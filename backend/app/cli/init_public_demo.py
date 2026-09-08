@@ -7,6 +7,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 from sqlalchemy import select
+from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
 from app.db.session import get_session_factory
@@ -18,6 +19,21 @@ from app.services.research_capabilities import seed_capability_templates, seed_p
 
 
 def initialize(db):
+    # Existing seed helpers commit their own batches. Bind them to the caller's
+    # transaction without allowing those commits to publish a partial sample.
+    try:
+        with Session(
+            bind=db.connection(), join_transaction_mode="rollback_only", expire_on_commit=False
+        ) as staged:
+            result = _initialize_selected(staged)
+        db.commit()
+        return result
+    except Exception:
+        db.rollback()
+        raise
+
+
+def _initialize_selected(db):
     if not get_settings().public_demo_enabled:
         raise RuntimeError("Explicit public demo mode is required")
     payload = sample_manifest()

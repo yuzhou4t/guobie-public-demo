@@ -1,1 +1,30 @@
 .public-demo-notice{display:flex;justify-content:space-between;gap:16px;padding:8px 14px;margin:8px 0 14px;border:1px solid #d7e3f3;border-radius:8px;color:#53667d;background:#f5f9ff;font-size:12px}.public-demo-notice a{color:#235bb5}#publicConnectionForm{display:grid;gap:14px;max-width:640px;margin-top:16px}#publicConnectionForm label{display:grid;gap:6px;font-size:13px}#publicConnectionForm input:not([type=checkbox]),#publicConnectionForm select{width:100%;border:1px solid #ccd7e5;border-radius:7px;padding:9px 11px;font:inherit;background:#fff;color:#172236}#publicConnectionForm .public-api-consent{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.7}#publicConnectionStatus{font-size:13px;color:#22654e}#publicConnectionStatus.is-error{color:#af3428}#publicModelSettings details{margin-top:20px}#publicModelSettings details p{font-size:12px;margin:10px 0}@media(max-width:700px){.public-demo-notice{display:block}.public-demo-notice a{display:block;margin-top:4px}}
+
+/* The notice shares the viewport with the existing Reader instead of extending it. */
+body.public-demo .public-demo-notice {
+  flex: 0 0 auto;
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+@media (min-width: 960px) {
+  body.public-demo .workspace-canvas {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  body.public-demo .workspace-canvas > .workspace-crumb { flex: 0 0 auto; }
+  body.public-demo .workspace-canvas > .view {
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+  }
+  body.public-demo #globalHub { min-height: 420px; }
+  body.public-demo #globalHub .global-overview-grid { min-height: 0; }
+  body.public-demo #globalHub .global-overview-rail { overflow-y: auto; }
+  body.public-demo #globalHub .map-selection { min-width: 0; left: 10px; }
+}

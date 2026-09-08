@@ -48,6 +48,7 @@
   window.ReaderAuth.init = async () => {
     const result = await originalInit();
     if (!result.public_demo) return result;
+    document.body.classList.add('public-demo');
     document.getElementById('readerAccountBar')?.remove();
     const info = [...document.querySelectorAll('.reader-settings .settings-section p')].find(p => p.textContent.includes('本机单用户'));
     if (info) info.textContent = '公开体验环境：沿用国别智枢原有页面和研究流程，数据为筛选后的现有样本。每位体验者的项目和 API 连接独立。';

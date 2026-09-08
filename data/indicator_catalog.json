@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-05",
+  "method_note": "仅登记本项目已经明确使用的指标定义；未登记指标由接口保留原始字段并显示待核验。",
+  "indicators": [
+    {
+      "key": "SP.POP.TOTL",
+      "label": "总人口",
+      "theme": "人口社会",
+      "definition": "年末或年度人口估算，具体估算方法以来源库元数据为准。",
+      "geography_level": "country",
+      "comparison_key": "SP.POP.TOTL",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "NY.GDP.MKTP.CD",
+      "label": "GDP（现价美元）",
+      "theme": "经济发展",
+      "definition": "按现价美元计量的国内生产总值，不与不变价序列自动换算。",
+      "geography_level": "country",
+      "comparison_key": "NY.GDP.MKTP.CD",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "NY.GDP.MKTP.KD.ZG",
+      "label": "GDP实际增速",
+      "theme": "经济发展",
+      "definition": "以不变价口径计算的年度增长率。",
+      "geography_level": "country",
+      "comparison_key": "NY.GDP.MKTP.KD.ZG",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "GGXWDG_NGDP",
+      "label": "政府债务占GDP",
+      "theme": "经济发展",
+      "definition": "一般政府总债务占GDP比例，预测值与历史值必须按来源版本区分。",
+      "geography_level": "country",
+      "comparison_key": "GGXWDG_NGDP"
+    },
+    {
+      "key": "DAC2A.206.ALLD",
+      "label": "ODA援助",
+      "theme": "国际关系",
+      "definition": "官方发展援助拨付额，币种、价格口径和捐助方范围以来源记录为准。",
+      "geography_level": "country",
+      "comparison_key": "DAC2A.206.ALLD",
+      "original_fields_by_source": {
+        "oecd": {
+          "country": "RECIPIENT",
+          "period": "TIME_PERIOD",
+          "unit": "UNIT_MEASURE",
+          "measure": "MEASURE",
+          "donor": "DONOR",
+          "price_basis": "PRICE_BASE",
+          "value": "observations[key][0]"
+        }
+      }
+    },
+    {
+      "key": "UNCTAD.US.FdiFlowsStock.08.1",
+      "label": "FDI流入",
+      "theme": "国际关系",
+      "definition": "外国直接投资流入，流量与存量不得混合。",
+      "geography_level": "country",
+      "comparison_key": "UNCTAD.US.FdiFlowsStock.08.1",
+      "original_fields_by_source": {
+        "unctad-fdi": {
+          "country": "Economy",
+          "period": "Year",
+          "value": "Millions of US$ at current prices",
+          "flow": "Flow",
+          "direction": "Direction"
+        }
+      }
+    },
+    {
+      "key": "AG.SRF.TOTL.K2",
+      "label": "国土面积",
+      "theme": "基础国情",
+      "definition": "国土总面积，包括内陆水体和部分沿海水道；年度变动可能来自数据修订。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/AG.SRF.TOTL.K2",
+      "comparison_key": "AG.SRF.TOTL.K2",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "EN.POP.DNST",
+      "label": "人口密度",
+      "theme": "基础国情",
+      "definition": "年中人口除以陆地面积，不以包含水域的国土总面积作为分母。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/EN.POP.DNST",
+      "comparison_key": "EN.POP.DNST",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "SG.GEN.PARL.ZS",
+      "label": "女性议员席位比例",
+      "theme": "政治治理",
+      "definition": "女性占国家单院制议会或两院制下院席位的比例，不包含上院。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SG.GEN.PARL.ZS",
+      "comparison_key": "SG.GEN.PARL.ZS",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "NY.GDP.PCAP.CD",
+      "label": "人均 GDP（现价美元）",
+      "theme": "经济发展",
+      "definition": "现价美元 GDP 除以年中人口；不是购买力平价或不变价序列。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NY.GDP.PCAP.CD",
+      "comparison_key": "NY.GDP.PCAP.CD",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "SP.URB.TOTL.IN.ZS",
+      "label": "城镇人口占比",
+      "theme": "人口社会",
+      "definition": "按各国统计机构的城镇定义划分的城镇人口占总人口比例。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SP.URB.TOTL.IN.ZS",
+      "comparison_key": "SP.URB.TOTL.IN.ZS",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "SP.DYN.LE00.IN",
+      "label": "出生时预期寿命",
+      "theme": "人口社会",
+      "definition": "假定出生时年龄别死亡率持续不变，新生儿预期可生存的年数。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SP.DYN.LE00.IN",
+      "comparison_key": "SP.DYN.LE00.IN",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "EG.ELC.ACCS.ZS",
+      "label": "电力可及率",
+      "theme": "人口社会",
+      "definition": "能够获得电力的人口占总人口比例。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/EG.ELC.ACCS.ZS",
+      "comparison_key": "EG.ELC.ACCS.ZS",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "AG.LND.FRST.ZS",
+      "label": "森林覆盖率",
+      "theme": "资源环境",
+      "definition": "森林面积占陆地面积比例；森林定义遵循 FAO 与来源元数据。",
+      "geography_level": "country",
+      "definition_url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/AG.LND.FRST.ZS",
+      "comparison_key": "AG.LND.FRST.ZS",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "BX.KLT.DINV.WD.GD.ZS",
+      "label": "FDI净流入占 GDP",
+      "theme": "国际关系",
+      "definition": "外国直接投资净流入占 GDP 比例，与以美元表示的流入量不直接合并。",
+      "geography_level": "country",
+      "comparison_key": "BX.KLT.DINV.WD.GD.ZS",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "NY.GDP.MINR.RT.ZS",
+      "label": "矿产租金占 GDP",
+      "theme": "资源环境",
+      "definition": "矿产生产价值与生产成本之差占 GDP 比例；不是矿业税收或产量。",
+      "geography_level": "country",
+      "comparison_key": "NY.GDP.MINR.RT.ZS",
+      "original_fields_by_source": {
+        "world-bank": {
+          "value": "value",
+          "period": "date",
+          "country": "countryiso3code",
+          "indicator": "indicator.id",
+          "unit": "unit",
+          "release": "lastupdated"
+        }
+      }
+    },
+    {
+      "key": "UNCTAD.US.FdiFlowsStock.08.2",
+      "label": "FDI流出",
+      "theme": "国际关系",
+      "definition": "外国直接投资流出，保留来源现价美元口径。",
+      "geography_level": "country",
+      "comparison_key": "UNCTAD.US.FdiFlowsStock.08.2",
+      "original_fields_by_source": {
+        "unctad-fdi": {
+          "country": "Economy",
+          "period": "Year",
+          "value": "Millions of US$ at current prices",
+          "flow": "Flow",
+          "direction": "Direction"
+        }
+      }
+    },
+    {
+      "key": "UNCTAD.US.FdiFlowsStock.09.1",
+      "label": "FDI流入存量",
+      "theme": "国际关系",
+      "definition": "期末外国直接投资流入存量，不与年度流量合并。",
+      "geography_level": "country",
+      "comparison_key": "UNCTAD.US.FdiFlowsStock.09.1",
+      "original_fields_by_source": {
+        "unctad-fdi": {
+          "country": "Economy",
+          "period": "Year",
+          "value": "Millions of US$ at current prices",
+          "flow": "Flow",
+          "direction": "Direction"
+        }
+      }
+    },
+    {
+      "key": "UNCTAD.US.FdiFlowsStock.09.2",
+      "label": "FDI流出存量",
+      "theme": "国际关系",
+      "definition": "期末外国直接投资流出存量，不与年度流量合并。",
+      "geography_level": "country",
+      "comparison_key": "UNCTAD.US.FdiFlowsStock.09.2",
+      "original_fields_by_source": {
+        "unctad-fdi": {
+          "country": "Economy",
+          "period": "Year",
+          "value": "Millions of US$ at current prices",
+          "flow": "Flow",
+          "direction": "Direction"
+        }
+      }
+    },
+    {
+      "key": "WITS.TRAINS.MFN.SimpleAverage",
+      "label": "最惠国简单平均关税",
+      "theme": "国际关系",
+      "definition": "指定 HS 商品的最惠国适用税率简单平均值，不是实际缴税率。",
+      "geography_level": "country",
+      "original_fields_by_source": {
+        "wits": {
+          "country": "REPORTER",
+          "partner": "PARTNER",
+          "period": "TIME_PERIOD",
+          "value": "OBS_VALUE",
+          "commodity": "PRODUCTCODE",
+          "measure": "OBS_VALUE_MEASURE"
+        }
+      }
+    },
+    {
+      "key": "trade_value",
+      "label": "贸易额",
+      "theme": "国际关系",
+      "definition": "来源记录的商品贸易金额；伙伴国、方向、HS 版本和统计期分别保留。",
+      "geography_level": "country",
+      "original_fields_by_source": {
+        "comtrade": {
+          "value": "primaryValue",
+          "period": "period",
+          "country": "reporterCode",
+          "partner": "partnerCode",
+          "commodity": "cmdCode",
+          "flow": "flowCode"
+        }
+      }
+    },
+    {
+      "key": "net_weight",
+      "label": "净重",
+      "theme": "国际关系",
+      "definition": "来源记录的商品净重，不与补充数量单位互换。",
+      "geography_level": "country",
+      "original_fields_by_source": {
+        "comtrade": {
+          "value": "netWgt",
+          "period": "period",
+          "country": "reporterCode",
+          "partner": "partnerCode",
+          "commodity": "cmdCode",
+          "flow": "flowCode"
+        }
+      }
+    },
+    {
+      "key": "quantity",
+      "label": "补充数量",
+      "theme": "国际关系",
+      "definition": "来源报告的商品数量；单位依据来源 qtyUnitCode，不默认等于净重。",
+      "geography_level": "country",
+      "original_fields_by_source": {
+        "comtrade": {
+          "value": "qty",
+          "period": "period",
+          "country": "reporterCode",
+          "partner": "partnerCode",
+          "commodity": "cmdCode",
+          "flow": "flowCode",
+          "unit": "qtyUnitCode"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 研究工作台布局模式对比与方案选型</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    .transition-all-300 { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased p-4 md:p-6 min-h-screen">
+
+  <div class="max-w-6xl mx-auto space-y-6">
+    <!-- Header -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full mb-2">
+          <span>🎨 交互体验专项对比</span>
+        </div>
+        <h1 class="text-2xl font-bold text-slate-900">AI 研究模式布局方案实时预览与对比</h1>
+        <p class="text-sm text-slate-500 mt-1">切换下方选项卡，实时查看 4 种不同布局模式对主内容区（地图、指标、图表）的影响</p>
+      </div>
+      
+      <!-- Layout Mode Tabs -->
+      <div class="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-xl text-xs font-semibold" id="tabGroup">
+        <button type="button" onclick="switchMode('floating')" id="btn-floating" class="px-4 py-2 rounded-lg transition-all-300 bg-white text-blue-600 shadow-sm">
+          🌟 方案 1: 右侧悬浮抽屉 (推荐)
+        </button>
+        <button type="button" onclick="switchMode('bottom')" id="btn-bottom" class="px-4 py-2 rounded-lg transition-all-300 text-slate-600 hover:text-slate-900">
+          💬 方案 2: 底部智能 Dock
+        </button>
+        <button type="button" onclick="switchMode('dual')" id="btn-dual" class="px-4 py-2 rounded-lg transition-all-300 text-slate-600 hover:text-slate-900">
+          📌 方案 3: 悬浮 / 钉住双模
+        </button>
+        <button type="button" onclick="switchMode('current')" id="btn-current" class="px-4 py-2 rounded-lg transition-all-300 text-slate-600 hover:text-slate-900">
+          ⚠️ 当前状态: 挤压式分栏
+        </button>
+      </div>
+    </div>
+
+    <!-- Mode Explanation Card -->
+    <div id="modeCard" class="border rounded-2xl p-5 shadow-sm text-sm transition-all-300 bg-blue-50/70 border-blue-200 text-blue-950">
+      <!-- Dynamic Info Injected via JS -->
+    </div>
+
+    <!-- Interactive Mockup Screen Frame -->
+    <div class="bg-slate-900 rounded-2xl p-3 shadow-xl border border-slate-800">
+      <div class="flex items-center gap-2 mb-2 px-2 text-xs text-slate-400">
+        <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+        <span class="ml-2 font-mono text-slate-300">国别智枢 · 刚果民主共和国 (COD) 研究空间 · 1440 × 900 模拟视口</span>
+      </div>
+
+      <!-- Main App Window Simulation -->
+      <div class="relative bg-slate-100 rounded-xl overflow-hidden min-h-[580px] flex border border-slate-200" id="appSimulation">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside id="simSidebar" class="w-48 bg-white border-r border-slate-200 p-4 flex flex-col justify-between shrink-0 transition-all-300">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">国</div>
+              <span class="font-bold text-slate-800 text-sm sidebar-text">国别智枢</span>
+            </div>
+            <div class="p-2 bg-slate-100 rounded-lg text-xs text-slate-500 flex items-center justify-between">
+              <span class="sidebar-text">全局检索</span>
+              <kbd class="px-1.5 py-0.5 bg-white rounded border text-[10px]">⌘K</kbd>
+            </div>
+            <nav class="space-y-1 text-xs">
+              <div class="px-3 py-2 bg-blue-50 text-blue-600 font-semibold rounded-lg">🇨🇩 国别空间</div>
+              <div class="px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg">⏱️ 事件空间</div>
+              <div class="px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg">📑 专题空间</div>
+              <div class="px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg">🧩 研究 Skills</div>
+            </nav>
+          </div>
+          <div class="text-[11px] text-slate-400 sidebar-text">
+            版本: v2.0 · 内部单机
+          </div>
+        </aside>
+
+        <!-- Center Main Content -->
+        <main id="simMain" class="flex-1 p-5 overflow-y-auto space-y-4 transition-all-300">
+          
+          <!-- Top Country Breadcrumb -->
+          <div class="flex items-center justify-between bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🇨🇩</span>
+              <div>
+                <h2 class="font-bold text-slate-900 text-sm">刚果民主共和国 (COD)</h2>
+                <p class="text-xs text-slate-500">10 大研究模块 · 26 个 ADM1 行政区 · 深度就绪</p>
+              </div>
+            </div>
+            <button type="button" onclick="toggleSimAi()" class="px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg text-xs font-semibold shadow-sm hover:opacity-90 flex items-center gap-1.5">
+              <span>✨</span>
+              <span id="aiTriggerBtnText">打开 AI 研究模式</span>
+            </button>
+          </div>
+
+          <!-- Single-line 7 Anchor Nav -->
+          <div class="bg-white/90 backdrop-blur p-2 rounded-full border border-slate-200 shadow-sm flex items-center gap-1.5 overflow-x-auto text-[11px]">
+            <span class="px-3 py-1 bg-blue-600 text-white font-medium rounded-full shrink-0">1. 空间与国情</span>
+            <span class="px-3 py-1 text-slate-600 hover:bg-slate-100 font-medium rounded-full shrink-0">2. 核心指标</span>
+            <span class="px-3 py-1 text-slate-600 hover:bg-slate-100 font-medium rounded-full shrink-0">3. 时序趋势</span>
+            <span class="px-3 py-1 text-slate-600 hover:bg-slate-100 font-medium rounded-full shrink-0">4. 国家专题</span>
+            <span class="px-3 py-1 text-slate-600 hover:bg-slate-100 font-medium rounded-full shrink-0">5. 贸易与政策</span>
+            <span class="px-3 py-1 text-slate-600 hover:bg-slate-100 font-medium rounded-full shrink-0">6. 近期信号</span>
+            <span class="px-3 py-1 text-slate-600 hover:bg-slate-100 font-medium rounded-full shrink-0">7. 时效溯源</span>
+          </div>
+
+          <!-- Country Dashboard Body Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Map Card -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+              <div class="flex justify-between items-center text-xs">
+                <strong class="text-slate-800 font-semibold">🗺️ 空间与行政区划 (ADM1 26省)</strong>
+                <span class="text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-[10px]">已核验边界</span>
+              </div>
+              <div class="h-44 bg-blue-50/70 border border-blue-100 rounded-lg flex flex-col items-center justify-center text-center p-3">
+                <span class="text-3xl mb-1">🗺️</span>
+                <p class="text-xs text-blue-900 font-medium">刚果（金）全境 26 个省份矢量地图</p>
+                <p class="text-[10px] text-blue-600">悬浮查看省份 · 首都金沙萨重点标注</p>
+              </div>
+            </div>
+
+            <!-- KPI Indicators Grid -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+              <strong class="text-slate-800 font-semibold text-xs block">📊 6 大官方宏观底账</strong>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-lg">
+                  <div class="text-[10px] text-slate-400">总人口 (World Bank)</div>
+                  <div class="font-bold text-slate-800 text-sm mt-0.5">1.09 亿</div>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-lg">
+                  <div class="text-[10px] text-slate-400">GDP 总量 (World Bank)</div>
+                  <div class="font-bold text-slate-800 text-sm mt-0.5">$757 亿美元</div>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-lg">
+                  <div class="text-[10px] text-slate-400">GDP 增速</div>
+                  <div class="font-bold text-emerald-600 text-sm mt-0.5">+6.10 %</div>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-lg">
+                  <div class="text-[10px] text-slate-400">政府债务占 GDP (IMF)</div>
+                  <div class="font-bold text-slate-800 text-sm mt-0.5">15.84 %</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stance Matrix & Signals Simulation -->
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <strong class="text-slate-800 font-semibold">⚖️ 多源立场对比矩阵 (Consensus 风格)</strong>
+              <span class="text-xs text-slate-400">3 份关键材料比对</span>
+            </div>
+            <div class="border border-slate-100 rounded-lg overflow-hidden text-xs">
+              <table class="w-full text-left">
+                <thead class="bg-slate-50 text-slate-600 border-b border-slate-100 text-[11px]">
+                  <tr>
+                    <th class="p-2">信源主体</th>
+                    <th class="p-2">核心主张</th>
+                    <th class="p-2">置信度</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-slate-700 text-[11px]">
+                  <tr>
+                    <td class="p-2 font-medium">联合国安理会 (UNSC)</td>
+                    <td class="p-2 text-slate-500">Rubaya 矿区关键矿物供应链合规风险与走私证据...</td>
+                    <td class="p-2 text-emerald-600 font-bold">高 (A级)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-medium">刚果通讯社 (ACP)</td>
+                    <td class="p-2 text-slate-500">强调钴铜出口加工本地化与国家矿产主权要求...</td>
+                    <td class="p-2 text-blue-600 font-bold">官方公告</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </main>
+
+        <!-- Simulation: Right Slide-over AI Panel (Mode 1 & Mode 3) -->
+        <aside id="simRightAi" class="hidden transition-all-300 z-30">
+          <!-- Populated by JS based on mode -->
+        </aside>
+
+        <!-- Simulation: Bottom Floating Sheet (Mode 2) -->
+        <div id="simBottomAi" class="hidden transition-all-300 absolute inset-x-0 bottom-0 z-40 bg-white border-t border-slate-200 shadow-2xl rounded-t-2xl max-h-[340px] flex flex-col">
+          <!-- Populated by JS for Mode 2 -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mode Detailed Pros & Cons Comparison Table -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+      <h3 class="text-lg font-bold text-slate-900">📊 4 种方案优缺点与业界标杆综合对比</h3>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border border-slate-200 rounded-xl overflow-hidden">
+          <thead class="bg-slate-50 border-b border-slate-200 text-slate-700 font-semibold">
+            <tr>
+              <th class="p-3">设计模式</th>
+              <th class="p-3">代表产品</th>
+              <th class="p-3">左侧主屏幕（地图/图表）表现</th>
+              <th class="p-3">交互手感与沉浸度</th>
+              <th class="p-3">专家推荐指数</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-600">
+            <tr class="bg-blue-50/40">
+              <td class="p-3 font-bold text-blue-900">方案 1: 右侧悬浮抽屉 (Floating Drawer)</td>
+              <td class="p-3">Perplexity Pro, Claude, Notion AI</td>
+              <td class="p-3 text-emerald-700 font-medium">✅ 100% 保持原样，完全不挤压、不重排任何图表</td>
+              <td class="p-3">极佳，AI 随叫随到，按 Esc 快速隐藏</td>
+              <td class="p-3 text-emerald-600 font-bold">⭐⭐⭐⭐⭐ 强烈推荐</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-800">方案 2: 底部智能 Dock (Bottom Sheet)</td>
+              <td class="p-3">SciSpace, Consensus, Elicit</td>
+              <td class="p-3 text-emerald-700 font-medium">✅ 左右宽度无任何缩减，横向大宽表最舒适</td>
+              <td class="p-3">良好，从底部向上呼出半屏，适合快速提问</td>
+              <td class="p-3 text-blue-600 font-bold">⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-800">方案 3: 悬浮/钉住双模 (Dual-mode Switch)</td>
+              <td class="p-3">Cursor, VS Code, NotebookLM</td>
+              <td class="p-3">默认不挤压；钉住分栏时自动收起最左侧主导航腾出空间</td>
+              <td class="p-3">专业度极高，适合轻度浏览与深度长文写作切换</td>
+              <td class="p-3 text-purple-600 font-bold">⭐⭐⭐⭐⭐ 高阶首选</td>
+            </tr>
+            <tr class="bg-rose-50/40">
+              <td class="p-3 font-bold text-rose-900">方案 4: 挤压式分栏 (当前版本)</td>
+              <td class="p-3">早期普通左右布局</td>
+              <td class="p-3 text-rose-700">❌ 硬性挤占 380px，导致地图缩小、折线折行、导航换行</td>
+              <td class="p-3">容易产生压迫感，主页面元素产生突兀跳变</td>
+              <td class="p-3 text-slate-400">建议升级</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentMode = 'floating';
+    let isAiOpen = true;
+
+    const MODE_DESCRIPTIONS = {
+      floating: {
+        title: "🌟 方案 1: 右侧悬浮轻量抽屉 (Perplexity / Claude 风格) —— 【强烈推荐】",
+        desc: "【核心机制】：AI 面板使用 position: fixed 浮在最右侧（带柔和投影与半透明毛玻璃）。左侧的主页面（地图、指标网格、7模块导航、立场对比表）100% 保持原有宽度与排版不变，彻底告别挤压折行！随时按 Esc 或点击收起。",
+        pros: "主界面完全不改变排版；地图与数据资产清晰度 100% 保持；交互极其轻快敏捷。",
+        themeClass: "bg-blue-50/70 border-blue-200 text-blue-950"
+      },
+      bottom: {
+        title: "💬 方案 2: 底部智能常驻 Dock (SciSpace / Consensus 风格)",
+        desc: "【核心机制】：在屏幕下方常驻一个轻巧搜索问答栏（如『向 AI 提问该国宏观底账...』）。点击或提问时，从底部向上平滑滑出一个半屏问答抽屉。",
+        pros: "左右两侧完全没有宽度挤压，横向大宽表、对比矩阵展开最从容。",
+        themeClass: "bg-emerald-50/70 border-emerald-200 text-emerald-950"
+      },
+      dual: {
+        title: "📌 方案 3: 悬浮 / 钉住双模灵活切换 (Cursor / NotebookLM 风格)",
+        desc: "【核心机制】：平时默认是方案 1（悬浮抽屉不占空间）；当需要长时间边看 AI 分析边整理材料时，点击右上角『📌 钉住』按钮，自动折叠最左侧主导航栏，给中间内容和右侧 AI 分栏腾出充足视口空间。",
+        pros: "兼具轻量阅读与深度学术分析两套工作流，最受科研专业学者青睐。",
+        themeClass: "bg-purple-50/70 border-purple-200 text-purple-950"
+      },
+      current: {
+        title: "⚠️ 方案 4: 挤压式分栏 (当前系统状态)",
+        desc: "【核心机制】：打开 AI 面板时，强制将主网格切分为 1fr 380px，导致左侧可用宽度瞬间收窄约 35%，引发地图缩小、图表换行以及导航栏被折断成两行。",
+        pros: "传统并排，但在大屏图表密集型场景下会破坏原有的视觉平衡。",
+        themeClass: "bg-amber-50/70 border-amber-200 text-amber-950"
+      }
+    };
+
+    function switchMode(mode) {
+      currentMode = mode;
+      
+      // Update Tab Styles
+      ['floating', 'bottom', 'dual', 'current'].forEach(m => {
+        const btn = document.getElementById('btn-' + m);
+        if (m === mode) {
+          btn.className = "px-4 py-2 rounded-lg transition-all-300 bg-white text-blue-600 shadow-sm font-bold";
+        } else {
+          btn.className = "px-4 py-2 rounded-lg transition-all-300 text-slate-600 hover:text-slate-900";
+        }
+      });
+
+      // Update Explanation Card
+      const info = MODE_DESCRIPTIONS[mode];
+      const card = document.getElementById('modeCard');
+      card.className = "border rounded-2xl p-5 shadow-sm text-sm transition-all-300 " + info.themeClass;
+      card.innerHTML = `
+        <div class="flex items-start justify-between">
+          <div>
+            <h4 class="font-bold text-base mb-1">${info.title}</h4>
+            <p class="opacity-90 leading-relaxed mb-2">${info.desc}</p>
+            <div class="text-xs font-semibold">✨ 核心优势：${info.pros}</div>
+          </div>
+        </div>
+      `;
+
+      // Render Layout in Mockup
+      renderMockup();
+    }
+
+    function toggleSimAi() {
+      isAiOpen = !isAiOpen;
+      renderMockup();
+    }
+
+    function renderMockup() {
+      const rightAi = document.getElementById('simRightAi');
+      const bottomAi = document.getElementById('simBottomAi');
+      const simMain = document.getElementById('simMain');
+      const simSidebar = document.getElementById('simSidebar');
+      const btnText = document.getElementById('aiTriggerBtnText');
+
+      btnText.textContent = isAiOpen ? "收起 AI 面板" : "打开 AI 研究模式";
+
+      // Reset Simulation elements
+      rightAi.className = "transition-all-300";
+      bottomAi.className = "hidden transition-all-300";
+      simMain.className = "flex-1 p-5 overflow-y-auto space-y-4 transition-all-300";
+      simSidebar.className = "w-48 bg-white border-r border-slate-200 p-4 flex flex-col justify-between shrink-0 transition-all-300";
+      document.querySelectorAll('.sidebar-text').forEach(el => el.classList.remove('hidden'));
+
+      if (!isAiOpen) {
+        rightAi.classList.add('hidden');
+        bottomAi.classList.add('hidden');
+        return;
+      }
+
+      if (currentMode === 'floating') {
+        // Mode 1: Floating Overlay Drawer on the right (No main resize!)
+        rightAi.className = "absolute top-3 right-3 bottom-3 w-80 bg-white/95 backdrop-blur-md rounded-2xl border border-blue-200 shadow-2xl z-30 flex flex-col overflow-hidden transition-all-300";
+        rightAi.innerHTML = getAiPanelHtml("🌟 悬浮抽屉模式 · 左侧零挤压", false);
+      } 
+      else if (currentMode === 'bottom') {
+        // Mode 2: Bottom Dock / Sheet
+        rightAi.classList.add('hidden');
+        bottomAi.className = "absolute inset-x-4 bottom-3 z-40 bg-white/95 backdrop-blur-md border border-blue-200 shadow-2xl rounded-2xl p-4 flex flex-col max-h-56 transition-all-300";
+        bottomAi.innerHTML = `
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
+            <span class="font-bold text-xs text-slate-800 flex items-center gap-1">💬 AI 受控问答 (SciSpace 风格底部提问)</span>
+            <button onclick="toggleSimAi()" class="text-slate-400 hover:text-slate-700 text-xs">✕ 关闭</button>
+          </div>
+          <div class="text-xs text-slate-600 flex-1 overflow-y-auto space-y-1.5 pr-1">
+            <div class="p-2 bg-blue-50 text-blue-900 rounded-lg text-[11px]">
+              <strong>问：刚果（金）关键矿产与储量优势？</strong>
+              <p class="text-slate-600 mt-1">答：根据 USGS 与库内安理会专家组材料，刚果（金）拥有全球约 70% 钴矿储量与重要钽铌/铜矿带...</p>
+            </div>
+          </div>
+          <div class="mt-2 flex gap-2">
+            <input type="text" placeholder="向 AI 提问该国数据、事件或政策..." class="flex-1 px-3 py-1.5 text-xs border border-slate-200 rounded-lg bg-slate-50 focus:outline-none focus:bg-white" value="刚果（金）当前宏观债务情况如何？">
+            <button class="px-3 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-lg">发送</button>
+          </div>
+        `;
+      }
+      else if (currentMode === 'dual') {
+        // Mode 3: Dual Mode (Sidebar collapses automatically to preserve space)
+        simSidebar.className = "w-14 bg-white border-r border-slate-200 p-3 flex flex-col items-center justify-between shrink-0 transition-all-300";
+        document.querySelectorAll('.sidebar-text').forEach(el => el.classList.add('hidden'));
+        
+        rightAi.className = "w-80 bg-white border-l border-slate-200 p-3 flex flex-col shrink-0 transition-all-300";
+        rightAi.innerHTML = getAiPanelHtml("📌 钉住分栏 · 左侧导航已自动折叠", true);
+      }
+      else if (currentMode === 'current') {
+        // Mode 4: Current Squish mode
+        rightAi.className = "w-72 bg-white border-l border-slate-200 p-3 flex flex-col shrink-0 transition-all-300";
+        rightAi.innerHTML = getAiPanelHtml("⚠️ 当前挤压分栏 (左侧被压缩)", false);
+      }
+    }
+
+    function getAiPanelHtml(badgeTitle, isPinned) {
+      return `
+        <div class="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100 flex items-center justify-between rounded-t-xl">
+          <div>
+            <span class="text-[10px] font-bold text-blue-600 block">${badgeTitle}</span>
+            <strong class="text-xs text-slate-800">AI 受控研究工作台</strong>
+          </div>
+          <div class="flex items-center gap-1.5">
+            ${isPinned ? '<span class="text-xs text-purple-600" title="已钉住分栏">📌</span>' : ''}
+            <button onclick="toggleSimAi()" class="text-slate-400 hover:text-slate-700 text-xs px-1.5 py-0.5 rounded">✕</button>
+          </div>
+        </div>
+        <div class="flex-1 p-3 overflow-y-auto space-y-2 text-xs">
+          <div class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl">
+            <span class="text-[10px] text-blue-600 font-semibold block mb-0.5">👤 提问</span>
+            <p class="text-slate-800 text-[11px]">刚果（金）有哪些关键矿产与储量优势？</p>
+          </div>
+          <div class="p-2.5 bg-blue-50/60 border border-blue-100 rounded-xl space-y-1">
+            <span class="text-[10px] text-indigo-600 font-semibold flex items-center gap-1">🤖 AI 研究回复 (带多步证据链)</span>
+            <p class="text-slate-700 text-[11px] leading-relaxed">
+              根据 World Bank 与 UN Comtrade 官方底账：刚果（金）占全球约 70% 钴供应份额，拥有世界级 Katanga 铜钴成矿带...
+            </p>
+            <div class="pt-1.5 flex flex-wrap gap-1 border-t border-blue-100/80">
+              <span class="px-1.5 py-0.5 bg-white border border-blue-200 rounded text-[9px] text-blue-700">来源: UNSC S/2024/969 [1]</span>
+              <span class="px-1.5 py-0.5 bg-white border border-blue-200 rounded text-[9px] text-blue-700">来源: World Bank 2024 [2]</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-2.5 border-t border-slate-200 bg-white">
+          <div class="flex gap-1.5">
+            <input type="text" placeholder="输入追问或研究命题..." class="flex-1 px-2.5 py-1 text-xs border border-slate-200 rounded-lg bg-slate-50 focus:outline-none focus:bg-white" value="请总结宏观底账">
+            <button class="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-lg">发送</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Initialize with default mode
+    switchMode('floating');
+  </script>
+</body>
+</html>

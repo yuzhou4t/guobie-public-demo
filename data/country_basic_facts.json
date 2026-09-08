@@ -1,0 +1,4389 @@
+{
+  "schema_version": "1.0",
+  "retrieved_at": "2026-08-28T00:00:00Z",
+  "coverage": {
+    "country_count": 195,
+    "required_fields": [
+      "capital",
+      "currencies",
+      "official_languages",
+      "land_area_km2"
+    ],
+    "catalog": "UN members and observer states in data/country_catalog.json"
+  },
+  "source": {
+    "name": "mledoze/countries",
+    "repository_url": "https://github.com/mledoze/countries",
+    "snapshot_url": "https://raw.githubusercontent.com/mledoze/countries/9eff32e4eef26715aa59d99b200127d1ef150e7a/countries.json",
+    "revision": "9eff32e4eef26715aa59d99b200127d1ef150e7a",
+    "revision_date": "2026-07-20T13:06:20Z",
+    "source_sha256": "99e62411349a991d0e26725aec22375ccd7e3381c723d92004a4fcb6aac1c34e",
+    "license": "ODbL-1.0",
+    "license_url": "https://github.com/mledoze/countries/blob/9eff32e4eef26715aa59d99b200127d1ef150e7a/LICENSE",
+    "field_notes": {
+      "capital": "Capital city or cities",
+      "currencies": "ISO 4217 currency code, English name and symbol",
+      "official_languages": "Official languages as represented by the source registry",
+      "land_area_km2": "Land area in square kilometres"
+    }
+  },
+  "field_overrides": {
+    "FSM": {
+      "currencies": {
+        "source_name": "Federated States of Micronesia Government",
+        "source_url": "https://gov.fm/cofa/",
+        "note": "The source registry omitted currency; the FSM government states that the country uses the U.S. dollar."
+      }
+    }
+  },
+  "countries": {
+    "AFG": {
+      "capital": [
+        "Kabul"
+      ],
+      "currencies": [
+        {
+          "code": "AFN",
+          "name": "Afghan afghani",
+          "symbol": "؋"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "prs",
+          "name": "Dari"
+        },
+        {
+          "code": "pus",
+          "name": "Pashto"
+        },
+        {
+          "code": "tuk",
+          "name": "Turkmen"
+        }
+      ],
+      "land_area_km2": 652230
+    },
+    "AGO": {
+      "capital": [
+        "Luanda"
+      ],
+      "currencies": [
+        {
+          "code": "AOA",
+          "name": "Angolan kwanza",
+          "symbol": "Kz"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        }
+      ],
+      "land_area_km2": 1246700
+    },
+    "ALB": {
+      "capital": [
+        "Tirana"
+      ],
+      "currencies": [
+        {
+          "code": "ALL",
+          "name": "Albanian lek",
+          "symbol": "L"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "sqi",
+          "name": "Albanian"
+        }
+      ],
+      "land_area_km2": 28748
+    },
+    "AND": {
+      "capital": [
+        "Andorra la Vella"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "cat",
+          "name": "Catalan"
+        }
+      ],
+      "land_area_km2": 468
+    },
+    "ARE": {
+      "capital": [
+        "Abu Dhabi"
+      ],
+      "currencies": [
+        {
+          "code": "AED",
+          "name": "United Arab Emirates dirham",
+          "symbol": "د.إ"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 83600
+    },
+    "ARG": {
+      "capital": [
+        "Buenos Aires"
+      ],
+      "currencies": [
+        {
+          "code": "ARS",
+          "name": "Argentine peso",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "grn",
+          "name": "Guaraní"
+        },
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 2780400
+    },
+    "ARM": {
+      "capital": [
+        "Yerevan"
+      ],
+      "currencies": [
+        {
+          "code": "AMD",
+          "name": "Armenian dram",
+          "symbol": "֏"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "hye",
+          "name": "Armenian"
+        }
+      ],
+      "land_area_km2": 29743
+    },
+    "ATG": {
+      "capital": [
+        "Saint John's"
+      ],
+      "currencies": [
+        {
+          "code": "XCD",
+          "name": "Eastern Caribbean dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 442
+    },
+    "AUS": {
+      "capital": [
+        "Canberra"
+      ],
+      "currencies": [
+        {
+          "code": "AUD",
+          "name": "Australian dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 7692024
+    },
+    "AUT": {
+      "capital": [
+        "Vienna"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "bar",
+          "name": "Austro-Bavarian German"
+        }
+      ],
+      "land_area_km2": 83871
+    },
+    "AZE": {
+      "capital": [
+        "Baku"
+      ],
+      "currencies": [
+        {
+          "code": "AZN",
+          "name": "Azerbaijani manat",
+          "symbol": "₼"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "aze",
+          "name": "Azerbaijani"
+        },
+        {
+          "code": "rus",
+          "name": "Russian"
+        }
+      ],
+      "land_area_km2": 86600
+    },
+    "BDI": {
+      "capital": [
+        "Gitega"
+      ],
+      "currencies": [
+        {
+          "code": "BIF",
+          "name": "Burundian franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "run",
+          "name": "Kirundi"
+        }
+      ],
+      "land_area_km2": 27834
+    },
+    "BEL": {
+      "capital": [
+        "Brussels"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "deu",
+          "name": "German"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "nld",
+          "name": "Dutch"
+        }
+      ],
+      "land_area_km2": 30528
+    },
+    "BEN": {
+      "capital": [
+        "Porto-Novo"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 112622
+    },
+    "BFA": {
+      "capital": [
+        "Ouagadougou"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 272967
+    },
+    "BGD": {
+      "capital": [
+        "Dhaka"
+      ],
+      "currencies": [
+        {
+          "code": "BDT",
+          "name": "Bangladeshi taka",
+          "symbol": "৳"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ben",
+          "name": "Bengali"
+        }
+      ],
+      "land_area_km2": 147570
+    },
+    "BGR": {
+      "capital": [
+        "Sofia"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "bul",
+          "name": "Bulgarian"
+        }
+      ],
+      "land_area_km2": 110879
+    },
+    "BHR": {
+      "capital": [
+        "Manama"
+      ],
+      "currencies": [
+        {
+          "code": "BHD",
+          "name": "Bahraini dinar",
+          "symbol": ".د.ب"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 765
+    },
+    "BHS": {
+      "capital": [
+        "Nassau"
+      ],
+      "currencies": [
+        {
+          "code": "BSD",
+          "name": "Bahamian dollar",
+          "symbol": "$"
+        },
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 13943
+    },
+    "BIH": {
+      "capital": [
+        "Sarajevo"
+      ],
+      "currencies": [
+        {
+          "code": "BAM",
+          "name": "Bosnia and Herzegovina convertible mark",
+          "symbol": "KM"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "bos",
+          "name": "Bosnian"
+        },
+        {
+          "code": "hrv",
+          "name": "Croatian"
+        },
+        {
+          "code": "srp",
+          "name": "Serbian"
+        }
+      ],
+      "land_area_km2": 51209
+    },
+    "BLR": {
+      "capital": [
+        "Minsk"
+      ],
+      "currencies": [
+        {
+          "code": "BYN",
+          "name": "Belarusian ruble",
+          "symbol": "Br"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "bel",
+          "name": "Belarusian"
+        },
+        {
+          "code": "rus",
+          "name": "Russian"
+        }
+      ],
+      "land_area_km2": 207600
+    },
+    "BLZ": {
+      "capital": [
+        "Belmopan"
+      ],
+      "currencies": [
+        {
+          "code": "BZD",
+          "name": "Belize dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "bjz",
+          "name": "Belizean Creole"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 22966
+    },
+    "BOL": {
+      "capital": [
+        "Sucre"
+      ],
+      "currencies": [
+        {
+          "code": "BOB",
+          "name": "Bolivian boliviano",
+          "symbol": "Bs."
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "aym",
+          "name": "Aymara"
+        },
+        {
+          "code": "grn",
+          "name": "Guaraní"
+        },
+        {
+          "code": "que",
+          "name": "Quechua"
+        },
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 1098581
+    },
+    "BRA": {
+      "capital": [
+        "Brasília"
+      ],
+      "currencies": [
+        {
+          "code": "BRL",
+          "name": "Brazilian real",
+          "symbol": "R$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        }
+      ],
+      "land_area_km2": 8515767
+    },
+    "BRB": {
+      "capital": [
+        "Bridgetown"
+      ],
+      "currencies": [
+        {
+          "code": "BBD",
+          "name": "Barbadian dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 430
+    },
+    "BRN": {
+      "capital": [
+        "Bandar Seri Begawan"
+      ],
+      "currencies": [
+        {
+          "code": "BND",
+          "name": "Brunei dollar",
+          "symbol": "$"
+        },
+        {
+          "code": "SGD",
+          "name": "Singapore dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "msa",
+          "name": "Malay"
+        }
+      ],
+      "land_area_km2": 5765
+    },
+    "BTN": {
+      "capital": [
+        "Thimphu"
+      ],
+      "currencies": [
+        {
+          "code": "BTN",
+          "name": "Bhutanese ngultrum",
+          "symbol": "Nu."
+        },
+        {
+          "code": "INR",
+          "name": "Indian rupee",
+          "symbol": "₹"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "dzo",
+          "name": "Dzongkha"
+        }
+      ],
+      "land_area_km2": 38394
+    },
+    "BWA": {
+      "capital": [
+        "Gaborone"
+      ],
+      "currencies": [
+        {
+          "code": "BWP",
+          "name": "Botswana pula",
+          "symbol": "P"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "tsn",
+          "name": "Tswana"
+        }
+      ],
+      "land_area_km2": 582000
+    },
+    "CAF": {
+      "capital": [
+        "Bangui"
+      ],
+      "currencies": [
+        {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "sag",
+          "name": "Sango"
+        }
+      ],
+      "land_area_km2": 622984
+    },
+    "CAN": {
+      "capital": [
+        "Ottawa"
+      ],
+      "currencies": [
+        {
+          "code": "CAD",
+          "name": "Canadian dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 9984670
+    },
+    "CHE": {
+      "capital": [
+        "Bern"
+      ],
+      "currencies": [
+        {
+          "code": "CHF",
+          "name": "Swiss franc",
+          "symbol": "Fr."
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "gsw",
+          "name": "Swiss German"
+        },
+        {
+          "code": "ita",
+          "name": "Italian"
+        },
+        {
+          "code": "roh",
+          "name": "Romansh"
+        }
+      ],
+      "land_area_km2": 41284
+    },
+    "CHL": {
+      "capital": [
+        "Santiago"
+      ],
+      "currencies": [
+        {
+          "code": "CLP",
+          "name": "Chilean peso",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 756102
+    },
+    "CHN": {
+      "capital": [
+        "Beijing"
+      ],
+      "currencies": [
+        {
+          "code": "CNY",
+          "name": "Chinese yuan",
+          "symbol": "¥"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "zho",
+          "name": "Chinese"
+        }
+      ],
+      "land_area_km2": 9706961
+    },
+    "CIV": {
+      "capital": [
+        "Yamoussoukro"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 322463
+    },
+    "CMR": {
+      "capital": [
+        "Yaoundé"
+      ],
+      "currencies": [
+        {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 475442
+    },
+    "COD": {
+      "capital": [
+        "Kinshasa"
+      ],
+      "currencies": [
+        {
+          "code": "CDF",
+          "name": "Congolese franc",
+          "symbol": "FC"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "kon",
+          "name": "Kikongo"
+        },
+        {
+          "code": "lin",
+          "name": "Lingala"
+        },
+        {
+          "code": "lua",
+          "name": "Tshiluba"
+        },
+        {
+          "code": "swa",
+          "name": "Swahili"
+        }
+      ],
+      "land_area_km2": 2344858
+    },
+    "COG": {
+      "capital": [
+        "Brazzaville"
+      ],
+      "currencies": [
+        {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "kon",
+          "name": "Kikongo"
+        },
+        {
+          "code": "lin",
+          "name": "Lingala"
+        }
+      ],
+      "land_area_km2": 342000
+    },
+    "COL": {
+      "capital": [
+        "Bogotá"
+      ],
+      "currencies": [
+        {
+          "code": "COP",
+          "name": "Colombian peso",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 1141748
+    },
+    "COM": {
+      "capital": [
+        "Moroni"
+      ],
+      "currencies": [
+        {
+          "code": "KMF",
+          "name": "Comorian franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "zdj",
+          "name": "Comorian"
+        }
+      ],
+      "land_area_km2": 1862
+    },
+    "CPV": {
+      "capital": [
+        "Praia"
+      ],
+      "currencies": [
+        {
+          "code": "CVE",
+          "name": "Cape Verdean escudo",
+          "symbol": "Esc"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        }
+      ],
+      "land_area_km2": 4033
+    },
+    "CRI": {
+      "capital": [
+        "San José"
+      ],
+      "currencies": [
+        {
+          "code": "CRC",
+          "name": "Costa Rican colón",
+          "symbol": "₡"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 51100
+    },
+    "CUB": {
+      "capital": [
+        "Havana"
+      ],
+      "currencies": [
+        {
+          "code": "CUC",
+          "name": "Cuban convertible peso",
+          "symbol": "$"
+        },
+        {
+          "code": "CUP",
+          "name": "Cuban peso",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 109884
+    },
+    "CYP": {
+      "capital": [
+        "Nicosia"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ell",
+          "name": "Greek"
+        },
+        {
+          "code": "tur",
+          "name": "Turkish"
+        }
+      ],
+      "land_area_km2": 9251
+    },
+    "CZE": {
+      "capital": [
+        "Prague"
+      ],
+      "currencies": [
+        {
+          "code": "CZK",
+          "name": "Czech koruna",
+          "symbol": "Kč"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ces",
+          "name": "Czech"
+        },
+        {
+          "code": "slk",
+          "name": "Slovak"
+        }
+      ],
+      "land_area_km2": 78865
+    },
+    "DEU": {
+      "capital": [
+        "Berlin"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "deu",
+          "name": "German"
+        }
+      ],
+      "land_area_km2": 357114
+    },
+    "DJI": {
+      "capital": [
+        "Djibouti"
+      ],
+      "currencies": [
+        {
+          "code": "DJF",
+          "name": "Djiboutian franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 23200
+    },
+    "DMA": {
+      "capital": [
+        "Roseau"
+      ],
+      "currencies": [
+        {
+          "code": "XCD",
+          "name": "Eastern Caribbean dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 751
+    },
+    "DNK": {
+      "capital": [
+        "Copenhagen"
+      ],
+      "currencies": [
+        {
+          "code": "DKK",
+          "name": "Danish krone",
+          "symbol": "kr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "dan",
+          "name": "Danish"
+        }
+      ],
+      "land_area_km2": 43094
+    },
+    "DOM": {
+      "capital": [
+        "Santo Domingo"
+      ],
+      "currencies": [
+        {
+          "code": "DOP",
+          "name": "Dominican peso",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 48671
+    },
+    "DZA": {
+      "capital": [
+        "Algiers"
+      ],
+      "currencies": [
+        {
+          "code": "DZD",
+          "name": "Algerian dinar",
+          "symbol": "د.ج"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 2381741
+    },
+    "ECU": {
+      "capital": [
+        "Quito"
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 276841
+    },
+    "EGY": {
+      "capital": [
+        "Cairo"
+      ],
+      "currencies": [
+        {
+          "code": "EGP",
+          "name": "Egyptian pound",
+          "symbol": "£"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 1002450
+    },
+    "ERI": {
+      "capital": [
+        "Asmara"
+      ],
+      "currencies": [
+        {
+          "code": "ERN",
+          "name": "Eritrean nakfa",
+          "symbol": "Nfk"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "tir",
+          "name": "Tigrinya"
+        }
+      ],
+      "land_area_km2": 117600
+    },
+    "ESP": {
+      "capital": [
+        "Madrid"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 505992
+    },
+    "EST": {
+      "capital": [
+        "Tallinn"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "est",
+          "name": "Estonian"
+        }
+      ],
+      "land_area_km2": 45227
+    },
+    "ETH": {
+      "capital": [
+        "Addis Ababa"
+      ],
+      "currencies": [
+        {
+          "code": "ETB",
+          "name": "Ethiopian birr",
+          "symbol": "Br"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "amh",
+          "name": "Amharic"
+        }
+      ],
+      "land_area_km2": 1104300
+    },
+    "FIN": {
+      "capital": [
+        "Helsinki"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fin",
+          "name": "Finnish"
+        },
+        {
+          "code": "swe",
+          "name": "Swedish"
+        }
+      ],
+      "land_area_km2": 338424
+    },
+    "FJI": {
+      "capital": [
+        "Suva"
+      ],
+      "currencies": [
+        {
+          "code": "FJD",
+          "name": "Fijian dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fij",
+          "name": "Fijian"
+        },
+        {
+          "code": "hif",
+          "name": "Fiji Hindi"
+        }
+      ],
+      "land_area_km2": 18272
+    },
+    "FRA": {
+      "capital": [
+        "Paris"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 551695
+    },
+    "FSM": {
+      "capital": [
+        "Palikir"
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 702
+    },
+    "GAB": {
+      "capital": [
+        "Libreville"
+      ],
+      "currencies": [
+        {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 267668
+    },
+    "GBR": {
+      "capital": [
+        "London"
+      ],
+      "currencies": [
+        {
+          "code": "GBP",
+          "name": "British pound",
+          "symbol": "£"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 242900
+    },
+    "GEO": {
+      "capital": [
+        "Tbilisi"
+      ],
+      "currencies": [
+        {
+          "code": "GEL",
+          "name": "lari",
+          "symbol": "₾"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "kat",
+          "name": "Georgian"
+        }
+      ],
+      "land_area_km2": 69700
+    },
+    "GHA": {
+      "capital": [
+        "Accra"
+      ],
+      "currencies": [
+        {
+          "code": "GHS",
+          "name": "Ghanaian cedi",
+          "symbol": "₵"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 238533
+    },
+    "GIN": {
+      "capital": [
+        "Conakry"
+      ],
+      "currencies": [
+        {
+          "code": "GNF",
+          "name": "Guinean franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 245857
+    },
+    "GMB": {
+      "capital": [
+        "Banjul"
+      ],
+      "currencies": [
+        {
+          "code": "GMD",
+          "name": "dalasi",
+          "symbol": "D"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 10689
+    },
+    "GNB": {
+      "capital": [
+        "Bissau"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        },
+        {
+          "code": "pov",
+          "name": "Upper Guinea Creole"
+        }
+      ],
+      "land_area_km2": 36125
+    },
+    "GNQ": {
+      "capital": [
+        "Malabo"
+      ],
+      "currencies": [
+        {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "por",
+          "name": "Portuguese"
+        },
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 28051
+    },
+    "GRC": {
+      "capital": [
+        "Athens"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ell",
+          "name": "Greek"
+        }
+      ],
+      "land_area_km2": 131990
+    },
+    "GRD": {
+      "capital": [
+        "St. George's"
+      ],
+      "currencies": [
+        {
+          "code": "XCD",
+          "name": "Eastern Caribbean dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 344
+    },
+    "GTM": {
+      "capital": [
+        "Guatemala City"
+      ],
+      "currencies": [
+        {
+          "code": "GTQ",
+          "name": "Guatemalan quetzal",
+          "symbol": "Q"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 108889
+    },
+    "GUY": {
+      "capital": [
+        "Georgetown"
+      ],
+      "currencies": [
+        {
+          "code": "GYD",
+          "name": "Guyanese dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 214969
+    },
+    "HND": {
+      "capital": [
+        "Tegucigalpa"
+      ],
+      "currencies": [
+        {
+          "code": "HNL",
+          "name": "Honduran lempira",
+          "symbol": "L"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 112492
+    },
+    "HRV": {
+      "capital": [
+        "Zagreb"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "hrv",
+          "name": "Croatian"
+        }
+      ],
+      "land_area_km2": 56594
+    },
+    "HTI": {
+      "capital": [
+        "Port-au-Prince"
+      ],
+      "currencies": [
+        {
+          "code": "HTG",
+          "name": "Haitian gourde",
+          "symbol": "G"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "hat",
+          "name": "Haitian Creole"
+        }
+      ],
+      "land_area_km2": 27750
+    },
+    "HUN": {
+      "capital": [
+        "Budapest"
+      ],
+      "currencies": [
+        {
+          "code": "HUF",
+          "name": "Hungarian forint",
+          "symbol": "Ft"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "hun",
+          "name": "Hungarian"
+        }
+      ],
+      "land_area_km2": 93028
+    },
+    "IDN": {
+      "capital": [
+        "Jakarta"
+      ],
+      "currencies": [
+        {
+          "code": "IDR",
+          "name": "Indonesian rupiah",
+          "symbol": "Rp"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ind",
+          "name": "Indonesian"
+        }
+      ],
+      "land_area_km2": 1904569
+    },
+    "IND": {
+      "capital": [
+        "New Delhi"
+      ],
+      "currencies": [
+        {
+          "code": "INR",
+          "name": "Indian rupee",
+          "symbol": "₹"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "hin",
+          "name": "Hindi"
+        },
+        {
+          "code": "tam",
+          "name": "Tamil"
+        }
+      ],
+      "land_area_km2": 3287590
+    },
+    "IRL": {
+      "capital": [
+        "Dublin"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "gle",
+          "name": "Irish"
+        }
+      ],
+      "land_area_km2": 70273
+    },
+    "IRN": {
+      "capital": [
+        "Tehran"
+      ],
+      "currencies": [
+        {
+          "code": "IRR",
+          "name": "Iranian rial",
+          "symbol": "﷼"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fas",
+          "name": "Persian (Farsi)"
+        }
+      ],
+      "land_area_km2": 1648195
+    },
+    "IRQ": {
+      "capital": [
+        "Baghdad"
+      ],
+      "currencies": [
+        {
+          "code": "IQD",
+          "name": "Iraqi dinar",
+          "symbol": "ع.د"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "arc",
+          "name": "Aramaic"
+        },
+        {
+          "code": "ckb",
+          "name": "Sorani"
+        }
+      ],
+      "land_area_km2": 438317
+    },
+    "ISL": {
+      "capital": [
+        "Reykjavik"
+      ],
+      "currencies": [
+        {
+          "code": "ISK",
+          "name": "Icelandic króna",
+          "symbol": "kr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "isl",
+          "name": "Icelandic"
+        }
+      ],
+      "land_area_km2": 103000
+    },
+    "ISR": {
+      "capital": [
+        "Jerusalem"
+      ],
+      "currencies": [
+        {
+          "code": "ILS",
+          "name": "Israeli new shekel",
+          "symbol": "₪"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "heb",
+          "name": "Hebrew"
+        }
+      ],
+      "land_area_km2": 20770
+    },
+    "ITA": {
+      "capital": [
+        "Rome"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ita",
+          "name": "Italian"
+        }
+      ],
+      "land_area_km2": 301336
+    },
+    "JAM": {
+      "capital": [
+        "Kingston"
+      ],
+      "currencies": [
+        {
+          "code": "JMD",
+          "name": "Jamaican dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "jam",
+          "name": "Jamaican Patois"
+        }
+      ],
+      "land_area_km2": 10991
+    },
+    "JOR": {
+      "capital": [
+        "Amman"
+      ],
+      "currencies": [
+        {
+          "code": "JOD",
+          "name": "Jordanian dinar",
+          "symbol": "د.ا"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 89342
+    },
+    "JPN": {
+      "capital": [
+        "Tokyo"
+      ],
+      "currencies": [
+        {
+          "code": "JPY",
+          "name": "Japanese yen",
+          "symbol": "¥"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "jpn",
+          "name": "Japanese"
+        }
+      ],
+      "land_area_km2": 377930
+    },
+    "KAZ": {
+      "capital": [
+        "Astana"
+      ],
+      "currencies": [
+        {
+          "code": "KZT",
+          "name": "Kazakhstani tenge",
+          "symbol": "₸"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "kaz",
+          "name": "Kazakh"
+        },
+        {
+          "code": "rus",
+          "name": "Russian"
+        }
+      ],
+      "land_area_km2": 2724900
+    },
+    "KEN": {
+      "capital": [
+        "Nairobi"
+      ],
+      "currencies": [
+        {
+          "code": "KES",
+          "name": "Kenyan shilling",
+          "symbol": "Sh"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "swa",
+          "name": "Swahili"
+        }
+      ],
+      "land_area_km2": 580367
+    },
+    "KGZ": {
+      "capital": [
+        "Bishkek"
+      ],
+      "currencies": [
+        {
+          "code": "KGS",
+          "name": "Kyrgyzstani som",
+          "symbol": "с"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "kir",
+          "name": "Kyrgyz"
+        },
+        {
+          "code": "rus",
+          "name": "Russian"
+        }
+      ],
+      "land_area_km2": 199951
+    },
+    "KHM": {
+      "capital": [
+        "Phnom Penh"
+      ],
+      "currencies": [
+        {
+          "code": "KHR",
+          "name": "Cambodian riel",
+          "symbol": "៛"
+        },
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "khm",
+          "name": "Khmer"
+        }
+      ],
+      "land_area_km2": 181035
+    },
+    "KIR": {
+      "capital": [
+        "South Tarawa"
+      ],
+      "currencies": [
+        {
+          "code": "AUD",
+          "name": "Australian dollar",
+          "symbol": "$"
+        },
+        {
+          "code": "KID",
+          "name": "Kiribati dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "gil",
+          "name": "Gilbertese"
+        }
+      ],
+      "land_area_km2": 811
+    },
+    "KNA": {
+      "capital": [
+        "Basseterre"
+      ],
+      "currencies": [
+        {
+          "code": "XCD",
+          "name": "Eastern Caribbean dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 261
+    },
+    "KOR": {
+      "capital": [
+        "Seoul"
+      ],
+      "currencies": [
+        {
+          "code": "KRW",
+          "name": "South Korean won",
+          "symbol": "₩"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "kor",
+          "name": "Korean"
+        }
+      ],
+      "land_area_km2": 100210
+    },
+    "KWT": {
+      "capital": [
+        "Kuwait City"
+      ],
+      "currencies": [
+        {
+          "code": "KWD",
+          "name": "Kuwaiti dinar",
+          "symbol": "د.ك"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 17818
+    },
+    "LAO": {
+      "capital": [
+        "Vientiane"
+      ],
+      "currencies": [
+        {
+          "code": "LAK",
+          "name": "Lao kip",
+          "symbol": "₭"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "lao",
+          "name": "Lao"
+        }
+      ],
+      "land_area_km2": 236800
+    },
+    "LBN": {
+      "capital": [
+        "Beirut"
+      ],
+      "currencies": [
+        {
+          "code": "LBP",
+          "name": "Lebanese pound",
+          "symbol": "ل.ل"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 10452
+    },
+    "LBR": {
+      "capital": [
+        "Monrovia"
+      ],
+      "currencies": [
+        {
+          "code": "LRD",
+          "name": "Liberian dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 111369
+    },
+    "LBY": {
+      "capital": [
+        "Tripoli"
+      ],
+      "currencies": [
+        {
+          "code": "LYD",
+          "name": "Libyan dinar",
+          "symbol": "ل.د"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 1759540
+    },
+    "LCA": {
+      "capital": [
+        "Castries"
+      ],
+      "currencies": [
+        {
+          "code": "XCD",
+          "name": "Eastern Caribbean dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 616
+    },
+    "LIE": {
+      "capital": [
+        "Vaduz"
+      ],
+      "currencies": [
+        {
+          "code": "CHF",
+          "name": "Swiss franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "deu",
+          "name": "German"
+        }
+      ],
+      "land_area_km2": 160
+    },
+    "LKA": {
+      "capital": [
+        "Colombo"
+      ],
+      "currencies": [
+        {
+          "code": "LKR",
+          "name": "Sri Lankan rupee",
+          "symbol": "Rs රු"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "sin",
+          "name": "Sinhala"
+        },
+        {
+          "code": "tam",
+          "name": "Tamil"
+        }
+      ],
+      "land_area_km2": 65610
+    },
+    "LSO": {
+      "capital": [
+        "Maseru"
+      ],
+      "currencies": [
+        {
+          "code": "LSL",
+          "name": "Lesotho loti",
+          "symbol": "L"
+        },
+        {
+          "code": "ZAR",
+          "name": "South African rand",
+          "symbol": "R"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "sot",
+          "name": "Sotho"
+        }
+      ],
+      "land_area_km2": 30355
+    },
+    "LTU": {
+      "capital": [
+        "Vilnius"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "lit",
+          "name": "Lithuanian"
+        }
+      ],
+      "land_area_km2": 65300
+    },
+    "LUX": {
+      "capital": [
+        "Luxembourg"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "deu",
+          "name": "German"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "ltz",
+          "name": "Luxembourgish"
+        }
+      ],
+      "land_area_km2": 2586
+    },
+    "LVA": {
+      "capital": [
+        "Riga"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "lav",
+          "name": "Latvian"
+        }
+      ],
+      "land_area_km2": 64559
+    },
+    "MAR": {
+      "capital": [
+        "Rabat"
+      ],
+      "currencies": [
+        {
+          "code": "MAD",
+          "name": "Moroccan dirham",
+          "symbol": "د.م."
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "ber",
+          "name": "Berber"
+        }
+      ],
+      "land_area_km2": 446550
+    },
+    "MCO": {
+      "capital": [
+        "Monaco"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 2.02
+    },
+    "MDA": {
+      "capital": [
+        "Chișinău"
+      ],
+      "currencies": [
+        {
+          "code": "MDL",
+          "name": "Moldovan leu",
+          "symbol": "L"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ron",
+          "name": "Moldavian"
+        }
+      ],
+      "land_area_km2": 33846
+    },
+    "MDG": {
+      "capital": [
+        "Antananarivo"
+      ],
+      "currencies": [
+        {
+          "code": "MGA",
+          "name": "Malagasy ariary",
+          "symbol": "Ar"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "mlg",
+          "name": "Malagasy"
+        }
+      ],
+      "land_area_km2": 587041
+    },
+    "MDV": {
+      "capital": [
+        "Malé"
+      ],
+      "currencies": [
+        {
+          "code": "MVR",
+          "name": "Maldivian rufiyaa",
+          "symbol": ".ރ"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "div",
+          "name": "Maldivian"
+        }
+      ],
+      "land_area_km2": 300
+    },
+    "MEX": {
+      "capital": [
+        "Mexico City"
+      ],
+      "currencies": [
+        {
+          "code": "MXN",
+          "name": "Mexican peso",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 1964375
+    },
+    "MHL": {
+      "capital": [
+        "Majuro"
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "mah",
+          "name": "Marshallese"
+        }
+      ],
+      "land_area_km2": 181
+    },
+    "MKD": {
+      "capital": [
+        "Skopje"
+      ],
+      "currencies": [
+        {
+          "code": "MKD",
+          "name": "denar",
+          "symbol": "den"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "mkd",
+          "name": "Macedonian"
+        }
+      ],
+      "land_area_km2": 25713
+    },
+    "MLI": {
+      "capital": [
+        "Bamako"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 1240192
+    },
+    "MLT": {
+      "capital": [
+        "Valletta"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "mlt",
+          "name": "Maltese"
+        }
+      ],
+      "land_area_km2": 316
+    },
+    "MMR": {
+      "capital": [
+        "Naypyidaw"
+      ],
+      "currencies": [
+        {
+          "code": "MMK",
+          "name": "Burmese kyat",
+          "symbol": "Ks"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "mya",
+          "name": "Burmese"
+        }
+      ],
+      "land_area_km2": 676578
+    },
+    "MNE": {
+      "capital": [
+        "Podgorica"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "cnr",
+          "name": "Montenegrin"
+        }
+      ],
+      "land_area_km2": 13812
+    },
+    "MNG": {
+      "capital": [
+        "Ulan Bator"
+      ],
+      "currencies": [
+        {
+          "code": "MNT",
+          "name": "Mongolian tögrög",
+          "symbol": "₮"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "mon",
+          "name": "Mongolian"
+        }
+      ],
+      "land_area_km2": 1564110
+    },
+    "MOZ": {
+      "capital": [
+        "Maputo"
+      ],
+      "currencies": [
+        {
+          "code": "MZN",
+          "name": "Mozambican metical",
+          "symbol": "MT"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        }
+      ],
+      "land_area_km2": 801590
+    },
+    "MRT": {
+      "capital": [
+        "Nouakchott"
+      ],
+      "currencies": [
+        {
+          "code": "MRU",
+          "name": "Mauritanian ouguiya",
+          "symbol": "UM"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 1030700
+    },
+    "MUS": {
+      "capital": [
+        "Port Louis"
+      ],
+      "currencies": [
+        {
+          "code": "MUR",
+          "name": "Mauritian rupee",
+          "symbol": "₨"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "mfe",
+          "name": "Mauritian Creole"
+        }
+      ],
+      "land_area_km2": 2040
+    },
+    "MWI": {
+      "capital": [
+        "Lilongwe"
+      ],
+      "currencies": [
+        {
+          "code": "MWK",
+          "name": "Malawian kwacha",
+          "symbol": "MK"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "nya",
+          "name": "Chewa"
+        }
+      ],
+      "land_area_km2": 118484
+    },
+    "MYS": {
+      "capital": [
+        "Kuala Lumpur"
+      ],
+      "currencies": [
+        {
+          "code": "MYR",
+          "name": "Malaysian ringgit",
+          "symbol": "RM"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "msa",
+          "name": "Malay"
+        }
+      ],
+      "land_area_km2": 330803
+    },
+    "NAM": {
+      "capital": [
+        "Windhoek"
+      ],
+      "currencies": [
+        {
+          "code": "NAD",
+          "name": "Namibian dollar",
+          "symbol": "$"
+        },
+        {
+          "code": "ZAR",
+          "name": "South African rand",
+          "symbol": "R"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "afr",
+          "name": "Afrikaans"
+        },
+        {
+          "code": "deu",
+          "name": "German"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "her",
+          "name": "Herero"
+        },
+        {
+          "code": "hgm",
+          "name": "Khoekhoe"
+        },
+        {
+          "code": "kwn",
+          "name": "Kwangali"
+        },
+        {
+          "code": "loz",
+          "name": "Lozi"
+        },
+        {
+          "code": "ndo",
+          "name": "Ndonga"
+        },
+        {
+          "code": "tsn",
+          "name": "Tswana"
+        }
+      ],
+      "land_area_km2": 825615
+    },
+    "NER": {
+      "capital": [
+        "Niamey"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 1267000
+    },
+    "NGA": {
+      "capital": [
+        "Abuja"
+      ],
+      "currencies": [
+        {
+          "code": "NGN",
+          "name": "Nigerian naira",
+          "symbol": "₦"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 923768
+    },
+    "NIC": {
+      "capital": [
+        "Managua"
+      ],
+      "currencies": [
+        {
+          "code": "NIO",
+          "name": "Nicaraguan córdoba",
+          "symbol": "C$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 130373
+    },
+    "NLD": {
+      "capital": [
+        "Amsterdam"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "nld",
+          "name": "Dutch"
+        }
+      ],
+      "land_area_km2": 41850
+    },
+    "NOR": {
+      "capital": [
+        "Oslo"
+      ],
+      "currencies": [
+        {
+          "code": "NOK",
+          "name": "Norwegian krone",
+          "symbol": "kr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "nno",
+          "name": "Norwegian Nynorsk"
+        },
+        {
+          "code": "nob",
+          "name": "Norwegian Bokmål"
+        },
+        {
+          "code": "smi",
+          "name": "Sami"
+        }
+      ],
+      "land_area_km2": 323802
+    },
+    "NPL": {
+      "capital": [
+        "Kathmandu"
+      ],
+      "currencies": [
+        {
+          "code": "NPR",
+          "name": "Nepalese rupee",
+          "symbol": "₨"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "nep",
+          "name": "Nepali"
+        }
+      ],
+      "land_area_km2": 147181
+    },
+    "NRU": {
+      "capital": [
+        "Yaren"
+      ],
+      "currencies": [
+        {
+          "code": "AUD",
+          "name": "Australian dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "nau",
+          "name": "Nauru"
+        }
+      ],
+      "land_area_km2": 21
+    },
+    "NZL": {
+      "capital": [
+        "Wellington"
+      ],
+      "currencies": [
+        {
+          "code": "NZD",
+          "name": "New Zealand dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "mri",
+          "name": "Māori"
+        },
+        {
+          "code": "nzs",
+          "name": "New Zealand Sign Language"
+        }
+      ],
+      "land_area_km2": 270467
+    },
+    "OMN": {
+      "capital": [
+        "Muscat"
+      ],
+      "currencies": [
+        {
+          "code": "OMR",
+          "name": "Omani rial",
+          "symbol": "ر.ع."
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 309500
+    },
+    "PAK": {
+      "capital": [
+        "Islamabad"
+      ],
+      "currencies": [
+        {
+          "code": "PKR",
+          "name": "Pakistani rupee",
+          "symbol": "₨"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "urd",
+          "name": "Urdu"
+        }
+      ],
+      "land_area_km2": 881912
+    },
+    "PAN": {
+      "capital": [
+        "Panama City"
+      ],
+      "currencies": [
+        {
+          "code": "PAB",
+          "name": "Panamanian balboa",
+          "symbol": "B/."
+        },
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 75417
+    },
+    "PER": {
+      "capital": [
+        "Lima"
+      ],
+      "currencies": [
+        {
+          "code": "PEN",
+          "name": "Peruvian sol",
+          "symbol": "S/."
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "aym",
+          "name": "Aymara"
+        },
+        {
+          "code": "que",
+          "name": "Quechua"
+        },
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 1285216
+    },
+    "PHL": {
+      "capital": [
+        "Manila"
+      ],
+      "currencies": [
+        {
+          "code": "PHP",
+          "name": "Philippine peso",
+          "symbol": "₱"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fil",
+          "name": "Filipino"
+        }
+      ],
+      "land_area_km2": 342353
+    },
+    "PLW": {
+      "capital": [
+        "Ngerulmud"
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "pau",
+          "name": "Palauan"
+        }
+      ],
+      "land_area_km2": 459
+    },
+    "PNG": {
+      "capital": [
+        "Port Moresby"
+      ],
+      "currencies": [
+        {
+          "code": "PGK",
+          "name": "Papua New Guinean kina",
+          "symbol": "K"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "hmo",
+          "name": "Hiri Motu"
+        },
+        {
+          "code": "tpi",
+          "name": "Tok Pisin"
+        }
+      ],
+      "land_area_km2": 462840
+    },
+    "POL": {
+      "capital": [
+        "Warsaw"
+      ],
+      "currencies": [
+        {
+          "code": "PLN",
+          "name": "Polish złoty",
+          "symbol": "zł"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "pol",
+          "name": "Polish"
+        }
+      ],
+      "land_area_km2": 312679
+    },
+    "PRK": {
+      "capital": [
+        "Pyongyang"
+      ],
+      "currencies": [
+        {
+          "code": "KPW",
+          "name": "North Korean won",
+          "symbol": "₩"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "kor",
+          "name": "Korean"
+        }
+      ],
+      "land_area_km2": 120538
+    },
+    "PRT": {
+      "capital": [
+        "Lisbon"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        }
+      ],
+      "land_area_km2": 92090
+    },
+    "PRY": {
+      "capital": [
+        "Asunción"
+      ],
+      "currencies": [
+        {
+          "code": "PYG",
+          "name": "Paraguayan guaraní",
+          "symbol": "₲"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "grn",
+          "name": "Guaraní"
+        },
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 406752
+    },
+    "PSE": {
+      "capital": [
+        "Ramallah"
+      ],
+      "currencies": [
+        {
+          "code": "EGP",
+          "name": "Egyptian pound",
+          "symbol": "E£"
+        },
+        {
+          "code": "ILS",
+          "name": "Israeli new shekel",
+          "symbol": "₪"
+        },
+        {
+          "code": "JOD",
+          "name": "Jordanian dinar",
+          "symbol": "JD"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 6220
+    },
+    "QAT": {
+      "capital": [
+        "Doha"
+      ],
+      "currencies": [
+        {
+          "code": "QAR",
+          "name": "Qatari riyal",
+          "symbol": "ر.ق"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 11586
+    },
+    "ROU": {
+      "capital": [
+        "Bucharest"
+      ],
+      "currencies": [
+        {
+          "code": "RON",
+          "name": "Romanian leu",
+          "symbol": "lei"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ron",
+          "name": "Romanian"
+        }
+      ],
+      "land_area_km2": 238391
+    },
+    "RUS": {
+      "capital": [
+        "Moscow"
+      ],
+      "currencies": [
+        {
+          "code": "RUB",
+          "name": "Russian ruble",
+          "symbol": "₽"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "rus",
+          "name": "Russian"
+        }
+      ],
+      "land_area_km2": 17098242
+    },
+    "RWA": {
+      "capital": [
+        "Kigali"
+      ],
+      "currencies": [
+        {
+          "code": "RWF",
+          "name": "Rwandan franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        },
+        {
+          "code": "kin",
+          "name": "Kinyarwanda"
+        }
+      ],
+      "land_area_km2": 26338
+    },
+    "SAU": {
+      "capital": [
+        "Riyadh"
+      ],
+      "currencies": [
+        {
+          "code": "SAR",
+          "name": "Saudi riyal",
+          "symbol": "ر.س"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 2149690
+    },
+    "SDN": {
+      "capital": [
+        "Khartoum"
+      ],
+      "currencies": [
+        {
+          "code": "SDG",
+          "name": "Sudanese pound",
+          "symbol": "PT"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 1886068
+    },
+    "SEN": {
+      "capital": [
+        "Dakar"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 196722
+    },
+    "SGP": {
+      "capital": [
+        "Singapore"
+      ],
+      "currencies": [
+        {
+          "code": "SGD",
+          "name": "Singapore dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "msa",
+          "name": "Malay"
+        },
+        {
+          "code": "tam",
+          "name": "Tamil"
+        },
+        {
+          "code": "zho",
+          "name": "Chinese"
+        }
+      ],
+      "land_area_km2": 710
+    },
+    "SLB": {
+      "capital": [
+        "Honiara"
+      ],
+      "currencies": [
+        {
+          "code": "SBD",
+          "name": "Solomon Islands dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 28896
+    },
+    "SLE": {
+      "capital": [
+        "Freetown"
+      ],
+      "currencies": [
+        {
+          "code": "SLE",
+          "name": "Sierra Leonean leone",
+          "symbol": "Le"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 71740
+    },
+    "SLV": {
+      "capital": [
+        "San Salvador"
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 21041
+    },
+    "SMR": {
+      "capital": [
+        "City of San Marino"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ita",
+          "name": "Italian"
+        }
+      ],
+      "land_area_km2": 61
+    },
+    "SOM": {
+      "capital": [
+        "Mogadishu"
+      ],
+      "currencies": [
+        {
+          "code": "SOS",
+          "name": "Somali shilling",
+          "symbol": "Sh"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "som",
+          "name": "Somali"
+        }
+      ],
+      "land_area_km2": 637657
+    },
+    "SRB": {
+      "capital": [
+        "Belgrade"
+      ],
+      "currencies": [
+        {
+          "code": "RSD",
+          "name": "Serbian dinar",
+          "symbol": "дин."
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "srp",
+          "name": "Serbian"
+        }
+      ],
+      "land_area_km2": 88361
+    },
+    "SSD": {
+      "capital": [
+        "Juba"
+      ],
+      "currencies": [
+        {
+          "code": "SSP",
+          "name": "South Sudanese pound",
+          "symbol": "£"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 619745
+    },
+    "STP": {
+      "capital": [
+        "São Tomé"
+      ],
+      "currencies": [
+        {
+          "code": "STN",
+          "name": "São Tomé and Príncipe dobra",
+          "symbol": "Db"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        }
+      ],
+      "land_area_km2": 964
+    },
+    "SUR": {
+      "capital": [
+        "Paramaribo"
+      ],
+      "currencies": [
+        {
+          "code": "SRD",
+          "name": "Surinamese dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "nld",
+          "name": "Dutch"
+        }
+      ],
+      "land_area_km2": 163820
+    },
+    "SVK": {
+      "capital": [
+        "Bratislava"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "slk",
+          "name": "Slovak"
+        }
+      ],
+      "land_area_km2": 49037
+    },
+    "SVN": {
+      "capital": [
+        "Ljubljana"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "slv",
+          "name": "Slovene"
+        }
+      ],
+      "land_area_km2": 20273
+    },
+    "SWE": {
+      "capital": [
+        "Stockholm"
+      ],
+      "currencies": [
+        {
+          "code": "SEK",
+          "name": "Swedish krona",
+          "symbol": "kr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "swe",
+          "name": "Swedish"
+        }
+      ],
+      "land_area_km2": 450295
+    },
+    "SWZ": {
+      "capital": [
+        "Lobamba"
+      ],
+      "currencies": [
+        {
+          "code": "SZL",
+          "name": "Swazi lilangeni",
+          "symbol": "L"
+        },
+        {
+          "code": "ZAR",
+          "name": "South African rand",
+          "symbol": "R"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "ssw",
+          "name": "Swazi"
+        }
+      ],
+      "land_area_km2": 17364
+    },
+    "SYC": {
+      "capital": [
+        "Victoria"
+      ],
+      "currencies": [
+        {
+          "code": "SCR",
+          "name": "Seychellois rupee",
+          "symbol": "₨"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "crs",
+          "name": "Seychellois Creole"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 452
+    },
+    "SYR": {
+      "capital": [
+        "Damascus"
+      ],
+      "currencies": [
+        {
+          "code": "SYP",
+          "name": "Syrian pound",
+          "symbol": "£"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 185180
+    },
+    "TCD": {
+      "capital": [
+        "N'Djamena"
+      ],
+      "currencies": [
+        {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 1284000
+    },
+    "TGO": {
+      "capital": [
+        "Lomé"
+      ],
+      "currencies": [
+        {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 56785
+    },
+    "THA": {
+      "capital": [
+        "Bangkok"
+      ],
+      "currencies": [
+        {
+          "code": "THB",
+          "name": "Thai baht",
+          "symbol": "฿"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "tha",
+          "name": "Thai"
+        }
+      ],
+      "land_area_km2": 513120
+    },
+    "TJK": {
+      "capital": [
+        "Dushanbe"
+      ],
+      "currencies": [
+        {
+          "code": "TJS",
+          "name": "Tajikistani somoni",
+          "symbol": "ЅМ"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "rus",
+          "name": "Russian"
+        },
+        {
+          "code": "tgk",
+          "name": "Tajik"
+        }
+      ],
+      "land_area_km2": 143100
+    },
+    "TKM": {
+      "capital": [
+        "Ashgabat"
+      ],
+      "currencies": [
+        {
+          "code": "TMT",
+          "name": "Turkmenistan manat",
+          "symbol": "m"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "rus",
+          "name": "Russian"
+        },
+        {
+          "code": "tuk",
+          "name": "Turkmen"
+        }
+      ],
+      "land_area_km2": 488100
+    },
+    "TLS": {
+      "capital": [
+        "Dili"
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "por",
+          "name": "Portuguese"
+        },
+        {
+          "code": "tet",
+          "name": "Tetum"
+        }
+      ],
+      "land_area_km2": 14874
+    },
+    "TON": {
+      "capital": [
+        "Nuku'alofa"
+      ],
+      "currencies": [
+        {
+          "code": "TOP",
+          "name": "Tongan paʻanga",
+          "symbol": "T$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "ton",
+          "name": "Tongan"
+        }
+      ],
+      "land_area_km2": 747
+    },
+    "TTO": {
+      "capital": [
+        "Port of Spain"
+      ],
+      "currencies": [
+        {
+          "code": "TTD",
+          "name": "Trinidad and Tobago dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 5130
+    },
+    "TUN": {
+      "capital": [
+        "Tunis"
+      ],
+      "currencies": [
+        {
+          "code": "TND",
+          "name": "Tunisian dinar",
+          "symbol": "د.ت"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 163610
+    },
+    "TUR": {
+      "capital": [
+        "Ankara"
+      ],
+      "currencies": [
+        {
+          "code": "TRY",
+          "name": "Turkish lira",
+          "symbol": "₺"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "tur",
+          "name": "Turkish"
+        }
+      ],
+      "land_area_km2": 783562
+    },
+    "TUV": {
+      "capital": [
+        "Funafuti"
+      ],
+      "currencies": [
+        {
+          "code": "AUD",
+          "name": "Australian dollar",
+          "symbol": "$"
+        },
+        {
+          "code": "TVD",
+          "name": "Tuvaluan dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "tvl",
+          "name": "Tuvaluan"
+        }
+      ],
+      "land_area_km2": 26
+    },
+    "TZA": {
+      "capital": [
+        "Dodoma"
+      ],
+      "currencies": [
+        {
+          "code": "TZS",
+          "name": "Tanzanian shilling",
+          "symbol": "Sh"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "swa",
+          "name": "Swahili"
+        }
+      ],
+      "land_area_km2": 945087
+    },
+    "UGA": {
+      "capital": [
+        "Kampala"
+      ],
+      "currencies": [
+        {
+          "code": "UGX",
+          "name": "Ugandan shilling",
+          "symbol": "Sh"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "swa",
+          "name": "Swahili"
+        }
+      ],
+      "land_area_km2": 241550
+    },
+    "UKR": {
+      "capital": [
+        "Kyiv"
+      ],
+      "currencies": [
+        {
+          "code": "UAH",
+          "name": "Ukrainian hryvnia",
+          "symbol": "₴"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ukr",
+          "name": "Ukrainian"
+        }
+      ],
+      "land_area_km2": 603500
+    },
+    "URY": {
+      "capital": [
+        "Montevideo"
+      ],
+      "currencies": [
+        {
+          "code": "UYU",
+          "name": "Uruguayan peso",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 181034
+    },
+    "USA": {
+      "capital": [
+        "Washington D.C."
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 9372610
+    },
+    "UZB": {
+      "capital": [
+        "Tashkent"
+      ],
+      "currencies": [
+        {
+          "code": "UZS",
+          "name": "Uzbekistani soʻm",
+          "symbol": "so'm"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "rus",
+          "name": "Russian"
+        },
+        {
+          "code": "uzb",
+          "name": "Uzbek"
+        }
+      ],
+      "land_area_km2": 447400
+    },
+    "VAT": {
+      "capital": [
+        "Vatican City"
+      ],
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ita",
+          "name": "Italian"
+        },
+        {
+          "code": "lat",
+          "name": "Latin"
+        }
+      ],
+      "land_area_km2": 0.44
+    },
+    "VCT": {
+      "capital": [
+        "Kingstown"
+      ],
+      "currencies": [
+        {
+          "code": "XCD",
+          "name": "Eastern Caribbean dollar",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 389
+    },
+    "VEN": {
+      "capital": [
+        "Caracas"
+      ],
+      "currencies": [
+        {
+          "code": "VES",
+          "name": "Venezuelan bolívar soberano",
+          "symbol": "Bs.S."
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "spa",
+          "name": "Spanish"
+        }
+      ],
+      "land_area_km2": 916445
+    },
+    "VNM": {
+      "capital": [
+        "Hanoi"
+      ],
+      "currencies": [
+        {
+          "code": "VND",
+          "name": "Vietnamese đồng",
+          "symbol": "₫"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "vie",
+          "name": "Vietnamese"
+        }
+      ],
+      "land_area_km2": 331212
+    },
+    "VUT": {
+      "capital": [
+        "Port Vila"
+      ],
+      "currencies": [
+        {
+          "code": "VUV",
+          "name": "Vanuatu vatu",
+          "symbol": "Vt"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "bis",
+          "name": "Bislama"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "fra",
+          "name": "French"
+        }
+      ],
+      "land_area_km2": 12189
+    },
+    "WSM": {
+      "capital": [
+        "Apia"
+      ],
+      "currencies": [
+        {
+          "code": "WST",
+          "name": "Samoan tālā",
+          "symbol": "T"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "smo",
+          "name": "Samoan"
+        }
+      ],
+      "land_area_km2": 2842
+    },
+    "YEM": {
+      "capital": [
+        "Sana'a"
+      ],
+      "currencies": [
+        {
+          "code": "YER",
+          "name": "Yemeni rial",
+          "symbol": "﷼"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "ara",
+          "name": "Arabic"
+        }
+      ],
+      "land_area_km2": 527968
+    },
+    "ZAF": {
+      "capital": [
+        "Pretoria",
+        "Bloemfontein",
+        "Cape Town"
+      ],
+      "currencies": [
+        {
+          "code": "ZAR",
+          "name": "South African rand",
+          "symbol": "R"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "afr",
+          "name": "Afrikaans"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "nbl",
+          "name": "Southern Ndebele"
+        },
+        {
+          "code": "nso",
+          "name": "Northern Sotho"
+        },
+        {
+          "code": "sot",
+          "name": "Southern Sotho"
+        },
+        {
+          "code": "ssw",
+          "name": "Swazi"
+        },
+        {
+          "code": "tsn",
+          "name": "Tswana"
+        },
+        {
+          "code": "tso",
+          "name": "Tsonga"
+        },
+        {
+          "code": "ven",
+          "name": "Venda"
+        },
+        {
+          "code": "xho",
+          "name": "Xhosa"
+        },
+        {
+          "code": "zul",
+          "name": "Zulu"
+        }
+      ],
+      "land_area_km2": 1221037
+    },
+    "ZMB": {
+      "capital": [
+        "Lusaka"
+      ],
+      "currencies": [
+        {
+          "code": "ZMW",
+          "name": "Zambian kwacha",
+          "symbol": "ZK"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "eng",
+          "name": "English"
+        }
+      ],
+      "land_area_km2": 752612
+    },
+    "ZWE": {
+      "capital": [
+        "Harare"
+      ],
+      "currencies": [
+        {
+          "code": "BWP",
+          "name": "Botswana pula",
+          "symbol": "P"
+        },
+        {
+          "code": "CNY",
+          "name": "Chinese yuan",
+          "symbol": "¥"
+        },
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        },
+        {
+          "code": "GBP",
+          "name": "British pound",
+          "symbol": "£"
+        },
+        {
+          "code": "INR",
+          "name": "Indian rupee",
+          "symbol": "₹"
+        },
+        {
+          "code": "JPY",
+          "name": "Japanese yen",
+          "symbol": "¥"
+        },
+        {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        },
+        {
+          "code": "ZAR",
+          "name": "South African rand",
+          "symbol": "Rs"
+        },
+        {
+          "code": "ZWB",
+          "name": "Zimbabwean bonds",
+          "symbol": "$"
+        }
+      ],
+      "official_languages": [
+        {
+          "code": "bwg",
+          "name": "Chibarwe"
+        },
+        {
+          "code": "eng",
+          "name": "English"
+        },
+        {
+          "code": "kck",
+          "name": "Kalanga"
+        },
+        {
+          "code": "khi",
+          "name": "Khoisan"
+        },
+        {
+          "code": "ndc",
+          "name": "Ndau"
+        },
+        {
+          "code": "nde",
+          "name": "Northern Ndebele"
+        },
+        {
+          "code": "nya",
+          "name": "Chewa"
+        },
+        {
+          "code": "sna",
+          "name": "Shona"
+        },
+        {
+          "code": "sot",
+          "name": "Sotho"
+        },
+        {
+          "code": "toi",
+          "name": "Tonga"
+        },
+        {
+          "code": "tsn",
+          "name": "Tswana"
+        },
+        {
+          "code": "tso",
+          "name": "Tsonga"
+        },
+        {
+          "code": "ven",
+          "name": "Venda"
+        },
+        {
+          "code": "xho",
+          "name": "Xhosa"
+        },
+        {
+          "code": "zib",
+          "name": "Zimbabwean Sign Language"
+        }
+      ],
+      "land_area_km2": 390757
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.1",
+  "base": {
+    "template_key": "global-country-research-v1",
+    "profile_key": "general-country",
+    "profile_description": "使用统一九项基础模块与一个国家专题延伸模块，检查国家概况、宏观、贸易、政策、事件、来源与 AI 研究能力。",
+    "preview_enabled": true,
+    "focus_tags": ["国家概况", "宏观经济", "贸易与投资", "政策动态", "事件与安全"],
+    "extension_rule": {
+      "definition": "围绕该国特有的结构性矛盾或战略机制，连接至少两个固定模块形成综合研究。",
+      "admission": ["至少连接两个固定模块", "不是单一指标、政策或事件列表的改名", "可形成独立研究问题与证据包"],
+      "max_topics": 3
+    },
+    "basic_fact_slots": [
+      {"key": "capital", "label": "首都"},
+      {"key": "currency", "label": "货币"},
+      {"key": "official_languages", "label": "官方语言"},
+      {"key": "land_area", "label": "国土面积"}
+    ],
+    "indicator_slots": [
+      {"key": "population", "label": "总人口", "source_hint": "World Bank"},
+      {"key": "gdp", "label": "GDP", "source_hint": "World Bank"},
+      {"key": "gdp_growth", "label": "GDP 增速", "source_hint": "World Bank"},
+      {"key": "government_debt", "label": "政府债务占 GDP", "source_hint": "IMF WEO"},
+      {"key": "oda", "label": "ODA 援助", "source_hint": "OECD DAC"},
+      {"key": "fdi_inward", "label": "FDI 流入", "source_hint": "UNCTAD"}
+    ],
+    "profile_dimensions": [
+      {"key": "basic_facts", "label": "基础事实", "slots": ["capital", "currency", "official_languages", "land_area"]},
+      {"key": "governance", "label": "政治治理", "slots": ["policy_material", "reviewed_event"]},
+      {"key": "economy", "label": "经济发展", "slots": ["structured_dataset", "gdp_observation"]},
+      {"key": "population_social", "label": "人口社会", "slots": ["population_observation"]},
+      {"key": "resources_environment", "label": "资源环境", "slots": ["commodity_material", "environment_observation"]},
+      {"key": "international_relations", "label": "国际关系", "slots": ["trade_dataset", "cross_border_event"]}
+    ],
+    "modules": [
+      {"key": "overview", "kind": "fixed", "label": "基本国情与国家概览", "description": "国名、区域、ISO／M49 身份、战略位置和已接入研究要点"},
+      {"key": "administrative-map", "kind": "fixed", "label": "国家与行政区地图", "description": "国家轮廓，以及有来源、版本和许可信息的行政区资产"},
+      {"key": "macro", "kind": "fixed", "label": "核心宏观指标", "description": "人口、GDP、增长、债务、援助和投资等可比指标"},
+      {"key": "trends", "kind": "fixed", "label": "十年时序趋势", "description": "标明统计期、缺失值和来源版本的年度趋势"},
+      {"key": "minerals", "kind": "extension", "label": "国家专题延伸", "description": "按国家特征配置的产业、资源、社会或区域议题"},
+      {"key": "trade", "kind": "fixed", "label": "对外贸易与投资", "description": "贸易结构、主要伙伴、供应链和投资关系"},
+      {"key": "policy", "kind": "fixed", "label": "政策法规与动态", "description": "只展示具备正式来源和发布时间的政策材料"},
+      {"key": "events", "kind": "fixed", "label": "事件与安全", "description": "已复核原子事件、时间线和多源差异"},
+      {"key": "sources", "kind": "fixed", "label": "来源底账与数据新鲜度", "description": "来源、版本、发布时间精度和采集时间"},
+      {"key": "assistant", "kind": "fixed", "label": "AI 研判与能力生成", "description": "限定当前国家证据包的问答与能力运行"}
+    ],
+    "extension_topics": [],
+    "qa_presets": [
+      {"id": "base-overview", "label": "国家底账", "question": "{country_name}当前已接入哪些基础国别数据？"},
+      {"id": "base-trends", "label": "主要趋势", "question": "{country_name}当前有哪些可复算的长期趋势？"},
+      {"id": "base-policy", "label": "政策动态", "question": "{country_name}当前有哪些已复核政策材料及其发布时间？"},
+      {"id": "base-freshness", "label": "数据新鲜度", "question": "{country_name}哪些数据已经过期或缺少精确发布时间？"}
+    ]
+  },
+  "country_overrides": {
+    "COD": {
+      "profile_key": "critical-minerals-and-conflict",
+      "profile_description": "围绕关键矿产与武装冲突两个国家特有问题，连接产业、治理、供应链与区域安全证据。",
+      "preview_enabled": true,
+      "focus_tags": ["钴与铜", "矿产供应链", "出口政策", "M23／Rubaya", "地区安全"],
+      "module_labels": {"minerals": "关键矿产与武装冲突", "events": "武装冲突与安全"},
+      "extension_topics": [
+        {"key": "critical-mineral-governance", "label": "关键矿产与国家治理", "description": "研究钴、铜等资源如何传导到财政、本地增值、出口治理和全球供应链。", "connected_modules": ["核心宏观指标", "对外贸易与投资", "政策法规与动态"], "boundary": "不重复列出矿种、贸易表或政策原文；聚焦资源收益、产业能力与治理之间的机制。", "question": "刚果（金）关键矿产如何同时影响国家治理、本地增值与全球供应链？"},
+        {"key": "mineral-conflict-security", "label": "矿区控制、武装冲突与区域安全", "description": "研究矿区控制、M23／Rubaya、人口流动和跨境供应链风险如何联动。", "connected_modules": ["国家与行政区地图", "事件与安全", "对外贸易与投资"], "boundary": "不重复事件时间线；聚焦矿产、空间控制、冲突融资与区域通道的关系。", "question": "不同来源如何证明或限定刚果（金）矿区控制、武装冲突与区域供应链之间的关系？"}
+      ],
+      "qa_presets": [
+        {"id": "q1", "label": "宏观底账", "question": "刚果（金）当前已入库的六项宏观指标是什么？"},
+        {"id": "q2", "label": "政策时间线", "question": "当前有哪些已复核政策材料及其发布时间？"},
+        {"id": "q3", "label": "事件证据", "question": "当前已复核事件的不同来源主张有哪些差异？"},
+        {"id": "q4", "label": "数据新鲜度", "question": "哪些数据已经过期或缺少精确发布时间？"}
+      ]
+    },
+    "ZAF": {
+      "profile_key": "mining-energy-and-regional-trade",
+      "profile_description": "聚焦电力转型、空间不平等和区域枢纽三个跨模块的南非结构性问题。",
+      "preview_enabled": true,
+      "focus_tags": ["矿业", "能源转型", "制造业", "南部非洲贸易", "财政与就业"],
+      "module_labels": {"minerals": "能源、社会结构与区域枢纽"},
+      "extension_topics": [
+        {"key": "power-transition-competitiveness", "label": "电力体系转型与产业竞争力", "description": "研究供电、电网改革和低碳转型如何影响矿业、制造业与投资。", "connected_modules": ["核心宏观指标", "对外贸易与投资", "政策法规与动态"], "boundary": "不重复能源政策清单；研究电力制约与产业竞争力的传导机制。", "question": "南非电力体系转型如何影响矿业、制造业和投资竞争力？"},
+        {"key": "spatial-inequality-employment", "label": "空间不平等、公共服务与就业", "description": "研究城市空间、公共服务与劳动力市场如何延续历史性不平等。", "connected_modules": ["基本国情与国家概览", "国家与行政区地图", "核心宏观指标"], "boundary": "不重复人口或就业指标卡；聚焦空间结构、服务可达性与机会差异。", "question": "南非的空间结构、公共服务和就业机会之间有哪些可证实关系？"},
+        {"key": "regional-hub", "label": "南部非洲区域枢纽", "description": "研究南非的金融、港口、企业网络与区域产业链影响。", "connected_modules": ["对外贸易与投资", "十年时序趋势", "政策法规与动态"], "boundary": "不重复贸易伙伴排名；聚焦区域网络中的枢纽作用与外溢效应。", "question": "南非的金融、物流和企业网络如何影响南部非洲区域产业链？"}
+      ],
+      "qa_presets": [
+        {"id": "zaf-overview", "label": "接入底账", "question": "南非当前已接入哪些宏观、矿业与能源数据？"},
+        {"id": "zaf-trends", "label": "产业趋势", "question": "南非当前有哪些可复算的制造业、能源或贸易趋势？"},
+        {"id": "zaf-policy", "label": "政策材料", "question": "南非当前有哪些已复核能源转型或矿业政策材料及其发布时间？"},
+        {"id": "zaf-gaps", "label": "证据缺口", "question": "南非的财政、就业、矿业和能源研究还缺哪些可追溯数据？"}
+      ]
+    },
+    "ZMB": {
+      "profile_key": "copper-power-and-debt",
+      "profile_description": "聚焦铜—电力—水资源耦合、债务重组和内陆走廊选择三个赞比亚结构性问题。",
+      "preview_enabled": true,
+      "focus_tags": ["铜产业", "电力供给", "债务", "跨境物流", "对外投资"],
+      "module_labels": {"minerals": "资源耦合、发展融资与内陆走廊"},
+      "extension_topics": [
+        {"key": "copper-power-water", "label": "铜—电力—水资源耦合", "description": "研究铜业扩张如何受制于发电、水文波动和基础设施投资。", "connected_modules": ["十年时序趋势", "对外贸易与投资", "政策法规与动态"], "boundary": "不重复铜产量或电力政策列表；聚焦资源、能源和气候约束的联动。", "question": "赞比亚铜业扩张与电力、水资源约束之间有哪些可追溯证据？"},
+        {"key": "debt-development-finance", "label": "债务重组与发展融资", "description": "研究债务结构、国企风险、财政空间和基础设施融资的关系。", "connected_modules": ["核心宏观指标", "十年时序趋势", "政策法规与动态"], "boundary": "不重复债务率指标；聚焦债务处置如何改变投资能力与发展选择。", "question": "赞比亚债务重组如何影响财政空间、国企风险与发展融资？"},
+        {"key": "landlocked-corridors", "label": "内陆国家的跨境走廊选择", "description": "研究不同出海走廊如何影响铜业、边境成本、地缘关系和投资。", "connected_modules": ["国家与行政区地图", "对外贸易与投资", "政策法规与动态"], "boundary": "不重复贸易伙伴或运输新闻；聚焦多条走廊之间的战略选择与路径依赖。", "question": "赞比亚不同跨境走廊如何影响铜出口、边境成本和外部融资？"}
+      ],
+      "qa_presets": [
+        {"id": "zmb-overview", "label": "接入底账", "question": "赞比亚当前已接入哪些宏观、铜产业、电力与债务数据？"},
+        {"id": "zmb-trends", "label": "产业趋势", "question": "赞比亚当前有哪些可复算的铜产业、跨境贸易或投资趋势？"},
+        {"id": "zmb-policy", "label": "政策材料", "question": "赞比亚当前有哪些已复核矿业、电力或债务政策材料及其发布时间？"},
+        {"id": "zmb-gaps", "label": "证据缺口", "question": "赞比亚的跨境物流、外资和电力研究还缺哪些可追溯数据？"}
+      ]
+    },
+    "ZWE": {
+      "profile_key": "mining-agriculture-and-macro-stability",
+      "profile_description": "聚焦多货币体系、气候—农业韧性和矿产增值三个津巴布韦结构性问题。",
+      "preview_enabled": true,
+      "focus_tags": ["矿业", "农业与粮食", "宏观稳定", "电力供给", "区域贸易"],
+      "module_labels": {"minerals": "货币稳定、气候韧性与矿产增值"},
+      "extension_topics": [
+        {"key": "multi-currency-stability", "label": "多货币体系与宏观稳定", "description": "研究本币、外币使用、通胀预期和企业投资之间的关系。", "connected_modules": ["核心宏观指标", "十年时序趋势", "政策法规与动态"], "boundary": "不重复通胀、汇率或政策时间线；聚焦货币安排对信心和实体经济的传导。", "question": "津巴布韦多货币体系如何影响通胀预期、企业行为和宏观稳定？"},
+        {"key": "climate-agriculture-resilience", "label": "气候冲击、雨养农业与粮食韧性", "description": "研究干旱、雨养农业、农村生计和食品价格之间的联动。", "connected_modules": ["国家与行政区地图", "十年时序趋势", "事件与安全"], "boundary": "不重复农业产量或灾害事件列表；聚焦气候风险向家庭生计和粮食安全的传导。", "question": "津巴布韦气候冲击如何通过雨养农业影响农村生计与粮食韧性？"},
+        {"key": "mineral-beneficiation-infrastructure", "label": "矿产增值与基础设施融资", "description": "研究矿产增值如何与电力、交通、外汇和投资融资互相制约。", "connected_modules": ["对外贸易与投资", "核心宏观指标", "政策法规与动态"], "boundary": "不重复矿产出口或投资项目清单；聚焦本地增值的组合约束与可行路径。", "question": "津巴布韦矿产增值为何受到电力、交通、外汇和融资的共同制约？"}
+      ],
+      "qa_presets": [
+        {"id": "zwe-overview", "label": "接入底账", "question": "津巴布韦当前已接入哪些宏观、矿业和农业数据？"},
+        {"id": "zwe-trends", "label": "主要趋势", "question": "津巴布韦当前有哪些可复算的宏观或区域贸易趋势？"},
+        {"id": "zwe-policy", "label": "政策材料", "question": "津巴布韦当前有哪些已复核矿业、农业或能源政策材料？"},
+        {"id": "zwe-gaps", "label": "证据缺口", "question": "津巴布韦的矿业、农业、宏观稳定和电力研究还缺哪些证据？"}
+      ]
+    }
+  }
+}

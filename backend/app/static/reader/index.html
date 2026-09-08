@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="国别智枢 Reader：面向区域国别研究的可信数据、事件证据与研究产物工作台。">
+  <meta name="guobie-api-base" content="">
+  <title>国别智枢 · 区域国别研究工作台</title>
+  <link rel="stylesheet" href="./assets/leaflet-1.9.4.css?v=1.9.4">
+  <link rel="stylesheet" href="./tokens.css?v=20260905-country-layout-v108">
+  <link rel="stylesheet" href="./styles.css?v=20260908-demo-v2">
+  <link rel="stylesheet" href="./workspace-layout.css?v=20260908-card-wrap-v101">
+  <link rel="stylesheet" href="./country-reading.css?v=20260905-country-layout-v107">
+  <link rel="stylesheet" href="./country-workspace.css?v=20260905-country-layout-v107">
+  <link rel="stylesheet" href="./research-frontier.css?v=20260908-demo-v2">
+  <link rel="stylesheet" href="./country-layout-b.css?v=20260905-country-layout-v108">
+  <link rel="stylesheet" href="./collection-status.css?v=20260905-v1">
+  <link rel="stylesheet" href="./project-entry.css?v=20260906-card-actions-v1">
+  <link rel="stylesheet" href="./project-workbench.css?v=20260906-flow-fixes-v1">
+  <link rel="stylesheet" href="./project-materials.css?v=20260905-materials-v5">
+  <link rel="stylesheet" href="./project-flow.css?v=20260906-chat-layout-v3">
+  <link rel="stylesheet" href="./project-shelf.css?v=20260906-content-v7">
+  <link rel="stylesheet" href="./skill-workflows.css?v=20260906-v1">
+  <link rel="stylesheet" href="./project-skills.css?v=20260906-skill-control-v1">
+  <link rel="stylesheet" href="./reader-settings.css?v=20260906-settings-v1">
+  <link rel="stylesheet" href="./country-overview-compact.css?v=20260906-overview-v2">
+  <link rel="stylesheet" href="./field-library.css?v=20260908-single-v1">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <header class="app-header" id="appHeader">
+    <a class="brand" href="#/countries" aria-label="返回国别智枢全球国别大厅"><span class="brand-mark" aria-hidden="true">国</span><span><strong>国别智枢</strong><small>区域国别研究</small></span></a>
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-controls="appHeader" aria-expanded="true" aria-label="收起左侧导航" title="收起左侧导航"><span aria-hidden="true">‹</span></button>
+    <button type="button" class="global-search-trigger" id="globalSearchTrigger" aria-label="全局学术检索 (Cmd+K)" title="全局学术检索 (Cmd+K)"><svg class="ui-icon" aria-hidden="true"><use href="./assets/lucide-sprite.svg#search"></use></svg><span>全局检索</span><kbd class="kbd-badge">⌘K</kbd></button>
+    <nav class="primary-nav" aria-label="主要空间">
+      <a class="nav-item is-active" href="#/countries" data-route-space="countries" data-short="国" aria-label="国别空间"><b>国别空间</b><small>查看与比较信息</small></a>
+      <a class="nav-item" href="#/projects" data-route-space="projects" data-short="项" aria-label="项目空间"><b>项目空间</b><small>选题与持续研究</small></a>
+      <a class="nav-item" href="#/capabilities" data-route-space="capabilities" data-short="能" aria-label="能力市场"><b>能力市场</b><small>积累专属能力</small></a>
+    </nav>
+    <nav class="utility-nav" aria-label="辅助入口">
+      <a href="#/resources" title="友情链接" class="friend-links-nav">友情链接</a>
+      <a href="#/methods" title="来源与方法">来源与方法</a>
+      <a href="#/settings" title="设置" data-route-space="settings"><span aria-hidden="true">⚙</span> <span id="headerCoverage">设置</span></a>
+    </nav>
+  </header>
+
+  <main class="main" id="mainContent">
+    <div class="workspace-canvas" id="workspaceCanvas">
+    <div class="workspace-crumb" id="sidebarContext" aria-live="polite" hidden></div>
+    <section class="startup-diagnostic" id="startupDiagnostic" aria-live="polite" hidden></section>
+    <datalist id="countrySearchOptions"></datalist>
+    <section class="view is-active" data-view="countries">
+      <div id="globalHub">
+        <nav class="hub-space-tabs" aria-label="国别空间全球视图"><a class="is-active" href="#/countries">全球概览</a><a href="#/countries/global-events">全球动态</a><a href="#/countries/search">全局检索</a></nav>
+        <header class="hub-intro">
+          <div>
+            <p class="eyebrow">COUNTRY INTELLIGENCE OVERVIEW</p>
+            <h1>总览大屏</h1>
+            <p>从国家覆盖、近期变化、热点议题和可追溯来源进入具体资料。</p>
+          </div>
+          <span class="overview-freshness" id="globalOverviewFreshness">正在核对最新采录时间…</span>
+        </header>
+        <div class="global-overview-grid">
+          <section class="global-map-card" aria-labelledby="global-map-title">
+            <header class="overview-card-heading"><div><h2 id="global-map-title">国家覆盖地图</h2><p>点击区域或搜索国家，进入国别信息中心。</p></div><div class="map-legend" aria-label="地图高亮含义"><span class="deep"></span>深度样本 <span class="partial"></span>基础档案 <span class="building"></span>暂无专题数据</div></header>
+            <div class="map-layout">
+              <div class="world-map-frame">
+                <div id="worldMap" class="world-map" role="application" aria-label="世界国家地图"></div>
+                <aside class="map-selection" id="worldMapSelection" aria-live="polite"></aside>
+                <details class="map-meta">
+                  <summary>地图说明</summary>
+                  <p>内部交互图 · 公开使用待版图复核。拖动平移 · 滚轮、双击或 ＋／－ 缩放。</p>
+                  <figure><img src="/reader/assets/world-map-gs-2016-1560.jpg" alt="自然资源部监制的中文标准世界地图，审图号 GS(2016)1560号"><figcaption><b>GS(2016)1560号</b><span>原图直接展示，不裁切、改色或叠加标记。</span></figcaption></figure>
+                </details>
+              </div>
+            </div>
+          </section>
+          <aside class="global-overview-rail">
+            <section class="overview-status-card" aria-labelledby="overviewStatusTitle"><header><div><h2 id="overviewStatusTitle">覆盖与更新</h2><p>数量说明覆盖，不替代资料质量判断。</p></div><button type="button" class="page-ai-toggle" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><i aria-hidden="true"></i><span data-copilot-label>AI 研究</span></button></header><div class="overview-metrics" id="globalOverviewMetrics"></div></section>
+            <section class="catalog-panel">
+              <div class="catalog-head"><div><strong>快速进入国家</strong><p>输入中文、英文或 ISO3，直接搜索 195 国。</p></div><span id="catalogCount">—</span></div>
+              <label class="hub-search"><span class="visually-hidden">搜索国家</span><input id="countryCatalogSearch" type="search" placeholder="搜索国家、英文名或 ISO3" autocomplete="off"></label>
+              <div class="country-catalog-modes" id="countryCatalogModes" aria-label="国家目录范围"><button type="button" class="is-active" data-country-mode="all">推荐国家</button><button type="button" data-country-mode="recent">最近访问</button><button type="button" data-country-mode="deep">深度样本</button></div>
+              <div class="catalog-list" id="countryCatalogList" aria-live="polite"></div>
+              <p class="catalog-search-note">目录不翻页；未显示的国家请直接搜索名称或 ISO3。</p>
+            </section>
+            <section class="overview-topics-card" aria-labelledby="overviewTopicsTitle"><header><div><h2 id="overviewTopicsTitle">热点议题</h2><p>数量、事件强度和人工优先级分开表达。</p></div><a href="#/countries/global-events">查看动态</a></header><div class="overview-topic-filters"><label>区域<select id="overviewTopicRegion"><option value="all">全部区域</option></select></label><label>时间<select id="overviewTopicWindow"><option value="90">近90天</option><option value="365">近1年</option><option value="all">全部时期</option></select></label><label>来源<select id="overviewTopicSource"><option value="all">全部来源</option><option value="official">官方</option><option value="academic">学术</option><option value="thinktank">智库</option><option value="media">媒体</option></select></label></div><div class="overview-topic-list" id="globalOverviewTopics"></div></section>
+          </aside>
+        </div>
+      </div>
+
+      <div id="globalSearchView" hidden>
+        <nav class="hub-space-tabs" aria-label="国别空间全球视图"><a href="#/countries">全球概览</a><a href="#/countries/global-events">全球动态</a><a class="is-active" href="#/countries/search">全局检索</a></nav>
+        <header class="page-heading compact-heading"><div><p class="eyebrow">GLOBAL EVIDENCE SEARCH</p><h1>全局资料检索</h1><p>联合检索国家、事件、政策、报告、论文和结构化数据。</p></div><button type="button" class="page-ai-toggle" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><i aria-hidden="true"></i><span data-copilot-label>AI 研究</span></button></header>
+        <nav class="search-type-tabs" id="materialSearchTypeTabs" aria-label="检索结果类型"><button type="button" class="is-active" data-search-type="all">全部</button><button type="button" data-search-type="country">国家</button><button type="button" data-search-type="event">事件</button><button type="button" data-search-type="policy">政策</button><button type="button" data-search-type="report">报告</button><button type="button" data-search-type="paper">论文</button><button type="button" data-search-type="data">数据</button></nav>
+        <div class="global-search-workbench">
+          <aside class="material-search-sidebar" aria-labelledby="materialSearchFilterTitle">
+            <header><strong id="materialSearchFilterTitle">筛选条件</strong><span>已确认材料</span><button type="button" class="text-link" id="mobileSearchFilterToggle" aria-expanded="false">展开筛选</button></header>
+            <form class="material-search-form" id="materialSearchForm">
+              <label class="search-wide">关键词<input id="materialSearchQuery" name="q" type="search" placeholder="标题、主题、来源或 DOI"></label>
+              <label>国家<input id="materialSearchCountry" name="country_iso3" type="search" list="countrySearchOptions" placeholder="输入国家名或 ISO3" autocomplete="off"></label>
+              <label>主题<input id="materialSearchTopic" name="topic" type="search" placeholder="矿产、治理、供应链"></label>
+              <label>主体<input id="materialSearchActor" name="actor" type="search" placeholder="机构、企业或行为主体"></label>
+              <label>语言<input id="materialSearchLanguage" name="language" placeholder="zh / en / fr"></label>
+              <label>来源类型<select id="materialSearchSourceType" name="source_type"><option value="">全部来源</option><option value="official">官方</option><option value="academic">学术</option><option value="thinktank">智库</option><option value="media">媒体</option><option value="data">数据平台</option></select></label>
+              <label>时间依据<select id="materialSearchDateBasis" name="date_basis"><option value="published">发布时间</option><option value="occurred">发生时间</option><option value="updated">更新时间</option></select></label>
+              <label>起始日期<input id="materialSearchFrom" name="date_from" type="date"></label>
+              <label>截止日期<input id="materialSearchTo" name="date_to" type="date"></label>
+              <div class="material-search-actions"><button class="primary-btn" type="submit">检索</button><button class="ghost-btn" type="button" id="materialSearchReset">重置</button></div>
+            </form>
+          </aside>
+          <section class="material-search-content" aria-label="检索结果">
+            <div class="search-result-toolbar"><div class="event-feed-summary" id="materialSearchSummary" aria-live="polite">正在读取可检索对象。</div><div class="search-result-actions"><button type="button" class="ghost-btn" data-open-project-material-picker="materialSearchResults">资料加入项目</button><button type="button" class="ghost-btn" id="materialSearchCopyLink">复制链接</button><button type="button" class="ghost-btn" id="materialSearchShare">分享</button><button type="button" class="ghost-btn" id="materialSearchExport" disabled>导出元数据</button><button type="button" class="ghost-btn" id="materialSearchReferences" disabled>导出参考文献</button></div></div>
+            <div class="material-search-results" id="materialSearchResults"><div class="empty-state">正在载入可检索资料…</div></div>
+          </section>
+        </div>
+      </div>
+
+      <div id="countryWorkspace" hidden>
+        <header class="country-toolbar" id="countryToolbar">
+          <div class="toolbar-left">
+            <button type="button" class="ghost-btn" id="backToGlobal">← 返回全球</button>
+            <div class="toolbar-divider"></div>
+            <div class="country-current-badge">
+              <span class="context-flag" id="countryToolbarFlag">🇨🇩</span>
+              <strong id="countryToolbarName">—</strong>
+              <small id="countryAvailabilityLabel"></small>
+            </div>
+          </div>
+
+          <div class="toolbar-center">
+            <div class="country-quick-search">
+              <svg class="search-svg" viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8.5" cy="8.5" r="5.5"/>
+                <path d="M17.5 17.5L12.5 12.5"/>
+              </svg>
+              <input id="countryQuickSearchInput" type="text" maxlength="60" autocomplete="off" placeholder="搜索国家 / ISO3">
+              <div class="country-quick-list" id="countryQuickList" hidden></div>
+            </div>
+          </div>
+
+          <div class="toolbar-right">
+            <span class="country-freshness" id="countryFreshness"></span>
+            <button type="button" class="assistant-toggle" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><i aria-hidden="true"></i><span data-copilot-label>AI 研究</span></button>
+          </div>
+        </header>
+
+        <div class="country-layout" id="countryLayout">
+          <div class="country-main">
+            <section class="framework-state" id="frameworkState" hidden></section>
+            <nav class="country-anchor-nav" id="countryAnchorNav" aria-label="国别研究工作面">
+              <a href="#/countries/COD" data-country-pane="overview">国家概览</a>
+              <a href="#/countries/COD/events" data-country-pane="events">事件动态</a>
+              <a href="#/countries/COD/policies" data-country-pane="policies">政策资料</a>
+              <a href="#/countries/COD/research" data-country-pane="research">学术研究</a>
+              <a href="#/countries/COD/reports" data-country-pane="reports">智库报告</a>
+              <a href="#/countries/COD/field" data-country-pane="field">田野资料</a>
+              <a href="#/countries/COD/data" data-country-pane="data">数据目录</a>
+            </nav>
+            <div class="country-pane-viewport">
+            <section class="country-section country-overview-workbench" id="country-overview" data-country-pane-content="overview">
+              <article class="map-panel"><div class="section-heading"><div><p class="eyebrow">COUNTRY MAP</p><h2>国家与行政区地图</h2></div><span id="countryMapStatus">地图状态</span></div><div class="adm-map-controls"><nav class="adm-level-switch" id="admLevelSwitch" aria-label="行政区图层"></nav><div class="map-mode-switch" aria-label="地图背景"><button type="button" data-map-mode="research" aria-pressed="true">研究底图</button><button type="button" data-map-mode="administrative" aria-pressed="false">纯行政区</button><button type="button" data-map-reset>复位</button></div></div><div class="adm-map-shell"><div class="adm-map" id="admMap"></div><aside class="adm-map-inspector" id="admMapInspector" aria-live="polite" hidden></aside></div><p class="attribution" id="admMapAttribution" hidden></p></article>
+              <article class="brief-panel"><div class="section-heading"><div><p class="eyebrow">COUNTRY FACTS</p><h2>基础事实与指标口径</h2></div><button type="button" class="primary-btn compact" data-open-project-context="country">国家概览加入项目</button></div><div class="country-basic-facts" id="countryBasicFacts"></div><div id="strategicSignals"></div></article>
+            </section>
+            <section class="country-section country-topic-panel" data-country-pane-content="overview"><div class="section-heading"><div><p class="eyebrow">CROSS-MODULE QUESTIONS</p><h2 id="countryExtensionTitle">重点议题</h2></div><span>横向宽卡 · 连接多模块证据</span></div><p class="section-note" id="countryExtensionRule"></p><div class="country-topic-grid" id="countryTopicContent"></div></section>
+            <section class="country-section country-overview-follow" data-country-pane-content="overview">
+              <article class="overview-conflict-card"><div class="section-heading"><div><p class="eyebrow">CONFLICTING CLAIMS</p><h2>口径冲突与重点议题</h2></div><span>并列展示 · 不自动裁决</span></div><div id="countryConflictSummary"></div></article>
+              <aside class="country-overview-rail" aria-label="覆盖与来源">
+                <div class="country-change-rail">
+                  <section><div class="section-heading"><div><p class="eyebrow">RECENT CHANGES</p><h2>近期变化</h2></div></div><div id="countryRecentChanges"></div></section>
+                  <section><div class="section-heading"><div><p class="eyebrow">SOURCE MIX</p><h2>来源结构</h2></div></div><div id="countrySourceMix"></div></section>
+                </div>
+                <section class="profile-completeness-rail">
+                  <div class="section-heading"><div><p class="eyebrow">PROFILE COVERAGE</p><h2>国家画像完整度</h2></div><strong id="countryProfileScore">—</strong></div>
+                  <div id="countryProfileDimensions"></div>
+                  <p class="method-note">只表示登记槽位覆盖，不是质量或可信度评分。</p>
+                </section>
+              </aside>
+            </section>
+            <section class="country-section" id="recent-signals" data-country-pane-content="events">
+              <div class="section-heading"><div><p class="eyebrow">EVENT UPDATES</p><h2>事件动态与证据链</h2></div><div class="section-heading-actions"><a class="text-link" href="#/countries/global-events">查看跨国动态</a><button type="button" class="primary-btn compact" data-open-project-material-picker="recent-signals">内容加入项目</button></div></div>
+              <nav class="reading-tabs" id="countryFeedTabs" aria-label="事件动态类型"><button type="button" data-country-feed="reports" aria-pressed="true">最新报道</button><button type="button" data-country-feed="chains" aria-pressed="false">已复核事件链</button></nav><div class="country-latest-filters" id="countryLatestFilters"><label>检索报道<input type="search" id="countryLatestQuery" placeholder="标题或来源关键词"></label><label>来源<select id="countryLatestSource"><option value="">全部来源</option></select></label></div><div id="countryLatestReports" aria-live="polite"></div>
+              <section class="country-reviewed-panel" id="countryReviewedPanel" hidden>
+                <div class="country-reviewed-heading"><div><p class="eyebrow">REVIEWED EVENT CHAINS</p><h3>已复核事件链</h3></div><span>按事件线索、节点和确认来源查看</span></div>
+                <div class="country-event-filters"><label>时间依据<select id="countryEventTimeBasis"><option value="occurred">发生时间</option><option value="reported">报道时间</option><option value="recorded">录入时间</option><option value="updated">更新时间</option></select></label><label>类型<select id="countryEventType"><option value="">全部类型</option><option value="policy">政策</option><option value="conflict">冲突</option><option value="market">市场</option><option value="accident">事故</option><option value="other">其他</option></select></label><label>主体或地点<input id="countryEventQuery" type="search" placeholder="搜索主体、地点或事件"></label><label>来源视角<select id="countryEventPerspective"><option value="">全部视角</option><option value="government">政府</option><option value="local_media">地方媒体</option><option value="international_organization">国际组织</option><option value="academic">学者</option><option value="enterprise">企业</option><option value="social_media">社媒</option><option value="unclassified">未分类</option></select></label></div>
+                <div class="country-event-workbench"><div id="countrySignals"></div></div>
+              </section>
+              <div class="coverage-summary" id="countryCoverage"></div>
+            </section>
+            <section class="country-section" id="country-research" data-country-pane-content="research"><div class="section-heading"><div><p class="eyebrow">FRONTIER RESEARCH</p><h2>学术研究</h2></div><div class="section-heading-actions"><nav class="research-window-switch" id="researchWindowSwitch"><button type="button" data-research-window="1">近2年</button><button type="button" class="is-active" data-research-window="3">近3年</button><button type="button" data-research-window="5">近5年</button></nav><button type="button" class="primary-btn compact" data-open-project-material-picker="countryResearchMaterials">资料加入项目</button></div></div><div class="country-feed-toolbar" id="countryResearchToolbar"><div class="country-latest-filters"><label>检索论文<input type="search" id="countryResearchQuery" placeholder="标题、期刊或来源"></label><label>来源<select id="countryResearchSource"><option value="">全部来源</option></select></label></div></div><div class="research-coverage-summary" id="countryResearchGaps"></div><section class="research-evolution" id="countryResearchEvolution"></section><div class="country-channel-materials" id="countryResearchMaterials"></div></section>
+            <section class="country-section publication-section" id="country-reports" data-country-pane-content="reports">
+              <div class="section-heading"><div><p class="eyebrow">THINK TANK REPORTS</p><h2>智库报告</h2></div><div class="section-heading-actions"><span id="countryThinkTankReportCount">—</span><button type="button" class="primary-btn compact" data-open-project-material-picker="countryThinkTankReports">资料加入项目</button></div></div>
+              <div class="publication-workbench"><div class="country-feed-toolbar" id="countryReportToolbar"><nav class="reading-tabs report-view-tabs" aria-label="智库频道内容"><button type="button" data-report-view="reports" aria-pressed="true">智库报告</button><button type="button" data-report-view="institutions" aria-pressed="false">发布机构</button></nav><div class="country-latest-filters"><label>检索报告<input type="search" id="countryReportQuery" class="publication-search" placeholder="检索报告与来源"></label><label>机构<select id="countryReportSourceFilter" aria-label="按发布机构筛选"><option value="">全部机构</option></select></label></div><button type="button" class="text-link" id="countryReportCompareMode" aria-pressed="false">报告对照</button></div><button class="publication-directory-toggle ghost-btn" data-publication-directory="reports" aria-expanded="false" hidden>机构目录</button><aside class="publication-rail" aria-label="报告机构目录" hidden><h3>发布机构</h3><nav id="countryReportInstitutions"></nav></aside><div class="publication-main"><section id="countryReportsList"><div class="report-compare-toolbar" hidden><span id="reportSelectionCount"></span><button type="button" class="ghost-btn" data-compare-reports disabled>并列对照</button></div><div id="countryThinkTankReports"></div><section id="countryInstitutionSection" hidden><div class="subsection-heading"><h3>机构资料</h3><span id="countrySourceProfileCount"></span></div><div id="countrySourceProfiles"></div></section></section><section id="countryReportsReading" class="publication-reading" hidden></section></div></div>
+            </section>
+            <section class="country-section publication-section" id="minerals-policy" data-country-pane-content="policies">
+              <div class="section-heading"><div><p class="eyebrow">POLICY CENTER</p><h2>政策资料</h2></div><div class="section-heading-actions"><span id="policyMaterialCount">—</span><button type="button" class="primary-btn compact" data-open-project-material-picker="policyContent">资料加入项目</button></div></div>
+              <div class="policy-lifecycle" id="policyLifecycle"></div><div class="publication-workbench"><div class="country-feed-toolbar" id="countryPolicyToolbar"><nav class="reading-tabs" id="countryPolicyCategories" aria-label="政策资料分类"></nav><div class="country-latest-filters"><label>检索政策<input type="search" id="countryPolicyQuery" placeholder="检索政策与来源"></label><label>来源<select id="countryPolicySource"><option value="">全部来源</option></select></label></div></div><button class="publication-directory-toggle ghost-btn" data-publication-directory="policies" aria-expanded="false" hidden>政策目录</button><aside class="publication-rail" aria-label="政策分类目录" hidden></aside><div class="publication-main"><section id="countryPoliciesList"><div id="policyContent"></div></section><section id="countryPoliciesReading" class="publication-reading" hidden></section></div></div><div id="policyImpactContent" hidden></div><div id="tradeContent" hidden></div>
+            </section>
+            <section class="country-section" id="country-field" data-country-pane-content="field"><div id="fieldLibraryRoot"></div></section>
+            <section class="country-section" id="country-data" data-country-pane-content="data"><div class="section-heading"><div><p class="eyebrow">DATA AGGREGATION</p><h2>数据目录、指标详情与规范化记录</h2></div><div class="section-heading-actions"><span id="indicatorFreshness">—</span><button type="button" class="primary-btn compact" data-open-project-context="data">当前指标加入项目</button></div></div><div class="country-data-workbench"><aside class="data-catalog-rail"><label>搜索数据目录<input id="countryDataCatalogSearch" type="search" placeholder="指标、数据集或来源"></label><div class="country-data-selects"><label>目录<select id="countryDataCategoryFilter" aria-label="按目录筛选"><option value="全部">全部目录</option></select></label><label>来源<select id="countryDataSourceFilter" aria-label="按数据来源筛选"><option value="">全部来源</option></select></label><label>指标<select id="countryDataIndicatorFilter" aria-label="选择指标"><option value="">全部指标</option></select></label></div><div id="countryDataCatalog" hidden></div></aside><div class="data-indicator-detail"><div class="kpi-grid" id="countryKpis" hidden></div><div id="countryDataIndex"></div><div class="data-comparison-note" id="countryDataComparison"></div><div class="trend-list" id="trendContent" hidden></div><div id="countryDataRecords"></div></div></div></section>
+            <aside class="country-section assurance-section" id="country-provenance"><div class="section-heading"><div><p class="eyebrow">ASSURANCE</p><h2>来源与更新说明</h2></div><span>非编号保障区 · 可回源 · 缺失不补造</span></div><div class="provenance-assurance-bar" id="countryProvenanceBar"></div></aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" data-view="events" hidden>
+      <div id="eventHall">
+        <nav class="hub-space-tabs" aria-label="国别空间全球视图"><a href="#/countries">全球概览</a><a class="is-active" href="#/countries/global-events">全球动态</a><a href="#/countries/search">全局检索</a></nav>
+        <header class="page-heading compact-heading"><div><p class="eyebrow">COUNTRY SPACE · GLOBAL EVENTS</p><h1>全球动态</h1><p>区分待聚合报道与已复核事件；报道可回源和加入项目，但不会自动冒充事件。</p></div><button type="button" class="page-ai-toggle" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><i aria-hidden="true"></i><span data-copilot-label>AI 研究</span></button></header>
+        <nav class="layer-switch" id="eventLayerSwitch" aria-label="事件内容层级"><button type="button" data-event-layer="report" aria-pressed="true">近期材料（待聚合）</button><button type="button" data-event-layer="event" aria-pressed="false">已复核事件</button></nav>
+        <div class="workspace-filter-bar" id="eventFilters"></div>
+        <div class="event-feed-toolbar"><div class="event-feed-summary" id="eventFeedSummary" aria-live="polite"></div><button type="button" class="ghost-btn compact" data-open-project-material-picker="eventList">资料加入项目</button></div>
+        <div class="event-hall-workbench"><div class="event-timeline-list" id="eventList"></div><aside class="event-preview" id="eventPreview" aria-live="polite"><div class="empty-state">选择一条材料或事件，在此核对摘要、来源和证据缺口。</div></aside></div>
+      </div>
+      <div id="eventWorkspace" hidden>
+        <header class="object-toolbar" id="eventToolbar"></header>
+        <nav class="workspace-tabs" id="eventTabs" aria-label="事件工作面"></nav>
+        <section class="workspace-pane run-result" id="eventDetail" hidden></section>
+      </div>
+    </section>
+    <section class="view" data-view="projects" hidden>
+      <div id="topicHall" class="project-entry-hall unified-project-hall">
+        <header class="page-heading compact-heading"><div><p class="eyebrow">PROJECT SPACE</p><h1 id="projectHallTitle">项目空间</h1><p id="projectHallDescription">浏览已收录的研究线索，从一个问题开始。</p></div><div class="page-heading-actions"><a class="ghost-btn link-button" id="projectHallSwitch" href="#/projects/mine">我的项目</a><button type="button" class="primary-btn" data-create-topic>新建项目</button></div></header>
+        <div class="project-hall-layout">
+          <section class="my-topics-section" id="myProjectsSection" aria-labelledby="myTopicsTitle" hidden><div class="section-heading"><div><p class="eyebrow">ACTIVE PROJECTS</p><h2 id="myTopicsTitle">我创建或参与的项目</h2></div><span>打开项目后按步骤继续</span></div><div class="topic-hall-grid" id="topicList"></div></section>
+          <section class="project-frontier-section" id="projectFrontiersSection" aria-labelledby="topicFrontierTitle"><div class="section-heading"><div><p class="eyebrow">RESEARCH FRONTIERS</p><h2 id="topicFrontierTitle">推荐研究方向</h2></div></div><div class="topic-frontier-controls"><label><span>国家</span><select id="topicFrontierCountry"><option value="">全库 · 所有国家</option></select></label><label><span>关键词</span><input id="topicFrontierQuery" type="search" maxlength="200" placeholder="标题、期刊或学术主题"></label><label><span>时间</span><select id="topicFrontierYears"><option value="3">近三年</option><option value="1">近一年</option><option value="5">近五年</option></select></label><button type="button" class="ghost-btn compact" id="topicFrontierRefresh">筛选</button></div><p id="topicFrontierCoverage" class="method-note"></p><div class="topic-frontier-grid" id="topicFrontierList" aria-live="polite"></div></section>
+        </div>
+      </div>
+      <div id="topicWorkspace" hidden>
+        <header class="object-toolbar" id="topicToolbar"></header>
+        <div class="project-taskbench">
+          <aside class="project-taskbench-nav"><div id="projectIdentity"></div><nav id="topicTabs" aria-label="项目工作面"></nav><div id="projectNavCounts"></div></aside>
+          <section class="project-taskbench-main workspace-pane run-result" id="topicDetail" hidden></section>
+          <aside class="project-taskbench-context" id="projectContextPanel"></aside>
+        </div>
+      </div>
+    </section>
+    <section class="view" data-view="capabilities" hidden>
+      <div id="capabilityHall">
+        <header class="page-heading compact-heading"><div><p class="eyebrow">CAPABILITY SPACE</p><h1>能力空间</h1><p>围绕具体国家、区域与研究问题，整理资料、追踪动态、组织证据与开展比较研究。</p></div><div class="page-heading-actions"><button type="button" class="assistant-toggle" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><i aria-hidden="true"></i><span data-copilot-label>AI 研究</span></button><a class="ghost-btn link-button" href="#/capabilities/mine">我的能力</a><a class="primary-btn link-button" href="#/capabilities/create/1">创建能力包</a></div></header>
+        <div class="capability-market-layout">
+          <aside class="capability-market-catalog"><strong>能力目录</strong><button type="button" class="is-active" data-capability-category="all">研究 Skills <span>11</span></button><hr><a href="#/capabilities/mine">私有配置</a><a href="#/capabilities/history">历史执行器</a></aside>
+          <main class="capability-market-main">
+            <div class="capability-filterbar"><label><span>搜索</span><input id="skillQueryFilter" type="search" placeholder="能力名称或研究场景"></label><label><span>验证</span><select id="capabilityValidationFilter"><option value="">全部</option><option value="verified">已验证</option><option value="pending">待验证</option><option value="failed">未通过</option></select></label><label><span>适用层</span><select id="capabilityScopeFilter"><option value="">全部</option><option value="country">国别</option><option value="research_case">项目</option><option value="event">事件</option></select></label><label><span>权限</span><select><option>受控证据</option></select></label><label><span>成本</span><select><option>运行前估算</option></select></label><button type="button" class="ghost-btn compact" id="capabilityFilterToggle">更多筛选</button></div>
+            <section class="capability-feature-banner"><div><span>来源与研究边界</span><h2>11 项区域国别研究 Skills</h2><p>保留来源、时间、版本与处理记录。自动结果供研究者核查和取舍，不替代事实认定与学术判断。</p></div><a href="#/capabilities/catalog/research-s01">查看详情 →</a></section>
+            <div class="capability-market-summary"><div><h2>区域国别研究 Skills</h2><p>按 S01–S11 展示需求范围；完整验收前可保存配置草稿，不开放运行。</p></div><span id="skillVisibleCount">—</span></div>
+            <div class="capability-catalog-grid" id="capabilityGrid"></div>
+            <details class="method-note"><summary>平台功能 · S12 团队协作、权限与贡献管理</summary><p>管理团队对研究材料与成果的使用权限，记录上传、整理、审校和修改过程，保留来源、版本与贡献时间。</p><p>覆盖查看、编辑、下载、引用和发布权限，以及贡献、版本和审评记录；敏感田野材料需更严格的访问控制。不负责复杂收益结算，不因自动处理虚增个人贡献。</p><p class="method-note">在项目空间的“设置与成员”中管理；按需求文档建议单列为平台功能，不计入研究 Skills。</p></details>
+          </main>
+        </div>
+      </div>
+      <div id="capabilityWorkspace" hidden>
+        <header class="object-toolbar" id="capabilityToolbar"></header>
+        <nav class="workspace-tabs" id="capabilityTabs" aria-label="能力详情工作面"></nav>
+        <section class="workspace-pane run-result" id="capabilityRunResult" hidden></section>
+      </div>
+    </section>
+    <section class="view" data-view="resources" hidden>
+      <header class="page-heading compact-heading">
+        <div>
+          <h1>友情链接</h1>
+          <p class="visually-hidden">友情链接与研究资源导航</p>
+        </div>
+        <button type="button" class="page-ai-toggle" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><i aria-hidden="true"></i><span data-copilot-label>AI 研究</span></button>
+      </header>
+
+      <!-- Linear 风格官方信源目录 -->
+      <section class="resource-portal-section">
+        <div class="resource-controls">
+          <div class="resource-category-tabs" id="resourceCategoryTabs">
+            <button type="button" class="res-tab is-active" data-cat="all">全部已接入</button>
+            <button type="button" class="res-tab" data-cat="official">官方机构</button>
+            <button type="button" class="res-tab" data-cat="academic">学术文献</button>
+            <button type="button" class="res-tab" data-cat="media">新闻媒体</button>
+            <button type="button" class="res-tab" data-cat="thinktank">研究机构</button>
+            <button type="button" class="res-tab" data-cat="data">数据与工具</button>
+          </div>
+
+          <div class="resource-filter-row">
+            <div class="resource-region-chips" id="resourceRegionChips">
+              <button type="button" class="res-chip is-active" data-reg="all">全部地区</button>
+              <button type="button" class="res-chip" data-reg="china">中国</button>
+              <button type="button" class="res-chip" data-reg="africa">非洲</button>
+              <button type="button" class="res-chip" data-reg="intl">国际组织／全球</button>
+            </div>
+            <div class="resource-search-box">
+              <svg viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8.5" cy="8.5" r="5.5"/>
+                <path d="M17.5 17.5L12.5 12.5"/>
+              </svg>
+              <input type="text" id="resourceSearchInput" placeholder="搜索已接入信源、机构或覆盖领域...">
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-cards-grid" id="resourceCardsGrid">
+          <!-- 动态渲染已接入的信源卡片 -->
+        </div>
+      </section>
+    </section>
+    <section class="view" data-view="methods" hidden><header class="page-heading compact-heading"><div><h1>来源与方法</h1><p>解释采集、分级、版本、时效、证据定位和联网补充的边界。</p></div><button type="button" class="page-ai-toggle" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><i aria-hidden="true"></i><span data-copilot-label>AI 研究</span></button></header><label class="method-search">检索方法说明<input id="methodSearchInput" type="search" placeholder="例如：发布时间、地图、田野资料、写回"></label><div class="content-grid" id="methodCards"><article class="content-card" data-method-keywords="事件 人工复核 材料 已确认 待聚合 reviewed confirmed"><h2>事件复核与材料确认</h2><p>“已复核”表示事件经人工复核；“已确认”表示材料与事件或国家的关系已确认。待聚合材料不能冒充事件。</p></article><article class="content-card" data-method-keywords="时间 发布 采集 日期 精度"><h2>发布时间与采集时间</h2><p>来源发布时间按日、月、年或未知精度展示；采集时间只说明系统何时看到材料，不替代发布时间。</p></article><article class="content-card" data-method-keywords="文档 版本 引用 证据 定位 official canonical URL"><h2>版本与证据定位</h2><p>国家、事件和专题共享同一文档版本；引用保留版本号、原文定位和已核验的正式地址。</p></article><article class="content-card" data-method-keywords="AI 库内证据 联网 未复核"><h2>库内证据与联网补充</h2><p>正式回答优先使用已复核、已确认的库内证据；联网结果统一标为“未复核”，不能直接写回事实层。</p></article><article class="content-card" data-method-keywords="地图 ADM1 ADM2 ADM3 行政区 边界"><h2>地图资产</h2><p>COD 已登记 ADM1（2017）、ADM2（2019）和历史 ADM3（2010）真实边界；各层独立展示，不跨年份推断上下级归属，公开使用仍待版图复核。</p></article><article class="content-card" data-method-keywords="用户 田野 上传 隐私 授权"><h2>用户田野资料</h2><p>上传内容始终标记为“用户提供·未复核”，默认受限；平台不自动转写、不推断身份，也不会未经确认写入正式事实层。</p></article><article class="content-card" data-method-keywords="Skill 输入 步骤 检查 写回"><h2>声明式 Skill</h2><p>Skill 只声明输入、步骤、检查点、证据和写回目标；任何写回都先预览后确认，建议不会自动触发下一 Skill。</p></article></div><div class="empty-state" id="methodSearchEmpty" hidden>没有匹配的方法说明，请尝试更短的关键词。</div></section>
+    <section class="view reader-settings" data-view="system-status" hidden>
+      <header class="page-heading compact-heading"><div><h1>设置</h1><p>界面偏好与系统信息</p></div></header>
+      <section class="settings-section"><h2>界面显示</h2><label class="settings-preference"><span><strong>紧凑导航</strong><small>收起左侧主导航，为内容留出更多空间。偏好保存在此浏览器。</small></span><input id="settingsCompactNav" type="checkbox"></label></section>
+      <section class="settings-section"><h2>系统信息</h2><p>当前为本机单用户演示环境。</p><details><summary>数据与来源统计</summary><p class="settings-count-note">登记来源包含论文所属期刊等来源记录，不等同于独立采集网站；采集栏目也可能包含单篇论文的导入入口。</p><section class="run-result" id="systemStatus"></section></details></section>
+    </section>
+    </div>
+    <button type="button" class="assistant-fab" data-copilot-toggle aria-expanded="false" aria-controls="countryCopilot"><svg class="ui-icon" aria-hidden="true"><use href="./assets/lucide-sprite.svg#sparkles"></use></svg><span data-copilot-label>AI 研究</span></button>
+    <aside class="copilot" id="countryCopilot" aria-label="AI 研究模式" hidden>
+      <div class="copilot-resizer" id="copilotResizer" role="separator" aria-label="调整研究页面与 AI 面板宽度" aria-orientation="vertical" aria-valuemin="360" aria-valuemax="540" aria-valuenow="410" tabindex="0"></div>
+      <header>
+        <div class="copilot-context"><span class="assistant-scope-chip" id="assistantScopeChip">当前页面</span><strong id="assistantContextTitle">AI 研究模式</strong><small id="assistantContextMeta">当前空间 · 上下文独立保存</small></div>
+        <div class="copilot-actions"><button type="button" id="copilotHistoryBtn" aria-label="查看当前国家的历史对话" aria-pressed="false">历史</button><button type="button" id="copilotClearBtn" aria-label="新建对话">新对话</button><button type="button" id="copilotCloseBtn" aria-label="返回研究页面">关闭</button></div>
+      </header>
+      <div class="assistant-run-bar" id="assistantRunBar" aria-live="polite" hidden><span class="assistant-run-dot" aria-hidden="true"></span><span id="assistantRunStatus">正在运行</span><small id="assistantRunElapsed">0 秒</small><button type="button" id="assistantStopBtn">停止</button></div>
+      <div class="copilot-body" id="copilotBody">
+        <section class="assistant-history-panel" id="assistantHistoryPanel" aria-labelledby="assistantHistoryTitle" hidden>
+          <header><div><strong id="assistantHistoryTitle">历史对话</strong><small id="assistantHistoryMeta">读取数据库中的已保存记录</small></div><button type="button" class="ghost-btn compact" data-new-assistant-conversation>＋ 新建</button></header>
+          <div class="assistant-history-list" id="assistantHistoryList"></div>
+        </section>
+        <div class="assistant-intro"><span class="assistant-runtime-dot" aria-hidden="true"></span><p id="assistantRuntimeNote">正在检查当前 AI 运行模式。</p><details class="assistant-source-settings"><summary>证据设置</summary><div class="assistant-legend"><span class="is-database">库内已复核</span><span class="is-live">联网未复核</span><span class="is-calculation">确定性计算</span></div><label class="online-mode">联网补充<select id="assistantOnlineMode"><option value="auto">证据不足时尝试</option><option value="off">仅库内证据</option><option value="on">本轮必须尝试</option></select></label></details></div>
+        <div class="qa-presets" id="copilotQaPresets" aria-label="可选问题提示"></div>
+        <div class="assistant-status" id="assistantStatus" aria-live="polite" aria-atomic="true"></div>
+        <div class="assistant-answer" id="assistantAnswer"></div>
+      </div>
+      <form class="assistant-form" id="assistantForm">
+        <details class="assistant-capability-picker" id="assistantCapabilityPicker">
+          <summary><span># 本轮 Skill</span><small id="assistantCapabilityCount">未选择 · 点击展开</small></summary>
+          <div class="assistant-capability-recommendation" id="assistantCapabilityRecommendation" hidden></div>
+          <div class="assistant-capability-all-title"><span>全部可用 Skill</span><small>推荐项优先排列</small></div>
+          <div class="assistant-capability-choices" id="assistantCapabilityChoices"></div>
+          <section class="assistant-prompt-guide" id="assistantPromptGuide" hidden>
+            <header><span>推荐提示词</span><small id="assistantPromptContext">依据当前页面生成</small></header>
+            <div class="assistant-prompt-choices" id="assistantPromptChoices"></div>
+            <p>点击只会填入输入框，不会自动发送。</p>
+          </section>
+          <p>AI 会按选择顺序读取配置；真正运行和写回仍逐项确认。</p>
+        </details>
+        <div class="copilot-selected-context" id="copilotSelectedContext" hidden>
+          <div class="selected-context-header">
+            <span><svg class="ui-icon" aria-hidden="true"><use href="./assets/lucide-sprite.svg#library"></use></svg>已选研判材料 (<b id="selectedContextCount">0</b>)</span>
+            <button type="button" id="clearSelectedContextBtn" class="text-link">清空已选</button>
+          </div>
+          <div class="selected-context-chips" id="selectedContextChips"></div>
+        </div>
+        <label class="visually-hidden" for="assistantQuestion">向 AI 提问</label>
+        <div class="assistant-composer"><textarea id="assistantQuestion" maxlength="500" rows="1" aria-label="研究问题"></textarea><button class="primary-btn" type="submit">发送</button></div>
+      </form>
+    </aside>
+  </main>
+
+    <!-- 友情链接/信源详情交互弹窗 (Linear Modal) -->
+  <dialog class="resource-detail-modal" id="resourceDetailModal" aria-labelledby="resModalTitle">
+    <div class="res-modal-shell">
+      <header class="res-modal-header">
+        <div class="res-modal-identity">
+          <div class="res-modal-icon" id="resModalIcon"></div>
+          <div class="res-modal-titles">
+            <div class="res-modal-title-line">
+              <h2 id="resModalTitle">—</h2>
+              <span class="res-modal-status" id="resModalStatus">已接入</span>
+            </div>
+            <p class="res-modal-by" id="resModalBy">—</p>
+          </div>
+        </div>
+        <button type="button" class="res-modal-close-btn" id="resModalCloseBtn" aria-label="关闭弹窗">×</button>
+      </header>
+
+      <div class="res-modal-body">
+        <div class="res-modal-kicker" id="resModalKicker"></div>
+        <p class="res-modal-desc" id="resModalDesc">—</p>
+
+        <div class="res-modal-meta-grid">
+          <div class="res-meta-item">
+            <span>覆盖范围</span>
+            <strong id="resModalCov">—</strong>
+          </div>
+          <div class="res-meta-item">
+            <span>更新频率</span>
+            <strong id="resModalSpan">—</strong>
+          </div>
+          <div class="res-meta-item">
+            <span>数据粒度</span>
+            <strong id="resModalGran">—</strong>
+          </div>
+          <div class="res-meta-item">
+            <span>入库评级</span>
+            <strong id="resModalPrio">P0 · 优先接入</strong>
+          </div>
+        </div>
+
+        <div class="res-modal-routes-section" id="resModalRoutesSection" hidden>
+          <h4>已配置的官方直达栏目</h4>
+          <div class="res-modal-routes-list" id="resModalRoutesList"></div>
+        </div>
+
+        <div class="res-modal-bib-section">
+          <div class="res-bib-header">
+            <h4>BibTeX 学术引用</h4>
+            <button type="button" class="res-copy-bib-btn" id="resCopyBibBtn">复制引用</button>
+          </div>
+          <pre class="res-bib-code" id="resModalBib">—</pre>
+        </div>
+
+        <div class="res-modal-compliance-note">
+          <p><strong>合规与溯源保障</strong>：该信源已登记于系统清单，所有外部请求均通过安全获取层执行公网地址校验与访问边界检查。</p>
+        </div>
+      </div>
+
+      <footer class="res-modal-footer">
+        <a class="primary-btn res-modal-link" id="resModalMainLink" href="#" target="_blank" rel="noopener noreferrer">打开官方主站 ↗</a>
+      </footer>
+    </div>
+  </dialog>
+  <dialog class="material-drawer" id="materialDrawer" aria-labelledby="materialDrawerTitle"><div class="material-drawer-shell"><header><div><p class="eyebrow">材料版本</p><h2 id="materialDrawerTitle">材料详情</h2></div><button type="button" data-close-material>关闭</button></header><div id="materialDrawerBody"></div></div></dialog>
+  <dialog class="workflow-dialog field-upload-dialog" id="fieldMaterialDialog" aria-labelledby="fieldMaterialDialogTitle">
+    <form id="fieldMaterialForm">
+      <header><div><p class="eyebrow">FIELD MATERIAL</p><h2 id="fieldMaterialDialogTitle">上传田野资料</h2></div><button type="button" class="dialog-close" data-close-field-upload aria-label="关闭">×</button></header>
+      <p>上传内容只进入本机内部研究空间，并标记为“用户提供 · 未复核”。</p>
+      <div class="field-upload-grid">
+        <label>资料标题<input id="fieldMaterialTitle" maxlength="160" required placeholder="例如：卢本巴希矿区访谈记录"></label>
+        <label>资料类型<select id="fieldMaterialType"><option value="field_note">田野札记</option><option value="interview_transcript">访谈转写</option><option value="photo">现场照片</option><option value="supporting_document">辅助文档</option></select></label>
+        <label>所属国家<input id="fieldMaterialCountryLabel" readonly></label>
+        <label>关联项目<select id="fieldMaterialTopic" required></select></label>
+        <label>采集日期（可选）<input id="fieldMaterialCapturedOn" type="date"></label>
+        <label>隐私级别<select id="fieldMaterialPrivacy"><option value="restricted">受限 · 仅本人研究</option><option value="anonymized">已匿名化</option><option value="shareable">可在内部共享</option></select></label>
+      </div>
+      <label class="field-file-input">选择文件<input id="fieldMaterialFile" type="file" accept=".txt,.md,.pdf,.jpg,.jpeg,.png,text/plain,text/markdown,application/pdf,image/jpeg,image/png" required><span id="fieldMaterialFileSummary">支持 TXT、Markdown、PDF、JPG、PNG；单个文件不超过 10 MB。</span></label>
+      <label>方法与场景说明<textarea id="fieldMaterialMethodNote" maxlength="2000" rows="3" placeholder="记录采集地点、访谈方式、角色代号或资料形成背景；不要填写无必要的敏感身份信息。"></textarea></label>
+      <label class="field-authorization"><input id="fieldMaterialAuthorization" type="checkbox" required><span>我确认有权将该资料用于当前内部研究，并已按需要处理个人信息与知情同意。</span></label>
+      <div class="field-upload-boundary"><b>上传前预览与边界</b><span>不接受音频、视频、脚本或压缩包；不自动转写、不推断身份、不自动写入已复核／已确认事实层。</span></div>
+      <p class="method-note" id="fieldMaterialStatus" aria-live="polite"></p>
+      <footer><button type="button" class="ghost-btn" data-close-field-upload>取消</button><button type="submit" class="primary-btn" id="fieldMaterialSubmit">确认上传</button></footer>
+    </form>
+  </dialog>
+  <dialog class="workflow-dialog" id="topicLinkDialog" aria-labelledby="topicLinkTitle">
+    <form id="topicLinkForm">
+      <header><div><p class="eyebrow">PROJECT WORKFLOW</p><h2 id="topicLinkTitle">加入项目</h2></div><button type="button" class="dialog-close" data-close-topic-dialog aria-label="关闭">×</button></header>
+      <p id="topicLinkTarget">选择现有项目，或通过 AI 草稿确认创建一个研究项目。</p>
+      <label>国家范围<select id="topicCountrySelect"></select></label>
+      <label id="existingTopicField">已有项目<select id="existingTopicSelect"><option value="">请选择项目</option></select></label>
+      <div class="dialog-divider" id="topicDialogDivider">或整理成新项目</div>
+      <input id="topicResearchIntent" type="hidden" value="">
+      <section hidden class="topic-ai-handoff" aria-labelledby="topicAiHandoffTitle">
+        <svg aria-hidden="true"><use href="./assets/lucide-sprite.svg#sparkles"></use></svg>
+        <div><strong id="topicAiHandoffTitle">在右侧 AI 中澄清、整理和修改</strong><p>AI 会保留当前对象与已选材料的上下文，流式展示研究过程；生成草稿后再回到这里确认。</p></div>
+        <div class="topic-compose-actions"><button type="button" class="primary-btn" data-topic-return-ai>打开右侧 AI</button><button type="button" class="ghost-btn" data-topic-manual>手动定义</button></div>
+      </section>
+      <section class="topic-suggestion-panel" id="topicSuggestionPanel" aria-live="polite" hidden></section>
+      <section class="topic-draft-fields" id="topicDraftFields" hidden><label>项目标题<input id="newTopicTitle" maxlength="160" autocomplete="off" placeholder="由你确定研究主题"></label><label>研究问题（选填）<textarea id="newTopicQuestion" maxlength="1000" rows="2" placeholder="可以先写一句想法，也可以进入项目后和 AI 讨论"></textarea></label><details id="newTopicOptional"><summary>补充信息（选填，可进入项目后完善）</summary><label>研究目的<input id="newTopicPurpose" maxlength="2000" placeholder="这项研究希望解释什么、服务什么工作"></label><label>时间范围<select id="newTopicPeriod"><option>近三年</option><option>近一年</option><option>近五年</option></select></label><label>初步概览<textarea id="newTopicOverview" maxlength="6000" rows="3" placeholder="写下你已有的认识和研究边界；AI 丰富后仍由你决定采用"></textarea></label><label>期望输出<input id="newTopicOutcome" maxlength="1000" placeholder="暂未确定也可以留空"></label><fieldset id="newTopicMaterials"><legend>候选材料 · 自行勾选采用，默认不选</legend><div id="newTopicMaterialOptions"></div></fieldset></details></section>
+      <p class="method-note">所有国家均可建立项目。只需项目标题和国家范围即可进入。概览、研究目标与成果形式可在项目内和 AI 逐步讨论，确认后再执行。</p>
+      <footer><button type="button" class="ghost-btn" data-close-topic-dialog>取消</button><button type="submit" class="primary-btn" id="topicLinkSubmit" disabled>确认创建项目</button></footer>
+    </form>
+  </dialog>
+  <dialog class="workflow-dialog bulk-project-material-dialog" id="bulkProjectMaterialDialog" aria-labelledby="bulkProjectMaterialTitle">
+    <form id="bulkProjectMaterialForm">
+      <header><div><p class="eyebrow">PROJECT EVIDENCE SCOPE</p><h2 id="bulkProjectMaterialTitle">将内容加入项目</h2></div><button type="button" class="dialog-close" data-close-bulk-project-material aria-label="关闭">×</button></header>
+      <p>选择目标项目，再勾选本页需要纳入范围的资料或已复核事件。只有点击确认后，相应对象才会进入项目。</p>
+      <label>目标项目<select id="bulkProjectTarget" required></select></label>
+      <div class="bulk-project-material-heading"><strong>选择本页内容</strong><span id="bulkProjectMaterialCount">已选 0 项</span><button type="button" class="text-link" data-toggle-all-project-materials>全选</button></div>
+      <section class="bulk-project-material-summary" id="bulkProjectMaterialSummary" aria-live="polite"></section>
+      <p class="method-note" id="bulkProjectMaterialStatus">系统会继续校验项目编辑权限及资料或事件的确认状态；重复对象不会再次写入。</p>
+      <footer><a class="text-link bulk-project-create-link" href="#/projects" data-close-bulk-project-material>还没有项目？先去创建</a><button type="button" class="ghost-btn" data-close-bulk-project-material>取消</button><button type="submit" class="primary-btn" id="bulkProjectMaterialSubmit">确认加入</button></footer>
+    </form>
+  </dialog>
+  <dialog class="workflow-dialog project-context-dialog" id="projectContextDialog" aria-labelledby="projectContextTitle">
+    <form id="projectContextForm">
+      <header><div><p class="eyebrow">PROJECT CONTEXT</p><h2 id="projectContextTitle">加入项目</h2></div><button type="button" class="dialog-close" data-close-project-context aria-label="关闭">×</button></header>
+      <p id="projectContextDescription"></p>
+      <label>目标项目<select id="projectContextTarget" required></select></label>
+      <section class="project-context-summary" id="projectContextSummary" aria-live="polite"></section>
+      <p class="method-note" id="projectContextStatus">只显示与当前国家一致且未归档的项目。</p>
+      <footer><a class="text-link bulk-project-create-link" href="#/projects" data-close-project-context>还没有项目？先去创建</a><button type="button" class="ghost-btn" data-close-project-context>取消</button><button type="submit" class="primary-btn" id="projectContextSubmit">确认加入</button></footer>
+    </form>
+  </dialog>
+  <!-- 全局学术聚合检索 (Command Palette Modal · Cmd+K) -->
+  <dialog class="command-palette-modal" id="commandPaletteModal" aria-labelledby="cmdPaletteTitle">
+    <div class="cmd-palette-shell">
+      <header class="cmd-palette-header">
+        <div class="cmd-palette-input-wrap">
+          <svg class="search-svg" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8.5" cy="8.5" r="5.5"/>
+            <path d="M17.5 17.5L12.5 12.5"/>
+          </svg>
+          <input type="text" id="cmdPaletteInput" placeholder="快速跳转：国家 (COD)、事件、项目、Skill 或信源..." autocomplete="off" maxlength="80">
+          <kbd class="kbd-esc" id="cmdPaletteCloseBtn">ESC</kbd>
+        </div>
+        <div class="cmd-palette-tabs" id="cmdPaletteTabs">
+          <button type="button" class="cmd-tab is-active" data-filter="all">全部</button>
+          <button type="button" class="cmd-tab" data-filter="country">国别</button>
+          <button type="button" class="cmd-tab" data-filter="event">事件</button>
+          <button type="button" class="cmd-tab" data-filter="topic">项目</button>
+          <button type="button" class="cmd-tab" data-filter="skill">研究 Skill</button>
+          <button type="button" class="cmd-tab" data-filter="resource">信源</button>
+        </div>
+      </header>
+      <div class="cmd-palette-results" id="cmdPaletteResults" role="listbox" aria-label="搜索结果">
+        <!-- 动态渲染搜索结果 -->
+      </div>
+      <footer class="cmd-palette-footer">
+        <span><kbd>↑</kbd><kbd>↓</kbd> 导航</span>
+        <span><kbd>↵</kbd> 打开</span>
+        <span><kbd>ESC</kbd> 关闭</span>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- 自定义研究 Skill 对话框 (Custom Skill Creator Modal) -->
+  <dialog class="workflow-dialog skill-custom-dialog" id="skillCustomDialog" aria-labelledby="skillCustomDialogTitle">
+    <form id="skillCustomForm">
+      <header>
+        <div>
+          <p class="eyebrow">SCHOLAR CO-BUILD · 声明式规范</p>
+          <h2 id="skillCustomDialogTitle">自定义研究 Skill</h2>
+        </div>
+        <button type="button" class="dialog-close" data-close-custom-skill aria-label="关闭">×</button>
+      </header>
+      <p>声明输入、处理步骤、人工检查点与写回边界。保存后将作为标准草稿沉淀入库，并可在 AI 研究中调用。</p>
+      <div class="field-upload-grid">
+        <label>Skill 标题<input id="customSkillName" maxlength="80" required placeholder="例如：中东安全形势动态研判"></label>
+        <label>标识 Slug<input id="customSkillSlug" maxlength="60" required pattern="[a-z0-9\-]+" placeholder="例如：mideast-security-digest"></label>
+        <label>适用研究空间
+          <select id="customSkillScope" required>
+            <option value="topic">项目空间 (兼容 scope: topic)</option>
+            <option value="country">国别空间 (country)</option>
+            <option value="event">事件空间 (event)</option>
+          </select>
+        </label>
+        <label>学科场景分类
+          <select id="customSkillCategory">
+            <option value="co_build">学者共建 (co_build)</option>
+            <option value="general_improved">学科改良通用能力 (general_improved)</option>
+          </select>
+        </label>
+      </div>
+      <label>核心用途与解决问题
+        <textarea id="customSkillPurpose" maxlength="500" rows="2" required placeholder="明确该 Skill 解决什么区域国别研究问题，例如：对中东地区多源安全事件进行周度聚合与立场比对。"></textarea>
+      </label>
+      <label>标准化执行步骤 (每行一步)
+        <textarea id="customSkillSteps" maxlength="800" rows="3" required placeholder="1. 冻结所选国家与时间窗范围的已复核事件&#10;2. 并列官方智库与媒体报道主张&#10;3. 生成差异矩阵与证据缺口"></textarea>
+      </label>
+      <label>人工检查点 (每行一条)
+        <textarea id="customSkillCheckpoints" maxlength="800" rows="2" placeholder="1. 运行前确认事件范围&#10;2. 写回项目前人工复核引用"></textarea>
+      </label>
+      <div class="field-upload-boundary">
+        <b>声明式执行与安全边界</b>
+        <span>纯声明式 Manifest，严禁包含任何可执行代码、外部未经许可请求或 Shell 脚本。</span>
+      </div>
+      <p class="method-note" id="customSkillStatus" aria-live="polite"></p>
+      <footer>
+        <button type="button" class="ghost-btn" data-close-custom-skill>取消</button>
+        <button type="submit" class="primary-btn" id="customSkillSubmit">保存为 Skill 草稿</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- 导入 / 上传 Skill JSON Manifest 对话框 -->
+  <dialog class="workflow-dialog skill-upload-dialog" id="skillUploadDialog" aria-labelledby="skillUploadDialogTitle">
+    <form id="skillUploadForm">
+      <header>
+        <div>
+          <p class="eyebrow">MANIFEST IMPORT</p>
+          <h2 id="skillUploadDialogTitle">导入 Skill 规范 (JSON)</h2>
+        </div>
+        <button type="button" class="dialog-close" data-close-upload-skill aria-label="关闭">×</button>
+      </header>
+      <p>粘贴符合平台《SkillManifestV2》声明式规范的 JSON 配置。导入后将自动校验字段安全并提交为草稿。</p>
+      <label>声明式 JSON Manifest
+        <textarea id="skillUploadJson" class="code-textarea" rows="10" required placeholder='{
+  "slug": "custom-research-pipeline",
+  "version": "0.1.0",
+  "name": "多源政策比对流水线",
+  "description": "针对区域国别政策多语种版本的声明式比对草稿。",
+  "input_schema": { "allowed_fields": ["country_iso3", "research_case_id"], "required": ["research_case_id"] },
+  "output_schema": { "type": "policy_comparison", "source_trace_required": true },
+  "manifest": {
+    "category": "co_build",
+    "source_channel": "学者共建",
+    "supported_scopes": ["topic"],
+    "purpose": "比对不同机构发布的政策原文与翻译版本差异。",
+    "steps": ["提取政策文本", "并列关键术语", "输出对比矩阵"],
+    "human_checkpoints": ["人工确认术语一致性"],
+    "writeback_targets": ["research_case"],
+    "permissions": ["read_reviewed_evidence"],
+    "evidence_policy": "仅使用已确认材料。"
+  }
+}'></textarea>
+      </label>
+      <p class="method-note" id="skillUploadStatus" aria-live="polite"></p>
+      <footer>
+        <button type="button" class="ghost-btn" data-close-upload-skill>取消</button>
+        <button type="submit" class="primary-btn" id="skillUploadSubmit">校验并导入</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- 管理已安装 Skill 对话框 (Codex 风格管理弹窗) -->
+  <dialog class="workflow-dialog skill-manage-dialog" id="skillManageDialog" aria-labelledby="skillManageDialogTitle">
+    <div class="skill-manage-shell">
+      <header>
+        <div>
+          <p class="eyebrow">INSTALLED CAPABILITIES</p>
+          <h2 id="skillManageDialogTitle">管理已安装研究 Skill</h2>
+        </div>
+        <button type="button" class="dialog-close" data-close-manage-skill aria-label="关闭">×</button>
+      </header>
+      <div class="skill-manage-list" id="skillManageList">
+        <!-- 动态渲染已启用的 Skill 条目 -->
+      </div>
+      <footer>
+        <button type="button" class="primary-btn" data-close-manage-skill>完成</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <dialog id="countryReadingDialog" class="country-reading-dialog" aria-labelledby="countryReadingTitle"><header><h2 id="countryReadingTitle">详情</h2><button type="button" class="ghost-btn" data-close-country-reading aria-label="关闭详情">关闭 ×</button></header><div id="countryEventChainDetail" aria-live="polite"></div></dialog>
+  <!-- AI 引用悬浮透视卡 (Citation Hover Inspector) -->
+  <div class="citation-hover-card" id="citationHoverCard" hidden aria-live="polite"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="./assets/leaflet-1.9.4.js?v=20260903-nosourcemap"></script>
+  <script src="./assets/protomaps-leaflet-5.1.0.js?v=20260903-nosourcemap"></script>
+  <script src="./resource_portal_data.js"></script>
+  <script src="./reader-core.js?v=20260908-demo-v2"></script>
+  <script src="./reader-formatters.js?v=20260905-frontier-v302"></script>
+  <script src="./reader-routing.js?v=20260908-demo-v2"></script>
+  <script src="./research-frontier.js?v=20260908-demo-v2"></script>
+  <script src="./country-workspace.js?v=20260908-demo-v2"></script>
+  <script src="./project-library.js?v=20260908-demo-v2"></script>
+  <script src="./project-plan.js?v=20260906-plan-recovery-v1"></script>
+    <script src="./project-output.js?v=20260906-writing-prompt-v1"></script>
+    <script src="./project-workbench.js?v=20260906-overview-v1"></script>
+  <script src="./project-materials.js?v=20260908-demo-v2"></script>
+  <script src="./project-onboarding.js?v=20260906-flow-fixes-v1"></script>
+  <script src="./field-record.js?v=20260908-single-v1"></script>
+  <script src="./workflow-editor.js?v=20260908-single-v1"></script>
+  <script src="./tracking-schedules.js?v=20260908-demo-v2"></script>
+  <script src="./skill-workflows.js?v=20260908-demo-v2"></script>
+  <script src="./project-skills.js?v=20260908-demo-v2"></script>
+  <script src="./reader-auth.js?v=20260908-no-demo-badge"></script>
+  <script src="./field-demo.js?v=20260908-single-v1"></script>
+  <script src="./field-library.js?v=20260908-demo-v2"></script>
+  <script src="./app.js?v=20260908-demo-v2"></script>
+</body>
+</html>

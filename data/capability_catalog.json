@@ -1,0 +1,647 @@
+{
+  "catalog_version": "2026.09.07",
+  "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+  "legacy_catalog_keys": [
+    "country-situation-daily",
+    "policy-change-tracking",
+    "cross-country-concept-equivalence",
+    "multilingual-literature-review",
+    "think-tank-viewpoint-comparison",
+    "controversy-evidence-matrix",
+    "hotspot-identification",
+    "evidence-gap-collection-plan",
+    "local-language-site-tracking",
+    "four-source-material-aggregation",
+    "content-dedup-versioning",
+    "country-indicator-alignment",
+    "external-country-record-monitoring",
+    "field-redaction-authorization-check",
+    "interview-coding",
+    "field-citation-request",
+    "policy-local-practice-comparison",
+    "team-weekly-research-deposit"
+  ],
+  "items": [
+    {
+      "catalog_key": "research-s01",
+      "skill_code": "S01",
+      "name": "对象国资料画像与知识缺口整理",
+      "category": "research_workflow",
+      "description": "围绕具体国家或区域，按主题、时间与来源整理研究资料，呈现资料画像、知识缺口及相互矛盾的信息。",
+      "validation_status": "pending",
+      "executors": [
+        "country-brief"
+      ],
+      "scopes": [
+        "country",
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "country_iso3",
+          "topic_slugs",
+          "date_from",
+          "date_to",
+          "source_ids"
+        ],
+        "required": [
+          "country_iso3"
+        ]
+      },
+      "output_schema": {
+        "type": "country_brief",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S01",
+        "scenario": "围绕一个具体国家或区域，持续组织历史、制度、政治、经济、地理和社会资料，并指出当前资料覆盖不足的部分。",
+        "inputs": "国家/区域、研究主题、已有材料或资料范围",
+        "actions": "识别材料涉及的国别维度；按时间、来源和主题整理；标注缺失维度、时间段和相互矛盾的信息。",
+        "outputs": "可回溯的国别资料画像、知识缺口清单、关联材料",
+        "writeback": "国别空间、专题空间",
+        "boundary": "不生成脱离来源的国家百科；不替研究者判断某一缺口是否具有学术价值。",
+        "implementation_note": "已有按主题、时期和来源组织资料的执行器；完整资料维度、缺口与冲突输出待逐项验收。",
+        "priority": "第一批建议",
+        "application_scene": "开展国别研究前，快速了解资料覆盖情况、已有基础和需要补充的内容。",
+        "explanation": "梳理指定国家或地区的资料覆盖情况，识别知识缺口和信息不一致之处。",
+        "english_name": "Country Research Profile & Knowledge Gaps"
+      },
+      "english_name": "Country Research Profile & Knowledge Gaps"
+    },
+    {
+      "catalog_key": "research-s02",
+      "skill_code": "S02",
+      "name": "对象国政策原文—译文对照与术语提示",
+      "category": "research_workflow",
+      "description": "对照阅读已获得的对象国政策、外交或法规文本，查看候选译文、术语与歧义提示，并保留人工修改。",
+      "validation_status": "pending",
+      "executors": [
+        "bilingual-policy-verification"
+      ],
+      "scopes": [
+        "document",
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "research_case_id",
+          "document_version_ids",
+          "file_refs",
+          "source_urls",
+          "source_language",
+          "target_language"
+        ],
+        "required": [
+          "source_language",
+          "target_language"
+        ],
+        "required_any_of": [
+          [
+            "document_version_ids",
+            "file_refs",
+            "source_urls"
+          ]
+        ]
+      },
+      "output_schema": {
+        "type": "bilingual_policy_verification",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S02",
+        "scenario": "辅助阅读已经获得的对象国政策、外交或法规文本，降低跨语言和政策语境理解的摩擦。",
+        "inputs": "用户上传的原文或可访问链接、国家/区域、研究主题",
+        "actions": "生成对照译文；提取机构、地名、政策术语；标出可能歧义的句段；记录人工修改。",
+        "outputs": "原文译文对照、候选术语表、疑点清单",
+        "writeback": "资料底层、专题空间",
+        "boundary": "MVP 不承诺境外官方原文全量采集，不承诺法律效力或专业译文认证；多语种术语库先采用项目级轻量词表。",
+        "implementation_note": "已有文本对照处理入口；支持语种、段落定位和人工修改记录待完整验收，不承诺专业译文认证。",
+        "priority": "按语言和材料范围分期",
+        "application_scene": "阅读外文政策、外交或法规材料，需要核对译文和专业术语时使用。",
+        "explanation": "对照政策原文与译文，提示关键术语、机构名称和可能存在的语义差异。",
+        "english_name": "Original–Translation Comparison & Terminology Notes"
+      },
+      "english_name": "Original–Translation Comparison & Terminology Notes"
+    },
+    {
+      "catalog_key": "research-s03",
+      "skill_code": "S03",
+      "name": "对象国政策与现实动态追踪",
+      "category": "research_workflow",
+      "description": "按国家、议题、信息源与更新频率整理政策和现实动态，呈现更新材料、变化摘要与版本关系。",
+      "validation_status": "verified",
+      "executors": [
+        "policy-dynamics"
+      ],
+      "scopes": [
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "country_iso3",
+          "topic_slugs",
+          "keywords",
+          "date_from",
+          "date_to",
+          "source_ids",
+          "workflow_version",
+          "material_ids",
+          "instruction",
+          "regions",
+          "topic_name",
+          "sources",
+          "focus_types"
+        ],
+        "required": [],
+        "required_any_of": [
+          [
+            "country_iso3",
+            "regions"
+          ],
+          [
+            "topic_name"
+          ],
+          [
+            "keywords"
+          ],
+          [
+            "sources",
+            "source_ids",
+            "material_ids"
+          ]
+        ]
+      },
+      "output_schema": {
+        "type": "policy_tracking_workflow",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S03",
+        "scenario": "围绕具体国家、区域和议题，持续整理政策变化、政府动作、项目进展和相关现实动态。",
+        "inputs": "国家/区域、主题、关键词、信息源、时间范围和更新频率",
+        "actions": "获取或导入新材料；识别新旧版本；提取变化内容、执行主体和影响对象；提示需要阅读的更新。",
+        "outputs": "更新材料清单、变化摘要、版本关系",
+        "writeback": "国别空间、事件空间、专题空间",
+        "boundary": "不承诺覆盖所有境外信息源；访问失败、来源缺失或信息过时必须明确提示；不自动判断政策效果。",
+        "implementation_note": "v1.1.0 支持指定来源与公开文件、手动重复执行、原文差异、主体候选修订、异常提示和状态保留；本机工程验收见随附记录。定时运行与专家质量验收未纳入本轮。",
+        "priority": "第一批建议",
+        "application_scene": "持续关注某个国家、议题或政策的变化，需要掌握最新动态时使用。",
+        "explanation": "持续跟踪政策变化、政府行动和相关现实动态，整理新旧材料及变化内容。",
+        "english_name": "Policy & Current Affairs Tracking"
+      },
+      "version": "1.1.0",
+      "acceptance": {
+        "result": "verified",
+        "scope": "local_engineering",
+        "checks": [
+          "SQLite API、重复执行、精确定位及受限访问回归",
+          "PostgreSQL 16.9 迁移升级、回退、再升级",
+          "受控模型真实输入实跑",
+          "能力市场、人工修订、项目保存和原文回溯界面验收"
+        ],
+        "evidence_report": "reports/skill-workflows-20260906/验收与演示.md",
+        "sample_run_ids": [
+          27,
+          28
+        ],
+        "expert_quality_status": "not_evaluated",
+        "pending": [
+          "专家质量验收（本轮未进行）"
+        ]
+      },
+      "english_name": "Policy & Current Affairs Tracking"
+    },
+    {
+      "catalog_key": "research-s04",
+      "skill_code": "S04",
+      "name": "国别事件时间线与冲突信息整理",
+      "category": "research_workflow",
+      "description": "将相关材料整理为事件卡与时间线，区分发生、报道和采集时间，并列呈现不同来源的冲突信息。",
+      "validation_status": "pending",
+      "executors": [
+        "event-timeline"
+      ],
+      "scopes": [
+        "country",
+        "event",
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "country_iso3",
+          "event_ids",
+          "research_case_id",
+          "source_ids"
+        ],
+        "required": [
+          "country_iso3"
+        ]
+      },
+      "output_schema": {
+        "type": "event_timeline",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S04",
+        "scenario": "把政策、新闻、项目和社会反应材料放入同一事件脉络，帮助研究者理解事件发展。",
+        "inputs": "国家/区域、事件关键词、相关材料",
+        "actions": "抽取事件名称、时间、地点、主体和动作；合并可能属于同一事件的材料；区分发生时间、报道时间和采集时间；并列呈现冲突信息。",
+        "outputs": "事件卡、时间线节点、关联材料、冲突提示",
+        "writeback": "事件空间、专题空间",
+        "boundary": "不自动选择唯一真相；不同来源的矛盾应保留其来源和语境；不根据时间先后直接推出因果关系。",
+        "implementation_note": "已有事件时间线执行器；三类时间、冲突语境及合并候选待完整验收。",
+        "priority": "第一批建议",
+        "application_scene": "研究重大事件、冲突或政策演变，需要还原事件发展过程时使用。",
+        "explanation": "按时间整理事件发展过程，区分不同时间类型，并并列呈现来源之间的冲突信息。",
+        "english_name": "Event Timeline & Conflicting Information"
+      },
+      "english_name": "Event Timeline & Conflicting Information"
+    },
+    {
+      "catalog_key": "research-s05",
+      "skill_code": "S05",
+      "name": "区域国别访谈与田野材料整理",
+      "category": "research_workflow",
+      "description": "围绕对象国现场语境整理访谈与田野材料，保留逐字稿，形成可定位的整理稿、主题摘录和观点卡。",
+      "validation_status": "verified",
+      "executors": [
+        "field-material-organizer"
+      ],
+      "scopes": [
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "transcript_items",
+          "file_refs",
+          "privacy_mode",
+          "research_case_id",
+          "workflow_version",
+          "material_ids",
+          "instruction",
+          "regions",
+          "topic_name",
+          "sources",
+          "source_ids",
+          "date_from",
+          "date_to",
+          "country_iso3",
+          "keywords",
+          "focus_types"
+        ],
+        "required": [],
+        "required_any_of": [
+          [
+            "transcript_items",
+            "file_refs",
+            "material_ids"
+          ]
+        ]
+      },
+      "output_schema": {
+        "type": "field_research_workflow",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S05",
+        "scenario": "将访谈或田野材料整理成可读、可检索、可回溯的研究材料，突出对象国现场语境。",
+        "inputs": "已有音频或转写文本、地点、时间、语言、受访者角色、采集方式",
+        "actions": "保留原始逐字稿；清理明显语气词、重复和口头停顿，形成整理稿；提取主题和观点；关联原文位置或时间戳；支持敏感内容标记。",
+        "outputs": "逐字稿与整理稿、主题摘录、观点卡、语境元数据",
+        "writeback": "专题空间、资料底层",
+        "boundary": "MVP 可先支持普通话和英语；音频存储、自动转写和小语种扩展按技术条件分期；整理稿不得覆盖原始材料；不替研究者解释文化和制度含义。",
+        "implementation_note": "v1.1.0 支持原文与整理稿版本、语义片段候选、标注修订确认拒绝、摘录和观点卡、受限访问与原文回溯；本机工程验收见随附记录。专家质量验收、音频转写未纳入本轮。",
+        "priority": "按语言和材料范围分期",
+        "application_scene": "需要将访谈、田野记录转化为可检索、可回溯的研究材料时使用。",
+        "explanation": "整理访谈和田野材料，保留原始记录，提炼主题、观点及对应语境信息。",
+        "english_name": "Interview & Fieldwork Material Organization"
+      },
+      "version": "1.1.0",
+      "acceptance": {
+        "result": "verified",
+        "scope": "local_engineering",
+        "checks": [
+          "SQLite API、重复执行、精确定位及受限访问回归",
+          "PostgreSQL 16.9 迁移升级、回退、再升级",
+          "受控模型真实输入实跑",
+          "能力市场、人工修订、项目保存和原文回溯界面验收"
+        ],
+        "evidence_report": "reports/skill-workflows-20260906/验收与演示.md",
+        "sample_run_ids": [
+          25
+        ],
+        "expert_quality_status": "not_evaluated",
+        "pending": [
+          "专家质量验收（本轮未进行）"
+        ]
+      },
+      "english_name": "Interview & Fieldwork Material Organization"
+    },
+    {
+      "catalog_key": "research-s06",
+      "skill_code": "S06",
+      "name": "跨学科证据组织",
+      "category": "research_workflow",
+      "description": "围绕区域国别研究问题，为材料生成可修改的学科标签，组织支持、反驳、背景与待核验证据。",
+      "validation_status": "pending",
+      "executors": [
+        "interdisciplinary-evidence"
+      ],
+      "scopes": [
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "research_case_id",
+          "document_version_ids",
+          "event_ids",
+          "discipline_labels"
+        ],
+        "required": [
+          "research_case_id"
+        ]
+      },
+      "output_schema": {
+        "type": "interdisciplinary_evidence",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S06",
+        "scenario": "围绕区域国别研究问题，整合政治、经济、历史、地理、语言等不同学科材料，形成可审核的证据结构。",
+        "inputs": "研究问题、国家/区域、材料集合",
+        "actions": "生成候选学科标签；标出对应证据段落和分类依据；区分支持、反驳、背景和待核验材料；允许一条材料多标签。",
+        "outputs": "证据矩阵、观点差异、待核验清单、分类依据",
+        "writeback": "专题空间",
+        "boundary": "自动分类只作初步整理；研究人员必须能够修改、确认或忽略；系统不评价某一学科解释是否正确。",
+        "implementation_note": "已有多标签证据组织执行器；支持、反驳、背景和待核验分类及人工修改待完整验收。",
+        "priority": "第一批建议",
+        "application_scene": "研究问题涉及政治、经济、历史、地理等多个学科时使用。",
+        "explanation": "整合不同学科材料，按研究问题组织支持、反驳、背景和待核验证据。",
+        "english_name": "Cross-disciplinary Evidence Organization"
+      },
+      "english_name": "Cross-disciplinary Evidence Organization"
+    },
+    {
+      "catalog_key": "research-s07",
+      "skill_code": "S07",
+      "name": "国别研究材料精准筛选与可解释排序",
+      "category": "research_workflow",
+      "description": "按研究问题和明确规则筛选材料，展示候选阅读顺序、排序理由及未纳入原因，支持调整和保留。",
+      "validation_status": "pending",
+      "executors": [
+        "material-relevance-ranking"
+      ],
+      "scopes": [
+        "research_case",
+        "document"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "research_case_id",
+          "query",
+          "keywords",
+          "weights",
+          "document_version_ids"
+        ],
+        "required": [
+          "research_case_id"
+        ]
+      },
+      "output_schema": {
+        "type": "material_relevance_ranking",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S07",
+        "scenario": "帮助研究者从大量国别资料中优先处理与当前研究问题最相关的材料，降低人工筛选成本。",
+        "inputs": "研究问题、国家/区域、材料集合、筛选条件和用户指定偏好",
+        "actions": "按明确规则生成候选排序，例如主题相关性、国家匹配度、时间覆盖、来源类型、原始性、是否重复和是否已有证据；显示每条排序的依据；允许用户调整权重和过滤条件。",
+        "outputs": "候选材料清单、排序理由、筛选条件、未纳入材料及原因",
+        "writeback": "专题空间、资料底层",
+        "boundary": "系统只提供“候选优先级”，不直接决定材料是否有学术价值或是否应进入论文；不得隐藏排序规则；用户可撤销、改排和保留被低排材料。",
+        "implementation_note": "已有公开权重排序执行器；排序解释、排除原因、改排与保留操作待完整验收。",
+        "priority": "第一批建议",
+        "application_scene": "面对大量研究资料，需要按研究问题快速筛选、排序并判断阅读优先级时使用。",
+        "explanation": "根据研究问题和明确规则筛选、排序资料，并说明排序依据和未纳入原因。",
+        "english_name": "Precision Filtering & Explainable Ranking"
+      },
+      "english_name": "Precision Filtering & Explainable Ranking"
+    },
+    {
+      "catalog_key": "research-s08",
+      "skill_code": "S08",
+      "name": "国别矛盾证据与语境对照",
+      "category": "research_workflow",
+      "description": "并列对照矛盾材料的原文、时间、地点、来源与观察主体，提示语境差异并记录研究者解释。",
+      "validation_status": "pending",
+      "executors": [
+        "contradictory-evidence-context"
+      ],
+      "scopes": [
+        "event",
+        "research_case",
+        "document"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "research_case_id",
+          "document_version_ids",
+          "comparison_question"
+        ],
+        "required": [
+          "research_case_id"
+        ]
+      },
+      "output_schema": {
+        "type": "contradictory_evidence_context",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S08",
+        "scenario": "处理不同材料在时间、观察角度、来源立场或访谈语境上的不一致，避免简单把一方判定为真、一方判定为假。",
+        "inputs": "研究问题、国家/区域、存在差异的材料",
+        "actions": "并列展示原文、时间、地点、来源类型和观察主体；标注差异内容；提示可能的时间变化、概念差异或立场差异；记录研究者解释。",
+        "outputs": "矛盾证据对照卡、语境差异说明、待核查事项",
+        "writeback": "专题空间、事件空间",
+        "boundary": "不自动裁决真实性；不把来源数量多简单等同于事实更可靠；最终解释和取舍由研究者完成。",
+        "implementation_note": "已有矛盾证据对照执行器；原文语境、差异解释与研究者记录待完整验收。",
+        "priority": "第二批建议",
+        "application_scene": "不同来源对同一问题说法不一致，需要比较来源、时间和语境差异时使用。",
+        "explanation": "并列对照存在差异的材料，结合来源、时间和观察语境呈现不同说法。",
+        "english_name": "Conflicting Evidence & Context Comparison"
+      },
+      "english_name": "Conflicting Evidence & Context Comparison"
+    },
+    {
+      "catalog_key": "research-s09",
+      "skill_code": "S09",
+      "name": "国别比较研究",
+      "category": "research_workflow",
+      "description": "按研究者设定的问题和维度比较国家、地区或事件，对齐概念、指标、时间与来源，标明缺失和不可比处。",
+      "validation_status": "pending",
+      "executors": [
+        "country-comparison"
+      ],
+      "scopes": [
+        "country",
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "research_case_id",
+          "country_iso3s",
+          "indicator_codes",
+          "period_from",
+          "period_to",
+          "source_ids",
+          "comparison_dimensions"
+        ],
+        "required": [
+          "country_iso3s"
+        ]
+      },
+      "output_schema": {
+        "type": "country_comparison",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S09",
+        "scenario": "在明确比较问题和维度的前提下，比较多个国家、地区或事件，呈现共性、差异和不可比处。",
+        "inputs": "国家/地区集合、比较问题、比较维度、材料集合",
+        "actions": "统一概念和指标口径；对齐时间和来源；标记缺失数据和不可比材料；生成差异说明及证据链接。",
+        "outputs": "比较表、差异说明、不可比提示、来源链",
+        "writeback": "专题空间、国别空间",
+        "boundary": "不进行脱离语境的机械排名；比较维度由研究者设定；系统不替研究者解释差异原因。",
+        "implementation_note": "已有指标对齐和材料比较执行器；国家、地区或事件比较的完整范围待验收。",
+        "priority": "原文未指定批次",
+        "application_scene": "开展跨国、跨地区或跨事件比较，需要统一比较口径和识别差异时使用。",
+        "explanation": "按照研究者设定的问题和维度比较国家、地区或事件，对齐口径并标明差异与不可比处。",
+        "english_name": "Country, Regional & Event Comparison"
+      },
+      "english_name": "Country, Regional & Event Comparison"
+    },
+    {
+      "catalog_key": "research-s10",
+      "skill_code": "S10",
+      "name": "政策影响关系候选图与证据整理",
+      "category": "research_workflow",
+      "description": "围绕政策或项目组织候选影响关系，为每条关系附上证据、时间与推断依据，供研究者逐条核查。",
+      "validation_status": "pending",
+      "executors": [
+        "policy-impact-graph"
+      ],
+      "scopes": [
+        "research_case",
+        "event"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "research_case_id",
+          "policy_event_ids",
+          "date_from",
+          "date_to"
+        ],
+        "required": [
+          "research_case_id"
+        ]
+      },
+      "output_schema": {
+        "type": "policy_impact"
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S10",
+        "scenario": "把政策、项目、执行主体、影响对象和结果材料组织成可检查的关系图，辅助现实问题和决策研究。",
+        "inputs": "国家/区域、政策或项目、时间范围、证据材料",
+        "actions": "区分已观察事实、来源主张和待核验推断；生成候选关系；为每条关系附材料、原文位置、时间和推断依据；支持人工确认。",
+        "outputs": "影响关系候选图、证据链、关系类型和确认状态",
+        "writeback": "专题空间、事件空间",
+        "boundary": "可以生成关系图，但不得将候选关系表述为已证实因果；证据不足时显示不确定；研究者可确认、修改或删除关系。",
+        "implementation_note": "已有政策关系候选图执行器；逐条关系的原文位置、推断依据和确认操作待完整验收。",
+        "priority": "第二批建议",
+        "application_scene": "研究政策、项目与相关主体之间的影响关系，需要梳理证据时使用。",
+        "explanation": "整理政策、执行主体、影响对象及结果之间的候选关系，并关联对应证据。",
+        "english_name": "Policy Impact Relationships & Evidence"
+      },
+      "english_name": "Policy Impact Relationships & Evidence"
+    },
+    {
+      "catalog_key": "research-s11",
+      "skill_code": "S11",
+      "name": "区域国别文献脉络与选题条件检查",
+      "category": "research_workflow",
+      "description": "围绕具体国家或区域梳理文献脉络，整理候选研究空白与资料条件，列出需要专家判断的方法问题。",
+      "validation_status": "pending",
+      "executors": [
+        "material-condition-assessment"
+      ],
+      "scopes": [
+        "country",
+        "research_case"
+      ],
+      "input_schema": {
+        "allowed_fields": [
+          "research_case_id",
+          "country_iso3",
+          "research_question",
+          "document_version_ids",
+          "event_ids",
+          "dataset_keys",
+          "language"
+        ],
+        "required": [
+          "research_question"
+        ]
+      },
+      "output_schema": {
+        "type": "material_condition_assessment",
+        "source_trace_required": true
+      },
+      "contract": {
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx",
+        "source_section": "三、垂直 Skill 清单 / S11",
+        "scenario": "帮助研究者或学生从具体国家/区域和研究问题出发，梳理文献发展、研究空白及资料条件。",
+        "inputs": "研究想法、国家/区域、文献集合、数据线索和时间范围",
+        "actions": "提取研究问题、对象、方法和结论；梳理文献脉络；标出不同研究视角；检查材料、数据和时间覆盖；生成待专家判断的方法问题。",
+        "outputs": "文献脉络、候选研究空白、资料需求清单、条件检查结果",
+        "writeback": "专题空间、任务能力中心",
+        "boundary": "不直接认定选题有价值或方法正确；不承诺数据一定可得；研究者和学科专家负责最终选题与方法判断。",
+        "implementation_note": "当前仅有资料条件评估子功能；完整文献脉络、研究问题与方法结论提取、候选研究空白尚待实现和验收。",
+        "priority": "第二批建议",
+        "application_scene": "准备研究选题，需要梳理已有研究、研究空白和资料条件时使用。",
+        "explanation": "梳理文献发展脉络和研究空白，检查材料、数据与时间条件，为选题判断提供依据。",
+        "english_name": "Literature Landscape & Topic Feasibility Analysis"
+      },
+      "english_name": "Literature Landscape & Topic Feasibility Analysis"
+    }
+  ],
+  "platform_features": [
+    {
+      "skill_code": "S12",
+      "name": "团队协作、权限与贡献管理",
+      "description": "管理团队对研究材料与成果的使用权限，记录上传、整理、审校和修改过程，保留来源、版本与贡献时间。",
+      "contract": {
+        "scenario": "支持区域国别研究团队在共享材料和共同产出时明确谁可以查看、编辑、引用和发布，并保留贡献过程。",
+        "inputs": "团队成员、材料/专题/事件对象、权限规则、操作记录",
+        "actions": "设置查看、编辑、下载、引用和发布权限；记录上传者、整理者、审校者和修改版本；保留材料来源和贡献时间；提供变更记录。",
+        "outputs": "权限状态、贡献记录、版本记录、审评记录",
+        "writeback": "专题空间、资料底层、任务能力中心",
+        "boundary": "这是平台基础能力与任务记录的结合，不负责复杂收益结算；不能因自动处理而虚增个人贡献；敏感田野材料需支持更严格的访问控制。",
+        "application_scene": "团队共同开展研究，需要管理资料权限、版本变化和成员贡献时使用。",
+        "explanation": "管理资料和成果的访问权限，记录上传、整理、审校、修改及成员贡献过程。",
+        "english_name": "Team Collaboration, Access & Contribution Management",
+        "source_document": "能力空间具体能力与描述_标题与说明优化版_v4.docx"
+      },
+      "english_name": "Team Collaboration, Access & Contribution Management"
+    }
+  ]
+}

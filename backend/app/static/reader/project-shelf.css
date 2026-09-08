@@ -1,0 +1,113 @@
+/* One conversation with an inspectable, independently scrolling project shelf. */
+.pw-shell .project-taskbench.is-chat-workbench {grid-template-columns:180px minmax(0,1fr);}
+.pw-shell .project-taskbench.is-chat-workbench.pw-panel-open {grid-template-columns:180px minmax(0,1fr) minmax(300px,30%);}
+.pw-shell .project-taskbench.is-chat-workbench.pw-panel-open #topicDetail {display:block;}
+.pw-shell .project-taskbench-nav #topicTabs[hidden] {display:none;}
+.pw-shell .pw-history .project-task-row strong {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:13px;line-height:1.6;}
+.pw-shell .project-taskbench.is-chat-workbench #projectContextPanel:not([hidden]) {display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;padding:12px;}
+.pw-shell #projectContextPanel .pw-panel-header {display:flex;flex-wrap:nowrap;align-items:center;gap:6px;padding-bottom:10px;}
+.pw-shell #projectContextPanel .pw-panel-header h2 {flex:1;min-width:0;white-space:nowrap;font-size:15px;}
+.pw-shell #projectContextPanel .pw-panel-header button {white-space:nowrap;font-size:12px;padding:6px;}
+.pw-shelf-tabs {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;flex-shrink:0;padding:4px 0 12px;}
+.pw-shelf-tabs button {border:0;border-radius:7px;padding:8px 3px;background:#f3f6fa;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap;}
+.pw-shelf-tabs button[aria-current=page] {background:#e7efff;color:#1f5bb7;}
+.pw-shelf-tabs span {font-size:11px;}
+.pw-shell #projectContextPanel .pw-panel-content {flex:1;min-height:0;width:100%;max-width:none;overflow:auto;overscroll-behavior:contain;}
+.pw-evidence-list .pw-library-item {gap:6px;padding:12px 0;}
+.pw-evidence-title {font-size:14px;line-height:1.6;color:#23466c;}
+.pw-evidence-check,.pw-review-toolbar {display:flex;align-items:center;gap:8px;font-size:12px;}
+.pw-review-toolbar {justify-content:space-between;margin:10px 0;}
+.pw-evidence-check input,.pw-review-toolbar input {width:auto;}
+.pw-review-note {display:block;font-size:12px;margin:8px 0;}
+.pw-review-note textarea {box-sizing:border-box;display:block;width:100%;font:inherit;border:1px solid var(--line);border-radius:6px;padding:6px;resize:vertical;}
+.pw-evidence-details dt {color:var(--muted);font-size:12px;margin-top:12px;}
+.pw-evidence-details dd {margin:4px 0;font-size:14px;line-height:1.6;overflow-wrap:anywhere;}
+.pw-evidence-detail h3 {font-size:16px;line-height:1.6;}
+.pw-evidence-detail pre {font-size:12px;white-space:pre-wrap;}
+.pw-execution-record {width:100%;border:1px solid #cedceb;}
+.pw-execution-record details {font-size:12px;line-height:1.6;margin:10px 0;}
+.pw-execution-record li {margin:5px 0;}
+.pw-execution-record > button,.pw-plan-refine button {font:inherit;font-size:12px;padding:8px;border:1px solid var(--line);border-radius:7px;background:#edf4ff;cursor:pointer;}
+.pw-evidence-suggestions {display:grid;gap:8px;margin:12px 0;}
+.pw-evidence-suggestions button {display:grid;gap:4px;text-align:left;border:1px solid #dce5ef;border-radius:8px;background:#fff;padding:10px;cursor:pointer;}
+.pw-evidence-suggestions button strong {font-size:14px;line-height:1.6;}
+.pw-evidence-suggestions button small {font-size:12px;line-height:1.6;}
+.pw-plan-refine {margin:12px 0;font-size:12px;}
+.pw-plan-refine label {display:grid;gap:4px;margin:10px 0;}
+.pw-plan-refine input,.pw-plan-refine select {width:100%;box-sizing:border-box;padding:6px;font:inherit;border:1px solid var(--line);border-radius:6px;}
+.pw-shell .project-chat-workbench .project-task-thread article {max-width:96%;}
+.pw-shell .project-chat-workbench .project-task-thread article.is-user {max-width:90%;}
+.pw-material-editor {min-width:0;}
+.pw-material-editor > header {display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.pw-material-editor > header h2 {flex:1;font-size:15px;}
+.pw-material-editor label {display:block;font-size:13px;margin:10px 0;}
+.pw-material-editor input:not([type=checkbox]),.pw-material-editor textarea,.pw-material-editor select {width:100%;box-sizing:border-box;padding:8px;border:1px solid var(--line);border-radius:6px;font:inherit;}
+.pw-material-editor textarea {resize:vertical;line-height:1.6;}
+.pw-material-editor footer {display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+@media(max-width:1100px){
+  .pw-shell .project-taskbench.is-chat-workbench.pw-panel-open {grid-template-columns:180px minmax(0,1fr);}
+  .pw-shell .project-taskbench.is-chat-workbench #projectContextPanel:not([hidden]) {position:fixed;z-index:150;top:12px;right:12px;bottom:12px;width:min(440px,calc(100vw - 24px));height:auto;box-shadow:0 8px 48px #142a4d44;background:white;}
+}
+@media(max-width:640px){
+  .pw-shell .project-taskbench.is-chat-workbench,.pw-shell .project-taskbench.is-chat-workbench.pw-panel-open {grid-template-columns:minmax(0,1fr);}
+  .pw-shell .project-taskbench.is-chat-workbench > .project-taskbench-nav {grid-template-rows:auto;}
+  .pw-shell .project-chat-workbench .project-task-thread article {max-width:100%;}
+  .pw-material-editor input:not([type=checkbox]),.pw-material-editor textarea,.pw-review-note textarea {font-size:16px;}
+}
+.pw-review-note input[type=search] {box-sizing:border-box;width:100%;padding:7px 8px;border:1px solid var(--line);border-radius:6px;font:inherit;}
+.pw-evidence-list .pw-library-item[hidden] {display:none;}
+.pw-review-actions button {font-size:12px;}
+.pw-shell [data-output-preview] {font-size:14px;line-height:1.75;overflow-wrap:anywhere;}
+.pw-shell [data-output-preview] h1 {font-size:21px;line-height:1.5;}
+.pw-shell [data-output-preview] h2 {font-size:18px;line-height:1.6;}
+.pw-shell [data-output-preview] h3 {font-size:16px;line-height:1.6;}
+/* Content-first shelf; controls appear where decisions are made. */
+.pw-shell #projectContextPanel .pw-panel-header {padding-bottom:6px;min-height:28px;}
+.pw-shell #projectContextPanel .pw-panel-header h2 {margin:0;font-size:14px;}
+.pw-shell #projectContextPanel .pw-shelf-tabs {padding:0 0 8px;gap:3px;}
+.pw-shell #projectContextPanel .pw-shelf-tabs button {padding:7px 2px;}
+.pw-shell #projectContextPanel .pw-panel-content {font-size:14px;line-height:1.6;}
+.pw-shell .pw-library-top {display:flex;align-items:center;gap:6px;margin:0 0 8px;}
+.pw-shell .pw-library-top input {width:100%;min-width:0;box-sizing:border-box;padding:7px 9px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:13px;}
+.pw-shell .pw-library-top button {flex-shrink:0;border:0;border-radius:5px;background:#edf2f7;padding:7px;font:inherit;font-size:12px;cursor:pointer;}
+.pw-shell .pw-evidence-list .pw-library-item {display:flex;align-items:flex-start;gap:8px;padding:11px 0;margin:0;border:0;border-bottom:1px solid #e8edf2;border-radius:0;background:transparent;}
+.pw-shell .pw-evidence-list .pw-library-item > input {flex:0 0 auto;width:14px;height:14px;margin:5px 0;}
+.pw-shell .pw-evidence-list .pw-library-item > div {min-width:0;display:grid;gap:4px;}
+.pw-shell .pw-evidence-title,.pw-shell .pw-content-row > button {display:block;text-align:left;border:0;background:transparent;padding:0;color:#263c55;font:inherit;font-size:14px;line-height:1.55;cursor:pointer;overflow-wrap:anywhere;}
+.pw-shell .pw-evidence-list small,.pw-shell .pw-content-row small {display:block;font-size:12px;line-height:1.5;color:var(--muted);}
+.pw-shell .pw-content-row {padding:12px 0;border-bottom:1px solid #e8edf2;display:grid;gap:5px;}
+.pw-shell .pw-content-row:first-child {padding-top:2px;}
+.pw-shell .pw-review-toolbar {display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px;padding:6px 0;font-size:12px;}
+.pw-shell .pw-review-toolbar label {display:flex;align-items:center;gap:5px;}
+.pw-shell .pw-review-toolbar .pw-review-actions {display:flex;gap:5px;}
+.pw-shell .pw-review-actions button {padding:5px 7px;border:1px solid var(--line);border-radius:5px;background:#f7f9fc;cursor:pointer;font:inherit;font-size:12px;}
+.pw-shell .pw-review-actions button:disabled {opacity:.45;cursor:default;}
+.pw-shell .pw-excluded-toggle {font-size:12px;margin:4px 0;}
+.pw-shell .pw-history-entry {position:relative;gap:0;padding:0;border:0;}
+.pw-shell .pw-history-entry .project-task-row {padding:9px 28px 9px 8px;border:0;border-radius:6px;min-height:0;}
+.pw-shell .pw-history-entry .project-task-row time {display:none;}
+.pw-shell .pw-history-entry > [data-pw-delete-task] {position:absolute;top:7px;right:2px;padding:4px;font-size:11px;border:0;background:#f3f5f8;opacity:0;pointer-events:none;}
+.pw-shell .pw-history-entry:hover > [data-pw-delete-task],.pw-shell .pw-history-entry:focus-within > [data-pw-delete-task] {opacity:1;pointer-events:auto;}
+.pw-shell .pw-history-entry:hover .project-task-row {background:#f3f5f8;}
+.pw-shell .pw-delete-note {padding:5px 8px;}
+.pw-shell .project-taskbench-nav {padding:10px;}
+.pw-shell #topicToolbar {height:26px;min-height:26px;}
+.pw-shell .project-taskbench.is-chat-workbench.pw-review-wide #projectContextPanel:not([hidden]) {position:fixed;z-index:150;top:56px;right:12px;bottom:12px;width:calc(100vw - 286px);height:auto;background:#fff;box-shadow:0 5px 28px #182d4429;}
+.pw-shell .pw-review-wide .pw-evidence-title {font-size:15px;}
+@media(max-width:1100px){.pw-shell .project-taskbench.is-chat-workbench.pw-review-wide #projectContextPanel:not([hidden]) {top:12px;width:calc(100vw - 24px);}}
+@media(hover:none){.pw-shell .pw-history-entry > [data-pw-delete-task] {opacity:1;pointer-events:auto;}}
+@media(max-width:640px){.pw-shell .pw-library-top input {font-size:16px;}}
+
+.pw-shell [data-library-clear] {border:0;background:transparent;color:#496481;font:inherit;cursor:pointer;padding:3px;}
+
+.pw-next-actions {display:flex;gap:8px;padding:8px 0;}
+.pw-next-actions button {font:inherit;font-size:13px;padding:8px 10px;border:1px solid #d5dfeb;border-radius:6px;background:#edf4ff;color:#294f80;cursor:pointer;}
+.pw-shell .project-task-composer .project-prompt-header button,.pw-shell .project-task-composer .pw-selection-tag {min-height:0;min-width:0;height:auto;padding:4px 7px;font-size:12px;line-height:1.5;}
+.pw-shell .project-task-composer .pw-selected-tags {margin-bottom:4px;}
+.pw-shell .project-task-composer .project-chat-options {gap:6px;align-items:center;}
+.pw-shell .project-task-composer .pw-chat-mode {min-height:30px;height:30px;min-width:0;width:74px;padding:4px;font-size:12px;}
+@media(max-width:640px){
+ .pw-shell .project-task-composer .pw-chat-mode {width:62px;}
+ .pw-shell .project-task-composer .project-capability-picker summary small {display:none;}
+ .pw-shell .project-task-composer .project-chat-options {gap:4px;}
+}

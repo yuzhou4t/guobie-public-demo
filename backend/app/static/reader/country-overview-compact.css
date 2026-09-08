@@ -1,0 +1,62 @@
+/* Country overview reads top to bottom, including when the assistant is open. */
+body #countryWorkspace .country-overview-workbench,
+body.assistant-side-open #countryWorkspace .country-overview-workbench,
+body #countryWorkspace .country-overview-follow,
+body.assistant-side-open #countryWorkspace .country-overview-follow,
+#countryWorkspace .country-overview-rail,
+#countryWorkspace .country-change-rail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+#countryWorkspace .country-overview-workbench > article { padding: 16px 18px; }
+#countryWorkspace .country-overview-workbench .section-heading { margin-bottom: 12px; }
+#countryWorkspace .country-overview-workbench h2 { font-size: 20px; }
+#countryWorkspace .country-overview-workbench .adm-map-shell { flex: none; min-height: 0; }
+#countryWorkspace .country-overview-workbench .adm-map,
+#countryWorkspace .country-overview-workbench .adm-map > svg {
+  flex: none;
+  height: 380px;
+  min-height: 0;
+}
+#countryWorkspace .country-basic-facts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+#countryWorkspace .country-basic-facts article {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 12px;
+  min-height: 0;
+  padding: 9px 0;
+  border: 0;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 0;
+  background: transparent;
+}
+#countryWorkspace .country-basic-facts strong,
+#countryWorkspace .country-basic-facts .basic-facts-source strong,
+#countryWorkspace .country-basic-facts .basic-facts-source a {
+  min-width: 0;
+  text-align: left;
+  word-break: normal;
+  overflow-wrap: break-word;
+  font-size: 14px;
+}
+#countryWorkspace .country-basic-facts .basic-facts-source { display: grid; background: transparent; padding: 9px 0; }
+#countryCopilot .qa-presets {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.country-chat-workspace #countryCopilot .qa-presets { display: grid; }
+#countryCopilot .qa-presets button {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  box-sizing: border-box;
+}

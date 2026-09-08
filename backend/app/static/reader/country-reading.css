@@ -1,0 +1,193 @@
+/* Country reading surfaces: cards first, evidence on demand. */
+#globalHub > .hub-space-tabs, #globalSearchView > .hub-space-tabs, #eventHall > .hub-space-tabs { order: -1; margin-top: 0; flex-wrap: nowrap; overflow-x: auto; }
+#eventHall { display: flex; flex-direction: column; }
+#eventHall > .page-heading { order: 0; }
+#countryAnchorNav { flex-wrap: nowrap; overflow-x: auto; }
+#countryAnchorNav a { flex-shrink: 0; }
+#recent-signals .country-event-workbench, #minerals-policy .policy-workbench, #country-reports .report-reading-layout { display: block; height: auto; max-height: none; }
+#recent-signals .country-event-workbench > *, #minerals-policy .policy-workbench > section { height: auto; max-height: none; overflow: visible; }
+#minerals-policy .policy-workbench > aside { display: none; }
+#countryReviewedPanel[hidden], #countryLatestReports[hidden], #policyLifecycle[hidden], #countryKpis[hidden], #trendContent[hidden] { display: none !important; }
+#recent-signals .country-reviewed-heading { display: none; }
+.reading-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 20px; }
+.reading-tabs button { padding: 10px 20px; color: #536579; background: #f3f6fa; border: 1px solid #dce4ec; border-radius: 999px; font-size: 15px; line-height: 1.35; cursor: pointer; }
+.reading-tabs button[aria-pressed="true"] { color: #126d7e; background: #e5f5f4; border-color: #82c8c7; font-weight: 650; }
+#countryFeedTabs { flex-wrap: nowrap; }
+.reading-feed { padding: 0 0 8px 26px; position: relative; }
+.reading-date { position: relative; margin: 24px 0 16px -26px; font-size: 15px; color: #5c6d7e; font-weight: 500; }
+#countryWorkspace .reading-card, .country-reading-dialog .reading-card { position: relative; margin: 0 0 18px; padding: 22px 24px; border: 1px solid #dce6eb; border-radius: 15px; background: #fff; color: #203346; box-shadow: 0 3px 12px #18374604; animation: reading-enter 180ms ease-out; }
+.reading-feed > .reading-card::before { content: ''; position: absolute; top: -18px; bottom: -19px; left: -20px; width: 1px; background: #d3e4e6; }
+.reading-feed > .reading-card::after { content: ''; position: absolute; top: 30px; left: -24px; width: 9px; height: 9px; border-radius: 50%; background: #2b99a4; box-shadow: 0 0 0 4px #edf7f7; }
+#countryWorkspace .reading-card h3, .country-reading-dialog .reading-card h3 { margin: 12px 0; font-size: 18px; line-height: 1.5; overflow: visible; white-space: normal; overflow-wrap: anywhere; }
+#countryWorkspace .reading-card p, .country-reading-dialog .reading-card p { font-size: 15.5px; line-height: 1.75; white-space: normal; overflow: visible; margin: 12px 0; }
+.reading-meta, #countryWorkspace .reading-card footer { display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap; align-items: center; color: #65788a; font-size: 13px; line-height: 1.6; }
+#countryWorkspace .reading-card footer { margin-top: 18px; }
+#countryWorkspace .reading-card button, #countryWorkspace .reading-card a, .country-reading-dialog .reading-card a { font-size: 14px; }
+#countryWorkspace .reading-card .reading-title-button { padding: 0; border: 0; background: none; color: inherit; font: inherit; line-height: inherit; text-align: left; cursor: pointer; }
+.reading-title-button:hover { color: #137c8b !important; }
+.reading-note, #countryWorkspace .reading-note { font-size: 13px; color: #65788a; line-height: 1.6; }
+#recent-signals .country-event-filters { margin: 16px 0; gap: 12px; }
+#recent-signals .country-event-filters label, #recent-signals .country-event-filters input, #recent-signals .country-event-filters select { font-size: 14px; }
+#recent-signals .country-event-filters input, #recent-signals .country-event-filters select { min-height: 38px; }
+#countryWorkspace .list-toggle { font-size: 14px; min-height: 42px; }
+.country-reading-dialog { width: min(1120px,calc(100vw - 64px)); max-width: none; height: auto; max-height: calc(100dvh - 64px); padding: 0; border: 1px solid #dce6eb; border-radius: 18px; background: #f9fbfd; color: #203346; overflow: auto; }
+.country-reading-dialog::backdrop { background: #112a4659; backdrop-filter: blur(3px); }
+.country-reading-dialog > header { position: sticky; top: 0; z-index: 2; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 18px; background: #f9fbfdf5; border-bottom: 1px solid #e0e7ed; }
+.country-reading-dialog > header h2 { margin: 0; font-size: 20px; }
+#countryEventChainDetail { padding: 24px; }
+#countryEventChainDetail .event-chain-detail { padding: 20px; border-radius: 12px; }
+#countryEventChainDetail .event-chain-detail h3 { font-size: 22px; line-height: 1.5; }
+#countryEventChainDetail .event-chain-detail h4 { font-size: 17px; margin: 24px 0 12px; }
+#countryEventChainDetail .event-chain-detail p, #countryEventChainDetail .event-chain-detail dd { font-size: 15px; line-height: 1.7; }
+#countryEventChainDetail .event-chain-detail dt, #countryEventChainDetail .event-chain-detail small, #countryEventChainDetail .event-chain-detail article, #countryEventChainDetail .event-chain-detail footer { font-size: 13px; line-height: 1.65; }
+#countryEventChainDetail .event-chain-timeline article { grid-template-columns: 100px minmax(0,1fr) auto; padding: 14px; }
+#countryEventChainDetail .reading-evidence { margin-top: 24px; font-size: 15px; }
+#countryEventChainDetail table { font-size: 14px; }
+#countryEventChainDetail section { min-width: 0; }
+#country-reports .report-compare-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 14px 0; font-size: 14px; }
+#countryInstitutionSection { margin-top: 40px; padding-top: 24px; border-top: 1px solid #dae5ec; }
+#countrySourceProfiles { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.institution-card dl, .report-comparison-grid dl { display: grid; gap: 16px; margin: 0; }
+.institution-card dt, .report-comparison-grid dt { color: #65788a; font-size: 13px; }
+.institution-card dd, .report-comparison-grid dd { margin: 4px 0 0; font-size: 15px; line-height: 1.7; }
+.institution-card small { display: block; color: #65788a; font-size: 12px; }
+.report-comparison-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+#materialDrawer { width: min(1050px,calc(100vw - 64px)); max-width: none; max-height: calc(100dvh - 64px); margin: auto; border-radius: 16px; }
+#materialDrawerBody { font-size: 15px; line-height: 1.7; }
+#country-data .country-data-workbench { display: grid; grid-template-columns: 210px minmax(0,1fr); gap: 24px; height: auto; min-height: 580px; }
+#country-data .data-catalog-rail { height: auto; padding: 16px; overflow: visible; align-self: start; }
+#country-data .data-catalog-rail input { font-size: 14px; min-height: 40px; width: 100%; }
+#country-data .data-catalog-rail label { font-size: 14px; }
+#countryDataCatalog button { display: flex; width: 100%; justify-content: space-between; padding: 14px 10px; margin: 6px 0; border: 0; border-radius: 8px; text-align: left; background: #f1f6f8; font-size: 14px; color: #435d6d; }
+#countryDataCatalog button.is-active { background: #dff3f1; color: #147b80; }
+#country-data .data-indicator-detail { overflow: visible; max-height: none; }
+.data-source-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 16px 0 24px; }
+.data-source-grid button { text-align: left; padding: 16px; border: 1px solid #dce6eb; border-radius: 12px; background: white; color: #203346; cursor: pointer; }
+.data-source-grid button strong { display: block; font-size: 15px; line-height: 1.5; }
+.data-source-grid button small { display: block; font-size: 13px; line-height: 1.6; margin-top: 6px; color: #65788a; }
+.data-source-grid button.is-active { border-color: #389fa5; background: #f2fbfa; }
+#countryDataComparison > article { padding: 22px; border: 1px solid #dce6eb; border-radius: 14px; font-size: 15px; }
+#countryDataComparison h3 { font-size: 20px; }
+#countryDataComparison dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+#countryDataComparison dt { font-size: 13px; color: #65788a; }
+#countryDataComparison dd { font-size: 15px; margin: 4px 0 0; line-height: 1.6; overflow-wrap: anywhere; }
+#countryDataRecords { margin-top: 24px; }
+#countryDataRecords .normalized-records > div, .reading-table-wrap { overflow-x: auto; max-height: none; }
+#countryDataRecords table { width: 100%; font-size: 14px; }
+#countryDataRecords th, #countryDataRecords td { padding: 12px; text-align: left; white-space: nowrap; }
+#countryDataRecords header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+#countryDataRecords h3 { font-size: 18px; }
+#countryDataRecords p { font-size: 13px; }
+#countryDataRecords .reading-tabs { margin-bottom: 8px; }
+.reading-data-chart { width: 100%; height: auto; margin-top: 20px; }
+.reading-data-chart text { fill: #65788a; font-size: 13px; }
+@keyframes reading-enter { from { opacity: .6; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (max-width: 760px) {
+ #countryWorkspace .reading-card { padding: 18px; }
+ #countrySourceProfiles, .report-comparison-grid, .data-source-grid { grid-template-columns: 1fr; }
+ #country-data .country-data-workbench { grid-template-columns: 1fr; }
+ #countryDataCatalog { display: flex; overflow-x: auto; gap: 8px; }
+ #countryDataCatalog button { min-width: 130px; }
+ #countryDataComparison dl { grid-template-columns: 1fr; }
+ .country-reading-dialog, #materialDrawer { width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+ #countryEventChainDetail { padding: 14px; }
+ #countryEventChainDetail .event-chain-timeline article { grid-template-columns: 1fr; }
+ #countryEventChainDetail .event-chain-detail > header { flex-wrap: wrap; }
+ #country-reports .report-compare-toolbar { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { .reading-card { animation: none !important; } }
+#countryFeedTabs { position: sticky; top: 0; z-index: 2; padding: 10px 0; background: #fff; }
+#countryWorkspace .reading-card a { color: #137b8b; text-decoration: none; }
+#countryWorkspace .reading-card a:hover { text-decoration: underline; }
+.data-indicator-picker { display: grid; gap: 8px; margin: 20px 0; font-size: 14px; color: #526a7b; }
+.data-indicator-picker select { width: 100%; min-width: 0; min-height: 44px; font-size: 15px; border: 1px solid #ccdce6; border-radius: 8px; padding: 10px; background: white; }
+
+#countryWorkspace .reading-card button.text-link { border: 0; background: transparent; padding: 4px 0; color: #137b8b; font: inherit; cursor: pointer; }
+#countryDataCatalog button { font-size: 14px; }
+#countryDataComparison dd, #countryDataComparison dd a { white-space: normal; overflow: visible; text-overflow: clip; -webkit-line-clamp: unset; overflow-wrap: anywhere; }
+
+.country-latest-filters { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 20px; }
+.country-latest-filters label { display: grid; gap: 7px; flex: 1 1 200px; min-width: 0; font-size: 13px; color: #65788a; }
+.country-latest-filters input, .country-latest-filters select { width: 100%; min-width: 0; padding: 10px; border: 1px solid #ccdce6; border-radius: 8px; background: white; font-size: 14px; }
+.country-latest-filters[hidden] { display: none; }
+@media (max-width: 760px) { .country-latest-filters label { flex-basis: 130px; } }
+/* Publication collections use a local directory and a single reading region. */
+#country-reports, #minerals-policy { container-type: inline-size; container-name: publications; }
+.publication-workbench { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 28px; position: relative; align-items: start; }
+.publication-main { min-width: 0; }
+.publication-rail { position: sticky; top: 12px; padding: 14px 10px; background: #f5f8fa; border: 1px solid #e2eaf0; border-radius: 10px; }
+.publication-rail h3 { margin: 0 10px 12px; font-size: 13px; color: #607384; }
+.publication-rail nav { display: grid; gap: 5px; }
+.publication-rail button { display: flex; gap: 10px; align-items: start; justify-content: space-between; text-align: left; border: 0; border-radius: 7px; padding: 12px 10px; background: transparent; color: #485d6e; font-size: 14px; line-height: 1.5; cursor: pointer; }
+.publication-rail button[aria-pressed="true"] { color: #126f7b; background: #e1f2f1; }
+.publication-rail button span:last-child { font-variant-numeric: tabular-nums; color: #71828c; }
+.publication-directory-toggle { display: none; }
+#country-reports .report-compare-toolbar[hidden], .publication-main section[hidden] { display: none; }
+.publication-row { display: grid; grid-template-columns: 22px minmax(0,1fr); gap: 12px; padding: 22px 0; border-bottom: 1px solid #e3e9ee; }
+.publication-row:first-child { padding-top: 6px; }
+.publication-select { padding-top: 7px; }
+.publication-select input { width: 17px; height: 17px; accent-color: #16858a; }
+#countryWorkspace .publication-row h3, #countryWorkspace .policy-ledger-row h3, #countryWorkspace .paper-list-row h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.55; white-space: normal; overflow: visible; text-overflow: clip; }
+.publication-row h3 a, .policy-ledger-row h3 a, .paper-list-row h3 a { text-decoration: none; color: #243c4c; }
+.publication-row h3 a:hover, .policy-ledger-row h3 a:hover, .paper-list-row h3 a:hover { color: #147c8a; }
+.publication-row p { font-size: 15px; line-height: 1.75; }
+.publication-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; font-size: 13px; color: #627889; }
+.publication-meta button { border: 0; background: none; padding: 0; font: inherit; color: #147c8a; text-align: left; cursor: pointer; }
+.publication-read-link { display: inline-block; font-size: 14px; margin-top: 12px; color: #147c8a; text-decoration: none; }
+#countrySourceProfiles { display: block; }
+#countrySourceProfiles .institution-card { padding: 0; background: transparent; }
+#countrySourceProfiles .institution-card dl { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.publication-reading { max-width: 850px; margin: 0 auto; font-size: 15px; line-height: 1.8; }
+.publication-reading h2 { margin: 12px 0 24px; font-size: 25px; line-height: 1.5; overflow-wrap: anywhere; }
+.publication-reading h3 { font-size: 17px; margin-top: 28px; }
+.publication-reading a { color: #147c8a; }
+.publication-back { display: inline-block; margin-bottom: 15px; font-size: 14px; text-decoration: none; }
+.publication-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; padding: 20px 0; border-block: 1px solid #e3e9ee; }
+.publication-facts dt { font-size: 13px; color: #70818e; }
+.publication-facts dd { margin: 4px 0 0; white-space: normal; overflow-wrap: anywhere; }
+.publication-citation { overflow-wrap: anywhere; color: #556e7d; font-size: 14px; }
+.policy-ledger-heading, .policy-ledger-row { display: grid; grid-template-columns: minmax(0,1fr) 155px; gap: 24px; }
+.policy-ledger-heading { padding: 12px 0; border-bottom: 1px solid #d6e1e7; color: #71818b; font-size: 13px; }
+.policy-ledger-row { border-bottom: 1px solid #e3e9ee; padding: 22px 0; }
+.policy-ledger-row p, .policy-ledger-row time { font-size: 13px; line-height: 1.6; color: #647a8a; }
+.policy-ledger-row > div:last-child { display: flex; flex-direction: column; align-items: start; gap: 10px; }
+.policy-kind { background: #f0f5f8; border-radius: 4px; padding: 3px 7px; font-size: 12px; color: #516a78; }
+#country-research .country-channel-materials { display: block; max-height: none; overflow: visible; }
+#countryWorkspace .paper-list-row { border-bottom: 1px solid #e0e8ed; padding: 24px 0; background: transparent; }
+.paper-list-row .publication-meta { margin-bottom: 10px; }
+.paper-list-row p, .paper-list-row dd { font-size: 15px; line-height: 1.75; }
+.paper-list-row .paper-authors { font-size: 13px; color: #617687; }
+.paper-list-row dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 24px; }
+.paper-list-row dt { color: #647b8a; font-size: 13px; }
+.paper-list-row dd { margin: 4px 0 0; }
+.paper-list-row footer { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 13px; align-items: center; overflow-wrap: anywhere; }
+.paper-list-row button { border: 0; background: transparent; color: #147c8a; padding: 0; font: inherit; cursor: pointer; }
+.paper-list-row a { color: #147c8a; }
+.paper-topics { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; align-items: center; }
+.paper-topics span { border-radius: 4px; padding: 4px 8px; background: #eef6f6; color: #317a80; font-size: 13px; }
+.paper-topics small { color: #798b95; font-size: 12px; }
+.research-coverage-summary { padding: 0 0 18px; border-bottom: 1px solid #e2eaf0; color: #526d7d; font-size: 14px; }
+.research-coverage-summary strong { color: #137d88; }
+.research-coverage-summary small { color: #788994; }
+#countryResearchEvolution { margin-top: 32px; padding: 20px; background: #f5f8fa; }
+.paper-year-counts { display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0; color: #647985; }
+.paper-year-counts strong { display: block; margin-top: 5px; color: #2b5668; font-size: 22px; }
+@container publications (max-width: 959px) {
+ .publication-workbench { grid-template-columns: minmax(0,1fr); gap: 16px; }
+ .publication-directory-toggle { display: block; justify-self: start; }
+ .publication-rail { display: none; }
+ .directory-open .publication-rail { display: block; position: absolute; width: 230px; top: 48px; left: 0; z-index: 5; box-shadow: 0 12px 30px #243c4c22; background: #fff; }
+}
+@media (max-width: 760px) {
+ .policy-ledger-heading { display: none; }
+ .policy-ledger-row { grid-template-columns: 1fr; gap: 8px; }
+ .policy-ledger-row > div:last-child { flex-direction: row; align-items: center; }
+ .publication-facts, .paper-list-row dl, #countrySourceProfiles .institution-card dl { grid-template-columns: 1fr; }
+ .publication-reading h2 { font-size: 22px; }
+}
+.research-window-switch { display:flex; gap:4px; padding:4px; background:#f2f6fa; border:1px solid var(--line); border-radius:10px; }
+.research-window-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; color:var(--muted); font:inherit; font-size:14px; cursor:pointer; }
+.research-window-switch button.is-active { background:white; color:var(--text); box-shadow:0 1px 4px #102b4514; }
+.research-window-switch button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+@media (max-width:760px) { #country-research .section-heading-actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; } }
+.publication-row h3 a, .policy-ledger-row h3 a, .paper-list-row h3 a { display:block; }

@@ -1,0 +1,1625 @@
+{
+  "version": "existing-reader-20260908-v1",
+  "project": {
+    "title": "刚果（金）关键矿产与武装冲突",
+    "research_question": "比较已复核政策事件与安全事件的多源证据，并生成可追溯周报。"
+  },
+  "structured": {
+    "schema_version": "1.0",
+    "seed_version": "mvp-reader-rescue-v2",
+    "generated_at": "2026-08-26T15:59:51.401406+00:00",
+    "country_iso3": "COD",
+    "policy": {
+      "contains_raw_assets": false,
+      "contains_document_body": false,
+      "contains_credentials": false,
+      "latest_structured_versions_only": true
+    },
+    "datasets": [
+      {
+        "dataset": {
+          "dataset_key": "world-bank-indicators-v2",
+          "name": "World Bank Open Data",
+          "scope_id": "mvp-structured-data-v1",
+          "frequency": "annual"
+        },
+        "source": {
+          "name": "World Bank Open Data",
+          "organization_name": "World Bank",
+          "source_type": "数据与工具",
+          "country_or_region": "国际组织",
+          "primary_language": "英文",
+          "homepage_url": "https://data.worldbank.org/",
+          "authority_level": "A官方权威"
+        },
+        "channel": {
+          "name": "World Bank Indicators API v2",
+          "entry_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+          "collector_type": "api",
+          "adapter_version": "v1",
+          "link_role": "official"
+        },
+        "observations": [
+          {
+            "observation_key": "0a13e846a8c801325c4b7c53d8de12deb90e621861243b41c0e29b3c054043bb",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2023,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "548d7616b29d2c2c9040a753db270dd0edd1c083639d3ba0ad5cd66ed89d7c83",
+              "value": "105789731.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "141bf586d2f20f6647c37a5058813e8ab639cdca9e8140bf82d4499c44805d39",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2015,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "cddcfbf720a5b4019021eb75ade0aa8e2f865a8c7cbdf679f9f3642ab9b02f30",
+              "value": "6.359737561648290000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "14fe4594caa3bd7f134ae3b9eabd82f348884a8f95d772018b68b123f7ff1cea",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2016,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "fda6301e9cbfd60c6ba4d7fbcaab0ff7c6f91e30382107a9e6fbc93a7ffe47d7",
+              "value": "83956415.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "16e14be745143c04fc37f50e2ace68cb8a77b3ce82533258e0674194853b33bb",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2017,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "0320a40ff8febf4cb0840ee6b7c86a0f2226865075e68d314e1f1dcfd0241729",
+              "value": "87083398.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "19a2db22a225737831a982722f8ad5495dd3276cceb58eec8f2cb050f2c339a5",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2016,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "7d009225d391281aa9ea627749f68ab617627153cd4f7aa0f9a7b762959c3895",
+              "value": "0.393832798154563000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "1bc3cf2c2d98545150b3df2206ef6daa1ec0dabe6f751904771e42e8e08ee429",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2017,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "2803492d2cbf4dbf9da0499580bf883f7b30a7581e09708c0579f21d46b31135",
+              "value": "37537521565.530800000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "24566118db07ed5a36443ba076c4316e7c44ec13041892c0292ce1b9b6e4068b",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2023,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "48c5fd724b749cd660d89d1bc852768fb8a535deaea8f81e238eabfaa38be19c",
+              "value": "69843655425.292900000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "2bb923b8e8c1ec953941404b1e817181bf899df72ff3159c05c9aea62becf961",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2018,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "44c187df26fa5cd13f08c38c18cbdcb6e3fad518b814f66fa68cbb2503214943",
+              "value": "46659954092.486200000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "344539e73780022260dd47c13e8d5a108ecc90d7cd0a7e8ce110521068205988",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2024,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "34fb2bf4eb4d386c9f1be31e895d7badeb77697ef76bb54a990f9dedb82c18bd",
+              "value": "75716176105.070400000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "460d377e71346f97b4ab4bc322eb26142b02c846c372248d8bf16e419a85b02c",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2015,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "69346409b4e8cd10960290ad669144e929b3f1416ea4b08ec7f2c41010f76c36",
+              "value": "81035531.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "4f9dc48d234ce5c6a065bd614a467a79e230cffbe4d03c457f4fff7a26c9e4a5",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2016,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "a850638dacb8bbcd905e7913941c6ff3fe0e2d5fa518cc329246927ed315a3c0",
+              "value": "38600224214.472800000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "52b94c5c9de2fe36d0492eb07433d6aedbb0738ac51719ef7e562e31739fb1ac",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2018,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "d9e08aaf0ab5afb3fde6bbf0c07ecb6f7e2fcf2885f249bd8531444ed91907c8",
+              "value": "90047644.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "58ee9a5f9561035f6baa2c5190420cfdc8de9e324abd8088a733b500d2d6f57b",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2020,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "6a66e6701c744226e04f0a72d944e11de2c07bef3ada129df453c2800659aa91",
+              "value": "95989998.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "713d7c65f3fe6cd8ede5a5f1c86e5d8a87c011976e0339d7fca2bb8faa62dacf",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2021,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "4e845bbb8918157b15d72e7b8bb4a04644ea24d5785b19e5ecd900d625b17ebe",
+              "value": "99148932.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "7199f6945449749168ce7400e36e0a36e1c447304bfb1cb820db733de98bec7f",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2018,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "e55c175cd0f3436741a313a7e605181cae2a85697686c559a32cfffa245a6edc",
+              "value": "6.071688706466150000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "784fb0d815707ac6c345bd98f165fef3ca0acf57bccd3e3ff1a704d0c67a850c",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2020,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "3fca23416d4d85d8711b27c48e70c9ef0b164dcd99db792dd0b5c512cddb8453",
+              "value": "0.775427992354622000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "796e3f126062a2afb840c363176ecdb65e555280a7c27b71bb6ce76c653f7091",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2024,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "0ccfb2778a6f8c26485175fa01a616b4d9da53da7973a7c7bfec6ab33ff31b11",
+              "value": "6.102529444286300000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "8396d46f11a05f3af3860e6e38790d6aa994b910d5fbd1307b8214e2bb3dc6a0",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2021,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "dce1700d7b77225652db40ed6f390552646d6c85bd17e2761aa7fec9430efac6",
+              "value": "59067289573.510200000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "84f80342127bcb7530b24ff3700e3fd541c02da6e33b8ef853ea3e24ddb3d933",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2022,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "b58c579678fd33402ad01f8f1a6029c9bbd3c82f295ef835cb512f2cb279d4e8",
+              "value": "102396968.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "86c4e5cf4fd75461dc011c9666fcbb5be1f1e7bdc8506abc031a027a8aedffb2",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2021,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "fe9b7e8225234a99326f0c193acea282b0aca3c129c2ae1a11074a660db45459",
+              "value": "6.429610056473550000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "957e0044388172c8250fa3961f8840a66c4d6e9a82c1b40e1aaccffd85997e84",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2022,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "e1ba4005b7112fa767471e2669532ee14aaa5eccc7a4dfb946e9aaba2eaecdef",
+              "value": "9.311169440649180000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "a129dbb76de6bcf5b98fd2dc262286df8990177d66bfe719c2bbea86205952e0",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2022,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "00253cc04e4453a06ff1536359e742a032e0e18f6e68a39e9afc1acf2622a5dd",
+              "value": "70422346142.202300000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "a336f37a4258d92edcccb18b727a02515b6dc2e1c6140c6c1cb183da923e839a",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2017,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "2a93ce2e4c1abf6caf0805b43b07262e5e701797cdb92844a6d466a331a86d31",
+              "value": "4.241210472727190000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "a96e20c9df31189d77f11575b40892447e488b9d4eb31c94c248b363dad24ebb",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2019,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "6c25fcef44a95e8ab9c907e150217bbe2f245362ed451bb92f10cc8af15434d8",
+              "value": "92947442.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "bfc547906aa648fa33d03b87c0d5c820975f175cc800da7f1f730c386895b7d8",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2019,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "62059f12fa3294e396110905ad6b21f19cb26a3922800f9fb09ae021157a80f9",
+              "value": "0.555384294580819000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "ce619b644fe4b161707dcfffaa70e52203d58414cb137ecf900c5ef0f8ae9d5d",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2015,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "15bd67fb92d83b8fed6d2bee91634189e449d47de4a84b515abb802545c54fb1",
+              "value": "40179574490.303200000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "d2c9975b581b336ea628c9958d7004d9a0af4715cd7db062c23ccc9624f03432",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "SP.POP.TOTL",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2024,
+            "metric_code": "population_total",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "00943c971ad88944b2a5442e1db7866872fd119504931c3e27468b2223133773",
+              "value": "109276265.000000000000000000",
+              "unit": "person",
+              "currency": null,
+              "price_basis": null,
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/SP.POP.TOTL?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "e11ea53c3ff771d53dd8abb5066427630be7f95832e55e47ab1685612c6b0e30",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2020,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "74f903f7f5e540ba5a480fabc8837e835dbfbc47a6761edc70690f59112424c0",
+              "value": "46691989748.918600000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "ef97cab41f1b299f9c93f272a02137d1faf1ac411db8f1428a3e8d7461fb930f",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.KD.ZG",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2023,
+            "metric_code": "gdp_real_growth",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "e6859bbf5a7755071b5d158283a8dface72678889a64c4c3db8407445147b207",
+              "value": "8.533489831845100000",
+              "unit": "percent",
+              "currency": null,
+              "price_basis": "constant_local_currency",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.KD.ZG?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          },
+          {
+            "observation_key": "f495bbb3069b6f3fef74a934ce3cbccdb77a9aadb2448f392a85ecc6e527ddc3",
+            "country_iso3": "COD",
+            "partner_iso3": null,
+            "indicator_code": "NY.GDP.MKTP.CD",
+            "commodity_classification": null,
+            "source_dataset_code": null,
+            "commodity_code": null,
+            "trade_flow": null,
+            "partner2_code": null,
+            "customs_code": null,
+            "mot_code": null,
+            "frequency": "annual",
+            "period": 2019,
+            "metric_code": "gdp_current_usd",
+            "first_seen_at": "2026-07-13T16:48:19.251555+00:00",
+            "last_seen_at": "2026-08-01T15:46:42.139730+00:00",
+            "version": {
+              "observation_hash": "8f1b41dca0199bdcca526eedf36c829442d1990ad2dbc4784ceb92fd8ed46bad",
+              "value": "46845900350.033200000000000000",
+              "unit": "USD",
+              "currency": "USD",
+              "price_basis": "current_prices",
+              "source_url": "https://api.worldbank.org/v2/country/COD;ZWE;ZMB;ZAF/indicator/NY.GDP.MKTP.CD?date=2015:2024&format=json&per_page=100&source=2",
+              "source_release_date": "2026-07-13",
+              "source_status": "unknown",
+              "missing_reason": null,
+              "is_reported": null,
+              "is_aggregate": null,
+              "quality_flags": {
+                "api_unit": ""
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "dataset_count": 1,
+      "observation_count": 30
+    }
+  },
+  "documents": [
+    {
+      "title": "ETUDE COMPARATIVE DE LA CARACTERISATION PHYSICO-CHIMIQUE DES ARGILES (LATERITE ET ZANGA) DE LA CITE DE LUKALA/KONGO CENTRAL/REPUBLIQUE DEMOCRATIQUE DU CONGO",
+      "canonical_url": "https://jaraps.org/index.php/AS/article/view/27",
+      "doi": "10.61841/nn-as-12-1-27",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-05T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Journal of Advance Research in Applied Science (ISSN 2208-2352)",
+      "source_type": "academic_journal",
+      "source_url": "https://jaraps.org/index.php/AS/article/view/25",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "EVALUATION DE DIVERSES UTILISATIONS DU PETIT COLA (&lt;i&gt;GARCINIA KOLA&lt;/i&gt; H.) DANS LE TERRITOIRE DE MWEKA (PROVINCE DU KASAÏ, RÉPUBLIQUE DÉMOCRATIQUE DU CONGO)",
+      "canonical_url": "https://jaraps.org/index.php/AS/article/view/25",
+      "doi": "10.61841/nn-as-12-1-25",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-05T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Journal of Advance Research in Applied Science (ISSN 2208-2352)",
+      "source_type": "academic_journal",
+      "source_url": "https://jaraps.org/index.php/AS/article/view/25",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Phylogenetic analysis of the 2025 Ebola outbreak in the Democratic Republic of the Congo",
+      "canonical_url": "https://www.nature.com/articles/s41467-026-77542-9",
+      "doi": "10.1038/s41467-026-77542-9",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-04T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Nature Communications",
+      "source_type": "academic_journal",
+      "source_url": "https://www.nature.com/articles/s41467-026-75910-z",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Overall survival of CNS WHO Grade 4 gliomas in the Democratic Republic of Congo: a multicenter analysis of 102 patients",
+      "canonical_url": "https://link.springer.com/10.1186/s12885-026-16909-z",
+      "doi": "10.1186/s12885-026-16909-z",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-04T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "BMC Cancer",
+      "source_type": "academic_journal",
+      "source_url": "https://link.springer.com/10.1186/s12885-026-16909-z",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Opportunities and barriers to implementing artificial intelligence for public health in the Democratic Republic of Congo: a case study of the Ibanda health zone and lessons from African pilot programs",
+      "canonical_url": "https://link.springer.com/10.1186/s12913-026-15492-0",
+      "doi": "10.1186/s12913-026-15492-0",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-03T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "BMC Health Services Research",
+      "source_type": "academic_journal",
+      "source_url": "https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-023-10219-x",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Clarifying Vaccination Status, Response Rate, and Regression Estimates in a National COVID‐19 Survey From the Democratic Republic of the Congo",
+      "canonical_url": "https://onlinelibrary.wiley.com/doi/10.1002/hsr2.73141",
+      "doi": "10.1002/hsr2.73141",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-02T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Health Science Reports",
+      "source_type": "academic_journal",
+      "source_url": "https://onlinelibrary.wiley.com/doi/10.1002/hsr2.72188",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Major Fungal Diseases of Common Bean Accessions Cultivated Under Medium Altitude Conditions in Tshilenge, Democratic Republic of Congo",
+      "canonical_url": "https://www.ijisrt.com/major-fungal-diseases-of-common-bean-accessions-cultivated-under-medium-altitude-conditions-in-tshilenge-democratic-republic-of-congo",
+      "doi": "10.38124/ijisrt/26aug859",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-02T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "International Journal of Innovative Science and Research Technology",
+      "source_type": "academic_journal",
+      "source_url": "https://www.ijisrt.com/causes-of-inadequate-supervision-of-nursing-staff-by-their-superiors-in-medical-and-surgical-facilities-in-the-city-of-bunia-ituri-province-northeast-democratic-republic-of-congo",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "The Re-Emergence of Bundibugyo Ebolavirus in Uganda and the Democratic Republic of Congo: Epidemiological Drivers, Response Strategies, and Implications for Global Health Security",
+      "canonical_url": "https://www.dovepress.com/the-re-emergence-of-bundibugyo-ebolavirus-in-uganda-and-the-democratic-peer-reviewed-fulltext-article-IDR",
+      "doi": "10.2147/idr.s632723",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Infection and Drug Resistance",
+      "source_type": "academic_journal",
+      "source_url": "https://www.dovepress.com/high-burden-of-multidrug-resistant-bacteria-in-eastern-democratic-repu-peer-reviewed-fulltext-article-IDR",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Determinants of Insufficient Knowledge About Multidrug-Resistant Tuberculosis Among Tuberculosis Patients in Kinshasa, Democratic Republic of the Congo: A Cross-Sectional Study.",
+      "canonical_url": "https://sjhrafrica.org.sjhresearchafrica.org/index.php/public-html/article/view/2946",
+      "doi": "10.51168/20405816",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Student's Journal of Health Research Africa",
+      "source_type": "academic_journal",
+      "source_url": "https://sjhrafrica.org/index.php/public-html/article/view/2616",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "CARTOGRAPHIE DES SECTEURS STRATÉGIQUES POUR UNE ÉCONOMIE CONCURRENTIELLE EN RÉPUBLIQUE DÉMOCRATIQUE DU CONGO",
+      "canonical_url": "https://revue-is.org/wp-content/uploads/2026/09/MUKUNDJI-01-TIRE-A-PART-024.pdf",
+      "doi": "10.62912/irges1746",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Revue Intelligence Stratégique",
+      "source_type": "academic_journal",
+      "source_url": "https://revue-is.org/wp-content/uploads/2026/04/KANTENGA-02-TIRE-A-PART-023.pdf",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "LA ZONE DE LIBRE-ÉCHANGE CONTINENTALE AFRICAINE ET LA REDÉFINITION DE LA PUISSANCE ÉCONOMIQUE DE LA RÉPUBLIQUE DÉMOCRATIQUE DU CONGO",
+      "canonical_url": "https://revue-is.org/wp-content/uploads/2026/09/MUKUNDJI-01-TIRE-A-PART-025.pdf",
+      "doi": "10.62912/irges0927",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Revue Intelligence Stratégique",
+      "source_type": "academic_journal",
+      "source_url": "https://revue-is.org/wp-content/uploads/2026/04/KANTENGA-02-TIRE-A-PART-023.pdf",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "L'HYPERPRÉSIDENTIALISME EN RÉPUBLIQUE DÉMOCRATIQUE DU CONGO À L'ÉPREUVE DU PRINCIPE DE SÉPARATION DES POUVOIRS : ANALYSE CRITIQUE D'UN CONSTITUTIONNALISME EN TRANSITION",
+      "canonical_url": "https://revue-is.org/wp-content/uploads/2026/09/MENGA-TIRE-A-PART-025.pdf",
+      "doi": "10.62912/irges10054",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Revue Intelligence Stratégique",
+      "source_type": "academic_journal",
+      "source_url": "https://revue-is.org/wp-content/uploads/2026/04/KANTENGA-02-TIRE-A-PART-023.pdf",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "The DR Congo–Uganda corridor: One Health promised, not delivered",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S0140673626016156",
+      "doi": "10.1016/s0140-6736(26)01615-6",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "The Lancet",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S0140673625023098",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Why COVID-19 vaccination struggled in the Democratic Republic of Congo: a qualitative study exploring organizational and sociocultural barriers, 2025",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S0264410X2600842X",
+      "doi": "10.1016/j.vaccine.2026.129033",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Vaccine",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S0264410X23013622",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Bundibugyo ebolavirus emergence in eastern Democratic Republic of Congo: The critical role of risk communication and community engagement in strengthening health security in fragile and conflict-affected settings",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S2055664026000130",
+      "doi": "10.1016/j.jve.2026.100633",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Journal of Virus Eradication",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S2055664026000105",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Termites, microbes and rocks – Assessing local resources for ecological intensification of agriculture in Democratic Republic of the Congo",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S0016706126003034",
+      "doi": "10.1016/j.geoderma.2026.117975",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Geoderma",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S0016706126003034",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Congolese hospital staff cohort admitted with infectious symptoms in the setting of the Bundibugyo virus outbreak, April and May 2026, Bunia, DR Congo",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S1473309926004202",
+      "doi": "10.1016/s1473-3099(26)00420-2",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "The Lancet Infectious Diseases",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S1473309923005522",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Long-term impact of attacks on health care on mental health and workforce retention among healthcare workers in protracted emergency settings: East of the Democratic Republic of Congo",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S0010440X26000787",
+      "doi": "10.1016/j.comppsych.2026.152739",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Comprehensive Psychiatry",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S0010440X26000787",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Comparative analysis of morphometric and genetic diversity in wild populations and farmed stocks of Nile tilapia (Oreochromis niloticus) from eastern DR Congo",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S235251342600373X",
+      "doi": "10.1016/j.aqrep.2026.103733",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Aquaculture Reports",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S235251342600373X",
+      "relation_review_status": "confirmed"
+    },
+    {
+      "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo and Uganda",
+      "canonical_url": "https://linkinghub.elsevier.com/retrieve/pii/S1600613526026390",
+      "doi": "10.1016/j.ajt.2026.07.001",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-09-01T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "American Journal of Transplantation",
+      "source_type": "academic_journal",
+      "source_url": "https://linkinghub.elsevier.com/retrieve/pii/S1600613526026390",
+      "relation_review_status": "confirmed"
+    }
+  ],
+  "field_demo": {
+    "version": "20260908-v2",
+    "materials": [
+      {
+        "id": "public-market",
+        "title": "城市市场走访记录",
+        "author": "研究者 A（虚构）",
+        "visibility": "shared",
+        "kind": "田野笔记",
+        "badge": "虚构示例",
+        "status": "公共展示示例",
+        "introduction": "示例展示一份市场观察如何保留时段、观察范围和未核实事项。",
+        "preview": "演示记录：在虚构市场的一次短时走访中，记录者看到部分摊位同时使用现金和移动支付。未询问交易额，也未覆盖全天客流，不能据此判断普及率。",
+        "context": {
+          "材料身份": "虚构材料，仅展示交互",
+          "研究主题": "支付方式",
+          "记录者": "研究者 A（虚构）",
+          "地点": "虚构场景",
+          "时间": "未设定",
+          "共享范围": "Demo 公共示例"
+        },
+        "text_note": "该记录是虚构示例，不能作为现实国情或研究证据",
+        "units": [
+          {
+            "locator": "line:1",
+            "text": "演示记录：在虚构市场的一次短时走访中，记录者看到部分摊位同时使用现金和移动支付。未询问交易额，也未覆盖全天客流，不能据此判断普及率。"
+          }
+        ],
+        "cleaned": [
+          {
+            "locator": "line:1",
+            "text": "演示记录：在虚构市场的一次短时走访中，记录者看到部分摊位同时使用现金和移动支付。未询问交易额，也未覆盖全天客流，不能据此判断普及率。"
+          }
+        ],
+        "annotations": [
+          {
+            "start_locator": "line:1",
+            "original_text": "演示记录：在虚构市场的一次短时走访中，记录者看到部分摊位同时使用现金和移动支付。未询问交易额，也未覆盖全天客流，不能据此判断普及率。",
+            "themes": [
+              "支付方式",
+              "观察范围"
+            ],
+            "statement_type": "经验描述",
+            "verification": "not_applicable",
+            "viewpoint": "示例展示一份市场观察如何保留时段、观察范围和未核实事项。",
+            "note": "虚构示例，无现实证据效力。"
+          }
+        ]
+      },
+      {
+        "id": "public-logistics",
+        "title": "物流从业者访谈摘记",
+        "author": "研究者 B（虚构）",
+        "visibility": "shared",
+        "kind": "田野笔记",
+        "badge": "虚构示例",
+        "status": "公共展示示例",
+        "introduction": "示例展示从业者陈述与研究者核验备注如何分开。",
+        "preview": "演示记录：受访者 L01 说“近期办理手续的时间不太稳定”。记录者尚未取得对应运单或办理日志，保留为受访者经验陈述。",
+        "context": {
+          "材料身份": "虚构材料，仅展示交互",
+          "研究主题": "物流手续",
+          "记录者": "研究者 B（虚构）",
+          "地点": "虚构场景",
+          "时间": "未设定",
+          "共享范围": "Demo 公共示例"
+        },
+        "text_note": "该记录是虚构示例，不能作为现实国情或研究证据",
+        "units": [
+          {
+            "locator": "line:1",
+            "text": "演示记录：受访者 L01 说“近期办理手续的时间不太稳定”。记录者尚未取得对应运单或办理日志，保留为受访者经验陈述。"
+          }
+        ],
+        "cleaned": [
+          {
+            "locator": "line:1",
+            "text": "演示记录：受访者 L01 说“近期办理手续的时间不太稳定”。记录者尚未取得对应运单或办理日志，保留为受访者经验陈述。"
+          }
+        ],
+        "annotations": [
+          {
+            "start_locator": "line:1",
+            "original_text": "演示记录：受访者 L01 说“近期办理手续的时间不太稳定”。记录者尚未取得对应运单或办理日志，保留为受访者经验陈述。",
+            "themes": [
+              "物流手续",
+              "待核验经验"
+            ],
+            "statement_type": "经验描述",
+            "verification": "not_applicable",
+            "viewpoint": "示例展示从业者陈述与研究者核验备注如何分开。",
+            "note": "虚构示例，无现实证据效力。"
+          }
+        ]
+      },
+      {
+        "id": "public-school",
+        "title": "社区教育访谈提纲与观察札记",
+        "author": "研究者 C（虚构）",
+        "visibility": "shared",
+        "kind": "田野笔记",
+        "badge": "虚构示例",
+        "status": "公共展示示例",
+        "introduction": "示例展示研究问题、现场观察与样本局限。",
+        "preview": "演示记录：本次拟了解家庭如何选择课外学习资源。仅与两位虚构家长进行试访谈，样本不代表社区总体，后续问题需根据反馈调整。",
+        "context": {
+          "材料身份": "虚构材料，仅展示交互",
+          "研究主题": "教育选择",
+          "记录者": "研究者 C（虚构）",
+          "地点": "虚构场景",
+          "时间": "未设定",
+          "共享范围": "Demo 公共示例"
+        },
+        "text_note": "该记录是虚构示例，不能作为现实国情或研究证据",
+        "units": [
+          {
+            "locator": "line:1",
+            "text": "演示记录：本次拟了解家庭如何选择课外学习资源。仅与两位虚构家长进行试访谈，样本不代表社区总体，后续问题需根据反馈调整。"
+          }
+        ],
+        "cleaned": [
+          {
+            "locator": "line:1",
+            "text": "演示记录：本次拟了解家庭如何选择课外学习资源。仅与两位虚构家长进行试访谈，样本不代表社区总体，后续问题需根据反馈调整。"
+          }
+        ],
+        "annotations": [
+          {
+            "start_locator": "line:1",
+            "original_text": "演示记录：本次拟了解家庭如何选择课外学习资源。仅与两位虚构家长进行试访谈，样本不代表社区总体，后续问题需根据反馈调整。",
+            "themes": [
+              "教育选择",
+              "样本局限"
+            ],
+            "statement_type": "经验描述",
+            "verification": "not_applicable",
+            "viewpoint": "示例展示研究问题、现场观察与样本局限。",
+            "note": "虚构示例，无现实证据效力。"
+          }
+        ]
+      }
+    ],
+    "results": {
+      "s03": {
+        "title": "S03 刚果金矿业政策追踪简报",
+        "label": "官方历史文本 · 实际版本比较 · 非实时政策更新",
+        "body": "# 刚果金矿业政策历史版本追踪简报\n\n## 本期范围与结论\n\n对照已留存的2002年矿业法与2018年修正法 Article 241，形成变化摘要与新旧版本关系。以下是历史版本演示，不是当前有效法规认定，也不是今日新增政策。\n\n## 可见的条款变化\n\n矿业权利金条款中的铁和黑色金属由0.5%改为1%，非铁金属由2%改为3.5%并扩展类别表述，贵金属由2.5%改为3.5%，宝石由4%改为6%并增加有色宝石表述；新文本单列战略物质10%。普通用途建筑材料0%、工业矿物等1%的数值保持不变。新文本还增加由矿业条例明确分类所涉要素的表述。\n\n这些是两份文本的字面差异，不能直接推导政策效果、实际缴纳情况或对某一矿种的当前适用税率。\n\n## 更新与异常记录\n\n历史基线轮 #27：新增1项、更新1项、未变化3项。重复检查轮 #28：新增0项、更新0项、未变化5项。重复轮没有制造新动态。\n\n两份CTCPM扫描件没有取得文本层，且文件哈希相同，保留重复与提取失败记录。刚果通讯社钴出口配额报道只保留元数据，发布日期未取得，不把采集时间填作发布日期。\n\n## 版本关系与下一步\n\n2002年文本 → 2018年修正文本，关系由人工指定；比较范围限定 Article 241。原文定位为旧文件PDF第106页、新文件PDF第30—31页。追踪记录来自2026年9月6日的已有运行；本次重新生成差异摘要，未重新采集外部来源。\n\n进一步研究前，应核对法规沿革与适用对象，为扫描件补充可核验原文或转写，并审阅报道的日期与内容。当前材料不支持自动判断政策效果。\n",
+        "rate_changes": [
+          [
+            "铁和黑色金属",
+            "0.5%",
+            "1%"
+          ],
+          [
+            "非铁金属／基本金属",
+            "2%（非铁金属）",
+            "3.5%（表述扩为非铁和／或基本金属）"
+          ],
+          [
+            "贵金属",
+            "2.5%",
+            "3.5%"
+          ],
+          [
+            "宝石",
+            "4%",
+            "6%（表述增加有色宝石）"
+          ],
+          [
+            "战略物质",
+            "本条未单列",
+            "10%"
+          ],
+          [
+            "普通用途建筑材料",
+            "0%",
+            "0%"
+          ],
+          [
+            "工业矿物等",
+            "1%",
+            "1%"
+          ]
+        ],
+        "observations": [
+          {
+            "title": "2002 矿业法 Article 241（历史版本演示）",
+            "date": "2002-07-15",
+            "status": "可比较文本",
+            "note": "重复轮：未变化。保留来源与版本"
+          },
+          {
+            "title": "2018 修正法 Article 241（历史版本演示，非整部合并法典）",
+            "date": "2018-03-28",
+            "status": "可比较文本",
+            "note": "重复轮：未变化。保留来源与版本"
+          },
+          {
+            "title": "RDC: fixation des conditions d’obtention et d’exécution des quotas d’exportation du cobalt - ACP",
+            "date": "发布日期未取得",
+            "status": "仅元数据",
+            "note": "重复轮：未变化。发布日期未取得"
+          },
+          {
+            "title": "CTCPM 第 45 号下载件 · 2025 联合通函",
+            "date": "2025-11-26",
+            "status": "文本提取失败",
+            "note": "重复轮：未变化。扫描件无文本层"
+          },
+          {
+            "title": "CTCPM 第 46 号下载件 · 2025 联合通函",
+            "date": "2025-11-26",
+            "status": "文本提取失败",
+            "note": "重复轮：未变化。扫描件无文本层；重复文件"
+          }
+        ],
+        "sources": [
+          {
+            "title": "2002 矿业法 Article 241（历史版本演示）",
+            "units": [
+              {
+                "text": "Article 241 : Du taux de la redevance \nminière \nLe taux de la redevance minière est \nde 0,5% pour le fer ou les métaux ferreux, \n2% pour les métaux non ferreux, 2, 5% \npour les métaux précieux, 4% pour les \npierres précieuses, 1% pour les minéraux \nindustriels, les hydrocarbures solides et \nautres substances non citées, et 0% pour \nles matériaux de construction d’usages \ncourants. \n",
+                "locator": "page:106",
+                "start_offset": 74
+              }
+            ],
+            "issues": [],
+            "sha256": "88391b9cafbf9642b4b377ca0d799e6b4900b76817bd2e6f514810fdb2266662",
+            "language": "fr",
+            "relation": "new",
+            "final_url": "https://sgnc.cd/wp-content/uploads/2025/02/CODE-MINIER-DE-LA-RDC-AU-11-JUILLET-2002.pdf",
+            "source_url": "https://sgnc.cd/wp-content/uploads/2025/02/CODE-MINIER-DE-LA-RDC-AU-11-JUILLET-2002.pdf",
+            "fingerprint": "934444240cb715d2e26211b113df0054be916356da488b246a3003f347efddaf",
+            "observed_at": "2026-09-06T02:08:47.876642+00:00",
+            "source_name": "SGNC 官方法规目录",
+            "source_type": "用户指定来源",
+            "match_status": "matched",
+            "published_at": "2002-07-15",
+            "access_status": "accessible",
+            "match_reasons": [],
+            "metadata_basis": "用户配置，待复核",
+            "comparison_scope": "Article 241",
+            "extraction_status": "extracted"
+          },
+          {
+            "title": "2018 修正法 Article 241（历史版本演示，非整部合并法典）",
+            "units": [
+              {
+                "text": "Article 241 : Des taux de la redevance minière \nLes taux de la redevance minière sont de : \na.   0%  pour les matériaux de construction d’usage \ncourant ; ",
+                "locator": "page:30",
+                "start_offset": 4183
+              },
+              {
+                "text": "28 mars 2018                                      Journal Officiel de la République Démocratique du Congo                                   Première partie  – n° spécial \n \n \n61                                                 62 \n \nb.   1%  pour les minéraux industriels, les \nhydrocarbures solides et autres substances non \ncitées ; \nc.   1%  pour le fer et les métaux ferreux; \nd.    3,5%  pour les métaux non ferreux et/ou de base; \ne.    3,5%  pour les métaux précieux ; \nf.     6%  pour les pierres précieuses et de couleur ; \ng.   10%  pour les substances stratégiques. \nLe Règlement minier précise les éléments concernés  \npar la classification ci–dessus. \n",
+                "locator": "page:31",
+                "start_offset": 0
+              }
+            ],
+            "issues": [],
+            "sha256": "d3ebda974d1caf3128f188a990fe518018a7d0697cfad8ed6f067109bdb814cd",
+            "language": "fr",
+            "relation": "new",
+            "final_url": "https://sgnc.cd/wp-content/uploads/2025/02/CODE-MINIER-DE-LA-RDC-REVISE-AU-28-MARS-2018-.pdf",
+            "source_url": "https://sgnc.cd/wp-content/uploads/2025/02/CODE-MINIER-DE-LA-RDC-REVISE-AU-28-MARS-2018-.pdf",
+            "fingerprint": "e99eca95443b1b2e85443c1c954b24baec42bfd7c6b6a5491a80ea88d4904832",
+            "observed_at": "2026-09-06T02:08:52.262392+00:00",
+            "source_name": "SGNC 官方法规目录",
+            "source_type": "用户指定来源",
+            "match_status": "matched",
+            "published_at": "2018-03-28",
+            "access_status": "accessible",
+            "match_reasons": [],
+            "metadata_basis": "用户配置，待复核",
+            "comparison_scope": "Article 241",
+            "extraction_status": "extracted"
+          }
+        ],
+        "generated_summary": "Article 241 的标题由“Du taux de la redevance minière”修改为“Des taux de la redevance minière”；正文由单数表述“Le taux de la redevance minière est”修改为复数表述“Les taux de la redevance minière sont de”，并改为按字母分项列示。材料中列明：普通用途建筑材料为 0%；工业矿物、固体碳氢化合物及其他未列明物质为 1%；铁和黑色金属由 0,5% 修改为 1%，且“ou”修改为“et”；非铁金属由 2% 修改为 3,5%，并增加“et/ou de base”；贵金属由 2,5% 修改为 3,5%；宝石由 4% 修改为 6%，并增加“et de couleur”；新增战略物质税率 10%。建筑材料表述由“matériaux de construction d’usages courants”修改为“matériaux de construction d’usage courant”。另新增原文：“Le Règlement minier précise les éléments concernés  \npar la classification ci–dessus.”"
+      }
+    },
+    "public_demo": true,
+    "notice": "这里保留现有 Demo 的三份公共示例材料；真实个人样稿未上传。"
+  },
+  "notice": "沿用现有国别智枢页面与研究流程。展示现有 World Bank 指标样本、所选文献元数据和原有公共田野示例；不代表完整数据库。",
+  "summary": {
+    "structured_observations": 30,
+    "document_metadata": 20,
+    "public_field_examples": 3,
+    "real_private_materials": 0,
+    "abstracts": 0,
+    "document_bodies": 0
+  }
+}

@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guobie-backend"
+version = "0.1.0"
+description = "国别智枢可信信源采集与证据后端"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "alembic>=1.14,<2",
+  "cryptography>=46,<48",
+  "jsonschema>=4,<5",
+  "celery[redis]>=5.4,<6",
+  "fastapi>=0.115,<1",
+  "feedparser>=6.0,<7",
+  "httpx>=0.28,<1",
+  "openpyxl>=3.1,<4",
+  "psycopg[binary]>=3.2,<4",
+  "pydantic-settings>=2.7,<3",
+  "pypdf>=5,<7",
+  "pwdlib[argon2]>=0.2,<1",
+  "python-docx>=1.1,<2",
+  "Pillow>=11,<13",
+  "py7zr>=0.22,<1",
+  "selectolax>=0.3,<1",
+  "sqlalchemy>=2.0,<3",
+  "trafilatura>=2.0,<3",
+  "uvicorn[standard]>=0.34,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "pytest-cov>=6,<8",
+  "ruff>=0.9,<1",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["static/reader/*", "static/reader/assets/*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.vercel]
+entrypoint = "app.main:app"

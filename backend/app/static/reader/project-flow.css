@@ -1,0 +1,77 @@
+/* Shared research typography, scoped so country layout stays intact. */
+#assistantQuestion, .assistant-form textarea, .project-task-composer textarea {font-family:inherit;font-size:14px;line-height:1.6;}
+.assistant-message, .assistant-message p, .project-task-thread article, .project-task-thread article p {font-size:14px;line-height:1.6;overflow-wrap:anywhere;white-space:normal;}
+.project-task-thread article > p {white-space:pre-wrap;}
+.assistant-capability-picker summary, .assistant-capability-picker summary small, .project-task-composer footer, .project-prompt-header span {font-size:12px;line-height:1.6;}
+.project-task-composer textarea {min-height:100px;max-height:240px;overflow:auto;resize:vertical;}
+.project-prompt-header {display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.unified-project-hall .project-hall-layout {display:flex;flex-direction:column;gap:28px;}
+.unified-project-hall #projectFrontiersSection {order:0;}
+.unified-project-hall #myProjectsSection {order:1;}
+#newTopicMaterialOptions label {display:flex;align-items:start;gap:10px;margin:10px 0;}
+#newTopicMaterialOptions input {width:auto;margin-top:4px;}
+#newTopicMaterialOptions small {display:block;font-size:12px;color:var(--muted);}
+#topicLinkDialog {max-height:90dvh;overflow-y:auto;}
+.project-brief-editor label {display:grid;gap:5px;margin:10px 0;}
+.project-brief-editor input,.project-brief-editor textarea {width:100%;font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;}
+.project-brief-editor textarea {min-height:90px;}
+@media(max-width:640px){#assistantQuestion,.assistant-form textarea,.project-task-composer textarea,.project-brief-editor input,.project-brief-editor textarea {font-size:16px;} .project-task-composer textarea{max-height:180px;}}
+.project-taskbench-main.is-task-pane .project-chat-workbench .project-task-composer textarea {min-height:128px;max-height:240px;resize:vertical;font-size:14px;line-height:1.6;}
+.project-task-composer .pw-chat-mode,.project-task-composer summary,.project-task-composer summary small,.project-task-composer .project-chat-options button {font-size:12px;}
+.prompt-material-list label {display:flex;gap:8px;align-items:start;margin:8px 0;font-size:12px;}
+.prompt-material-list input {width:auto;flex-shrink:0;}
+.project-prompt-header > span {color:var(--muted);}
+@media(max-width:640px){.project-taskbench-main.is-task-pane .project-chat-workbench .project-task-composer textarea{font-size:16px;min-height:90px;max-height:160px;}}
+.project-conversation > header h2 {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:3.2em;line-height:1.6;font-size:16px;}
+@media(max-width:640px){
+  .pw-shell #topicToolbar {height:30px;min-height:30px;padding:0 4px;}
+  .pw-shell #topicToolbar > span {display:block;font-size:12px;max-width:100%;}
+  .pw-shell .project-taskbench.is-chat-workbench,.pw-shell .project-taskbench.is-chat-workbench.pw-panel-open {height:calc(100dvh - 118px);gap:8px;}
+  .pw-shell .project-taskbench.is-chat-workbench > .project-taskbench-nav {position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto auto;gap:6px;padding:8px;max-height:none;overflow:visible;}
+  .pw-shell .project-taskbench-nav > a {grid-column:1;grid-row:1;padding:6px 8px;font-size:12px;}
+  .pw-shell .project-taskbench.is-chat-workbench #topicTabs {grid-column:1/-1;grid-row:2;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;}
+  .pw-shell #topicTabs button {flex-shrink:0;}
+  .pw-shell .pw-history-wrap {grid-column:2;grid-row:1;overflow:visible;align-self:center;}
+  .pw-shell .pw-history-wrap[open] .pw-history {position:absolute;left:0;right:0;top:42px;z-index:30;max-height:45dvh;overflow:auto;background:white;border:1px solid var(--line);padding:10px;box-shadow:0 8px 24px #2342;}
+  .pw-shell .pw-settings {grid-column:3;grid-row:1;margin:0;}
+  .pw-shell .project-chat-workbench .project-conversation {padding:8px;}
+  .pw-shell .project-chat-workbench .project-conversation > header {padding:4px 0 8px;gap:8px;flex-shrink:0;}
+  .pw-shell .project-conversation > header > div {flex:1;min-width:0;}
+  .pw-shell .project-conversation > header > button {white-space:nowrap;flex-shrink:0;width:auto;padding:7px;font-size:12px;}
+  .pw-shell .project-conversation > header .eyebrow {display:none;}
+  .pw-shell .project-chat-workbench .project-conversation > header h2 {font-size:14px;}
+  .pw-shell .project-task-composer {padding:8px;}
+  .project-prompt-header {gap:5px;margin-bottom:4px;}
+  .project-prompt-header button {padding:6px 8px;font-size:12px;}
+  .project-prompt-header span {font-size:11px;}
+  .pw-shell .project-task-composer footer {gap:6px;flex-wrap:wrap;}
+  .pw-shell .project-task-composer .project-chat-options {flex:1;min-width:0;flex-wrap:wrap;}
+  .pw-shell .project-task-composer footer > button {padding:8px;font-size:13px;}
+  .project-chat-workbench .project-task-thread article {max-width:100%;}
+}
+#countryCopilot .chat-bubble,#countryCopilot .answer-claim,#countryCopilot .assistant-answer {font-size:14px;line-height:1.6;}
+#countryCopilot #assistantCapabilityPicker summary,#countryCopilot #assistantCapabilityPicker summary small {font-size:12px;}
+@media(max-width:640px){
+  .pw-shell .project-taskbench.is-chat-workbench > .project-taskbench-nav {min-height:0;}
+  .country-chat-workspace #assistantQuestion {font-size:16px;}
+}
+
+/* Keep the conversation dominant; long titles must not squeeze the header action. */
+.pw-shell .project-chat-workbench .project-conversation > header {flex:0 0 auto;align-items:center;gap:12px;padding:0 0 8px;}
+.pw-shell .project-chat-workbench .project-conversation > header > div {flex:1;min-width:0;}
+.pw-shell .project-chat-workbench .project-conversation > header .eyebrow {display:none;}
+.pw-shell .project-chat-workbench .project-conversation > header h2 {display:block;font-size:16px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pw-shell .project-chat-workbench .project-conversation > header > button {flex:0 0 auto;width:auto;white-space:nowrap;writing-mode:horizontal-tb;padding:7px 10px;font-size:14px;line-height:1.5;}
+.pw-shell .project-chat-workbench .project-conversation > header span {font-size:12px;line-height:1.5;}
+.pw-shell .project-chat-workbench .project-task-composer {padding:8px 10px;}
+.pw-shell .project-taskbench-main.is-task-pane .project-chat-workbench .project-task-composer textarea {height:64px;min-height:64px;max-height:min(200px,28dvh);}
+.pw-shell .project-prompt-header {gap:8px;margin-bottom:4px;}
+.pw-shell .project-prompt-header button {padding:5px 8px;font-size:12px;line-height:1.5;}
+.pw-shell .project-task-composer footer {margin-top:4px;}
+.pw-shell .project-task-composer footer > button {padding:7px 12px;font-size:14px;line-height:1.5;}
+@media(max-width:640px){
+  .pw-shell .project-chat-workbench .project-conversation > header {gap:8px;}
+  .pw-shell .project-chat-workbench .project-conversation > header h2 {font-size:14px;}
+  .pw-shell .project-chat-workbench .project-conversation > header > button {font-size:12px;padding:6px 8px;}
+  .pw-shell .project-taskbench-main.is-task-pane .project-chat-workbench .project-task-composer textarea {height:58px;min-height:58px;max-height:24dvh;}
+}

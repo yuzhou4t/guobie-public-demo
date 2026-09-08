@@ -1,0 +1,32 @@
+/* Original text stays immutable. Reading, corrections and researcher notes are separate. */
+window.FieldRecord = (() => {
+  const e=v=>ReaderCore.escapeHtml(v??'');
+  const api=(id,path='',body)=>ReaderCore.apiFetch(`/reader/skill-workflows/materials/${id}${path}`,body===undefined?{}:{method:'POST',body:JSON.stringify(body)});
+  async function mount(root,{materials}) {
+    let selected=materials[0], material, mode='clean', drafts={}, noteDraft=null, paragraphNotes={};
+    async function load(){material=await api(selected.material_id,selected.research_case_id?`?research_case_id=${selected.research_case_id}`:'');render();}
+    async function act(button,fn){button.disabled=true;try{await fn();}catch(error){root.querySelector('[data-fr-status]').textContent=error.message;}finally{button.disabled=false;}}
+    function render(){
+      const versions=material.versions,raw=versions.find(v=>v.kind==='raw'),clean=[...versions].reverse().find(v=>v.kind==='clean')||raw;
+      if(!raw){root.textContent='尚未取得原文版本。';return;}
+      const context=material.context||{}, curated=context.reading_segments||[], segments=curated.length?curated:raw.units.filter(u=>u.text.trim()).map(u=>({locator:u.locator,label:u.locator,speaker:context.participant_alias||'',kind:'transcript'}));
+      const text=(version,locator)=>version.units.find(u=>u.locator===locator)?.text??'';
+      root.innerHTML=`<div class="field-record">${materials.length>1?`<label>选择一份材料<select data-fr-material>${materials.map(m=>`<option value="${m.material_id}" ${m.material_id===selected.material_id?'selected':''}>${e(m.title)}</option>`).join('')}</select></label>`:''}${materials.length>1?`<h3>${e(material.title)}</h3>`:''}<p class="fr-scope">${e(context.reading_note||context.sample_note||'按原文位置完整呈现本份材料。')}</p><nav class="field-tabs" aria-label="单份材料阅读">${[['clean','整理稿'],['compare','原文对照'],['notes','研究者笔记']].map(([key,label])=>`<button data-fr-mode="${key}" aria-pressed="${mode===key}">${label}</button>`).join('')}</nav><p role="status" data-fr-status></p><div data-fr-body></div><details class="fr-source"><summary>完整来源附件 · ${raw.units.length} 个原文单元</summary><p>包含附件原有的规范、表格和重复示例。原文版本 #${raw.id}；整理版本 #${clean.id}。</p>${raw.units.filter(u=>u.text.trim()).map(u=>`<article><small>${e(u.locator)}</small><p>${e(u.text)}</p></article>`).join('')}</details><details class="fr-context"><summary>材料语境</summary><p>采集时间：${e(material.captured_on||'未提供')} · 地点：${e(context.location||'未提供')}</p><p>${e(context.usage_scope)}</p><p>${e(context.sample_note)}</p></details></div>`;
+      const body=root.querySelector('[data-fr-body]');
+      if(mode==='notes'){
+        body.innerHTML=`<p>记录你的解释、疑问和待核实事项；这些笔记不属于受访者原话。</p>${segments.map((segment,index)=>`<label>${e(segment.label)} · 段落批注<small>${e(text(raw,segment.locator))}</small><textarea data-fr-paragraph-note="${index}" maxlength="2000" placeholder="对此段的解释、疑问或待核事项">${e(paragraphNotes[segment.locator]??context.reading_notes?.find(n=>n.locator===segment.locator)?.text??'')}</textarea></label>`).join('')}<details><summary>整份材料的研究者反思</summary><label>研究者笔记<textarea data-fr-notes maxlength="2000" placeholder="例如：P036 的查档条件是否适用于其他机构？需要补充访谈核实。">${e(noteDraft??context.researcher_reflection??'')}</textarea></label></details><button data-fr-save-notes>保存研究者笔记</button>`;
+        body.querySelectorAll('[data-fr-paragraph-note]').forEach(input=>input.oninput=()=>{paragraphNotes[segments[Number(input.dataset.frParagraphNote)].locator]=input.value;});
+        body.querySelector('[data-fr-notes]').oninput=event=>{noteDraft=event.target.value;};
+        body.querySelector('[data-fr-save-notes]').onclick=event=>act(event.target,async()=>{noteDraft=body.querySelector('[data-fr-notes]').value;body.querySelectorAll('[data-fr-paragraph-note]').forEach(input=>{paragraphNotes[segments[Number(input.dataset.frParagraphNote)].locator]=input.value;});const allNotes=new Map((context.reading_notes||[]).map(n=>[n.locator,n.text]));Object.entries(paragraphNotes).forEach(([locator,text])=>allNotes.set(locator,text));await api(material.id,'/metadata',{base_context:context,context:{...context,reading_notes:[...allNotes].filter(([,text])=>text.trim()).map(([locator,text])=>({locator,text})),researcher_reflection:noteDraft??context.researcher_reflection??''},sensitivity:material.sensitivity,privacy_level:material.privacy_level,captured_on:material.captured_on||null});noteDraft=null;paragraphNotes={};await load();root.querySelector('[data-fr-status]').textContent='研究者笔记已保存';});
+      }else{
+        body.innerHTML=segments.map((segment,index)=>`<article class="fr-paragraph"><header><strong>${e(segment.label)}</strong><small>${e(segment.speaker)}${segment.kind==='supplement'?' · 补充示例，原段号未提供':''}</small></header>${mode==='compare'?`<div class="fr-pair"><div><small>原文 · ${e(segment.locator)}</small><p>${e(text(raw,segment.locator))}</p></div><div><small>整理稿</small><p>${e(text(clean,segment.locator))}</p></div></div>`:`<p>${e(text(clean,segment.locator))}</p>`}<details><summary>校对这一段</summary><label>整理稿<textarea data-fr-edit="${index}">${e(drafts[segment.locator]??text(clean,segment.locator))}</textarea></label><button data-fr-save="${index}">保存整理修订</button></details></article>`).join('');
+        body.querySelectorAll('[data-fr-edit]').forEach(input=>input.oninput=()=>{drafts[segments[Number(input.dataset.frEdit)].locator]=input.value;});
+        body.querySelectorAll('[data-fr-save]').forEach(button=>button.onclick=event=>act(event.target,async()=>{const segment=segments[Number(button.dataset.frSave)],value=body.querySelector(`[data-fr-edit="${button.dataset.frSave}"]`).value;const units=clean.units.map(u=>({locator:u.locator,text:u.locator===segment.locator?value:u.text}));await api(material.id,'/versions',{base_version_id:versions.at(-1).id,source_version_id:clean.id,units,note:`研究者校对：${segment.label}`});delete drafts[segment.locator];await load();root.querySelector('[data-fr-status]').textContent='整理修订已保存，原文保持不变';}));
+      }
+      root.querySelectorAll('[data-fr-mode]').forEach(button=>button.onclick=()=>{mode=button.dataset.frMode;render();});
+      root.querySelector('[data-fr-material]')?.addEventListener('change',async event=>{selected=materials.find(m=>m.material_id===Number(event.target.value));drafts={};noteDraft=null;paragraphNotes={};await load();});
+    }
+    try{await load();}catch(error){root.textContent=error.message;}
+  }
+  return {mount};
+})();

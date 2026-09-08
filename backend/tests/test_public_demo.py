@@ -145,3 +145,29 @@ def test_sample_initialization_rolls_back_all_batches(monkeypatch, session_facto
         assert db.scalar(select(func.count()).select_from(Source)) == 0
         assert db.scalar(select(func.count()).select_from(Document)) == 0
     get_settings.cache_clear()
+
+
+def test_public_assistant_persists_user_api_run(public_app, session_factory, monkeypatch):
+    from app.models import AgentRun
+    from app.services import public_demo_runtime
+
+    monkeypatch.setattr(public_demo_runtime, "get_session_factory", lambda: session_factory)
+    with TestClient(public_app) as client:
+        client.get("/api/v1/reader/auth/status")
+        response = client.post(
+            "/api/v1/reader/assistant/ask",
+            json={
+                "context": {"space": "country", "country_iso3": "COD"},
+                "question": "核对刚果金资料来源",
+                "online_mode": "off",
+            },
+            headers={"Origin": "http://testserver", "x-csrf-token": client.cookies.get("guobie_csrf")},
+        )
+        assert response.status_code == 503, response.text
+        assert "请先在设置中连接" in response.json()["detail"]
+        with session_factory() as db:
+            run = db.scalar(select(AgentRun))
+            assert run is not None
+            assert run.runtime == "user_api"
+            assert run.status == "failed"
+            assert "连接" in run.error_message

@@ -1454,7 +1454,7 @@ class AgentRun(TimestampMixin, Base):
             name="workflow",
         ),
         CheckConstraint(
-            "runtime in ('evidence_only', 'codex_local', 'coze_test', 'openai_responses')",
+            "runtime in ('evidence_only', 'codex_local', 'coze_test', 'openai_responses', 'user_api')",
             name="runtime",
         ),
         CheckConstraint(

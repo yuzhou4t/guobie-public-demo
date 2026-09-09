@@ -139,7 +139,9 @@ def export_cod_structured_seed(session: Session, output_path: Path) -> dict[str,
     return payload["summary"]
 
 
-def import_cod_structured_seed(session: Session, seed_path: Path) -> dict[str, int]:
+def import_cod_structured_seed(
+    session: Session, seed_path: Path, *, snapshot_tag: str | None = None
+) -> dict[str, int]:
     payload = json.loads(seed_path.read_text(encoding="utf-8"))
     if payload.get("seed_version") != SEED_VERSION or payload.get("country_iso3") != "COD":
         raise ValueError("unsupported MVP seed package")
@@ -182,6 +184,8 @@ def import_cod_structured_seed(session: Session, seed_path: Path) -> dict[str, i
             session.flush()
             counters["datasets_created"] += 1
         marker = f"{SEED_VERSION}:{dataset.dataset_key}"
+        if snapshot_tag:
+            marker = f"{marker}:{snapshot_tag}"
         run = next(
             (
                 row

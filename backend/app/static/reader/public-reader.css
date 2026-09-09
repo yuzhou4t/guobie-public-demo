@@ -28,3 +28,5 @@ body.public-demo .public-demo-notice {
   body.public-demo #globalHub .global-overview-rail { overflow-y: auto; }
   body.public-demo #globalHub .map-selection { min-width: 0; left: 10px; }
 }
+
+.public-sample-note { margin: 0 0 8px; color: #64748b; font-size: 11px; line-height: 1.5; }

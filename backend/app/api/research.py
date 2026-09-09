@@ -2511,6 +2511,22 @@ def _country_policy_documents(
             )
         )
     )
+    if get_settings().public_demo_enabled:
+        rows.extend(
+            db.execute(
+                select(DocumentVersion, Document, Source)
+                .join(Document, Document.id == DocumentVersion.document_id)
+                .join(Source, Source.id == Document.source_id)
+                .join(DocumentEntity, DocumentEntity.document_version_id == DocumentVersion.id)
+                .where(
+                    DocumentVersion.version_no == Document.latest_version_no,
+                    DocumentEntity.entity_id == country_id,
+                    DocumentEntity.review_status == "confirmed",
+                    Document.document_type.in_(["policy", "law", "regulation", "policy_document"]),
+                )
+                .order_by(Document.published_at.desc())
+            )
+        )
     return list({row[0].id: row for row in rows}.values())
 
 
@@ -8402,6 +8418,13 @@ def list_event_reports(
             Document.id.desc(),
         )
     )
+    if get_settings().public_demo_enabled:
+        statement = statement.where(
+            or_(
+                Document.document_type.in_(["news", "news_article"]),
+                Source.source_type.in_(["news_media", "media"]),
+            )
+        )
     if country_iso3:
         _require_catalog_country(country_iso3)
         statement = statement.where(ResearchEntity.canonical_key == country_iso3)
@@ -8464,7 +8487,7 @@ def list_event_reports(
     seen_urls = {
         str(report.get("canonical_url") or report.get("discovery_url") or "").strip() for report in reports
     }
-    if event_type is None and source_id is None:
+    if not get_settings().public_demo_enabled and event_type is None and source_id is None:
         reports.extend(
             report
             for report in _drc_verified_harvest_reports(

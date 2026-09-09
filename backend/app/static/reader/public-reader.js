@@ -56,8 +56,12 @@
     try {connection = await api('model-connection');} catch(error) {console.warn('模型连接状态暂不可用');}
     draw();
     const banner = document.createElement('div'); banner.className='public-demo-notice';
-    banner.innerHTML='公开体验 · 使用筛选后的现有数据 <a href="#/settings">连接自己的 API</a>';
+    banner.innerHTML='公开体验 · 刚果（金）精选历史样本 <a href="#/settings">连接自己的 API</a>';
     document.querySelector('.workspace-canvas')?.prepend(banner);
+    const researchNote = document.createElement('p');
+    researchNote.className = 'public-sample-note';
+    researchNote.textContent = '图表统计所选论文样本，支持按年份与研究领域查看；不代表全部研究或全球热度，当年数据尚不完整。';
+    document.querySelector('#country-research > .section-heading')?.after(researchNote);
     return result;
   };
 })();

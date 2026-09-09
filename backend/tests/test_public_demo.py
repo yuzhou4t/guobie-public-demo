@@ -8,6 +8,7 @@ from sqlalchemy import func, select
 from app.core.config import get_settings
 from app.db.session import get_db
 from app.models import Document, ResearchCase
+from app.services.public_demo_samples import sample_manifest
 
 
 @pytest.fixture
@@ -54,7 +55,9 @@ def test_original_reader_and_isolation(public_app, session_factory):
             assert len(cases) == 2
             assert cases[0].owner_id != cases[1].owner_id
             aid, bid = cases[0].id, cases[1].id
-            assert db.scalar(select(func.count()).select_from(Document)) == 20
+            assert db.scalar(select(func.count()).select_from(Document)) == len(
+                sample_manifest()["documents"]
+            )
         assert a.get(f"/api/v1/reader/research-cases/{bid}").status_code in {403, 404}
         assert b.get(f"/api/v1/reader/research-cases/{aid}").status_code in {403, 404}
         assert a.delete("/api/v1/reader/demo-session").status_code == 403
@@ -64,7 +67,9 @@ def test_original_reader_and_isolation(public_app, session_factory):
         with session_factory() as db:
             assert db.get(ResearchCase, bid)
             assert not db.get(ResearchCase, aid)
-            assert db.scalar(select(func.count()).select_from(Document)) == 20
+            assert db.scalar(select(func.count()).select_from(Document)) == len(
+                sample_manifest()["documents"]
+            )
 
 
 def test_model_connection_and_boundary(public_app, monkeypatch):
@@ -171,3 +176,80 @@ def test_public_assistant_persists_user_api_run(public_app, session_factory, mon
             assert run.runtime == "user_api"
             assert run.status == "failed"
             assert "连接" in run.error_message
+
+
+def test_sample_upgrade_preserves_guests_history_and_is_idempotent(public_app, session_factory, monkeypatch):
+    import copy
+
+    from app.cli import init_public_demo
+    from app.models import DocumentVersion, EventMention, ResearchEvent, StructuredSnapshot
+    from app.models.public_demo import PublicDemoInstallation
+
+    original = init_public_demo.sample_manifest()
+    expanded = copy.deepcopy(original)
+    expanded["previous_versions"] = [original["version"]]
+    expanded["version"] = original["version"] + "-test-extension"
+    expanded["documents"][0]["source_metadata"] = {"published_at_provenance": {"precision": "year"}}
+    added = copy.deepcopy(expanded["documents"][0])
+    added.update(
+        title="Test-only public metadata", canonical_url="https://example.org/test-only-sample", doi=None
+    )
+    expanded["documents"].append(added)
+    expanded["events"] = [
+        {
+            "event_key": "test-only-event",
+            "series_key": "test-only-series",
+            "title": "Test event",
+            "event_type": "other",
+            "date_precision": "year",
+            "start_at": "2024-01-01T00:00:00+00:00",
+            "end_at": None,
+            "summary": "Test summary",
+            "mentions": [{"document_url": added["canonical_url"]}],
+        }
+    ]
+    with TestClient(public_app) as client:
+        client.get("/api/v1/reader/auth/status")
+        case_id = client.get("/api/v1/reader/research-cases").json()[0]["id"]
+        with session_factory() as db:
+            old_version_id = db.scalar(select(DocumentVersion.id).order_by(DocumentVersion.id))
+            old_snapshots = set(db.scalars(select(StructuredSnapshot.id)))
+            old_count = db.scalar(select(func.count()).select_from(Document))
+        monkeypatch.setattr(init_public_demo, "sample_manifest", lambda: expanded)
+        with session_factory() as db:
+            init_public_demo.initialize(db)
+        with session_factory() as db:
+            assert db.get(ResearchCase, case_id)
+            assert db.get(DocumentVersion, old_version_id)
+            assert db.get(PublicDemoInstallation, 1).sample_version == expanded["version"]
+            assert db.scalar(select(func.count()).select_from(Document)) == old_count + 1
+            assert (
+                db.scalar(select(func.count()).select_from(ResearchEvent))
+                == len(original.get("events", [])) + 1
+            )
+            assert (
+                db.scalar(select(func.count()).select_from(EventMention))
+                == sum(len(e["mentions"]) for e in original.get("events", [])) + 1
+            )
+            assert old_snapshots < set(db.scalars(select(StructuredSnapshot.id)))
+            version_count = db.scalar(select(func.count()).select_from(DocumentVersion))
+            init_public_demo.initialize(db)
+            assert db.scalar(select(func.count()).select_from(DocumentVersion)) == version_count
+        assert client.get(f"/api/v1/reader/research-cases/{case_id}").status_code == 200
+
+
+def test_public_country_sample_populates_sections_and_separates_news(public_app):
+    with TestClient(public_app) as client:
+        country = client.get("/api/v1/reader/countries/COD").json()
+        assert len(country["events"]) == 8
+        assert len(country["datasets"]) == 6
+        policies = [item for item in country["policy_items"] if item["document_type"] == "policy_document"]
+        assert len(policies) == 3
+        news = client.get("/api/v1/reader/event-reports?country_iso3=COD&limit=100").json()
+        assert len(news) == 49
+        assert all(item["source_type"] == "news_media" for item in news)
+        trends = client.get("/api/v1/reader/countries/COD/research-trends?years=5").json()
+        domains = trends["frontier"]["taxonomy"]["domains"]
+        assert len(domains) == 5
+        assert all(item["count"] > 0 for item in domains)
+        assert all(sum(year["count"] > 0 for year in item["years"]) >= 3 for item in domains)

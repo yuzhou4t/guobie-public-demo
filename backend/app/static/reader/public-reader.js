@@ -52,7 +52,7 @@
     document.getElementById('readerAccountBar')?.remove();
     const info = [...document.querySelectorAll('.reader-settings .settings-section p')].find(p => p.textContent.includes('本机单用户'));
     if (info) info.textContent = '公开体验环境：沿用国别智枢原有页面和研究流程，数据为筛选后的现有样本。每位体验者的项目和 API 连接独立。';
-    const link = document.createElement('link'); link.rel='stylesheet'; link.href='./public-reader.css'; document.head.append(link);
+    const link = document.createElement('link'); link.rel='stylesheet'; link.href='./public-reader.css?v=20260909-evidence-v3'; document.head.append(link);
     try {connection = await api('model-connection');} catch(error) {console.warn('模型连接状态暂不可用');}
     draw();
     const banner = document.createElement('div'); banner.className='public-demo-notice';

@@ -246,10 +246,39 @@ def test_public_country_sample_populates_sections_and_separates_news(public_app)
         policies = [item for item in country["policy_items"] if item["document_type"] == "policy_document"]
         assert len(policies) == 3
         news = client.get("/api/v1/reader/event-reports?country_iso3=COD&limit=100").json()
-        assert len(news) == 49
+        assert len(news) == 51
         assert all(item["source_type"] == "news_media" for item in news)
         trends = client.get("/api/v1/reader/countries/COD/research-trends?years=5").json()
         domains = trends["frontier"]["taxonomy"]["domains"]
         assert len(domains) == 5
         assert all(item["count"] > 0 for item in domains)
         assert all(sum(year["count"] > 0 for year in item["years"]) >= 3 for item in domains)
+
+
+def test_public_sample_claims_entities_and_topics_have_provenance(public_app, session_factory):
+    from app.models import DocumentEntity, DocumentTopic, EventEntity, EventRelation, EvidenceClaim, Topic
+
+    with TestClient(public_app) as client:
+        country = client.get("/api/v1/reader/countries/COD").json()
+        assert country["conflict_summary"]
+        assert all(len(group["values"]) > 1 for group in country["conflict_summary"])
+        assert all(group["comparison_label"] for group in country["conflict_summary"])
+        assert all("不必然" in group["method_note"] for group in country["conflict_summary"])
+        event_id = country["conflict_summary"][0]["event_id"]
+        event = client.get(f"/api/v1/reader/events/{event_id}").json()
+        evidence = client.get(f"/api/v1/reader/events/{event_id}/evidence").json()
+        assert evidence["comparison_groups"]
+        assert event["entities"]
+        with session_factory() as db:
+            assert db.scalar(select(func.count()).select_from(EvidenceClaim)) == 28
+            assert db.scalar(select(func.count()).select_from(EventEntity)) == 54
+            assert db.scalar(select(func.count()).select_from(EventRelation)) == 1
+            assert db.scalar(select(func.count()).select_from(Topic)) == 17
+            assert db.scalar(select(func.count()).select_from(DocumentTopic)) == 73
+            extra_links = db.scalar(
+                select(func.count()).select_from(DocumentEntity).where(DocumentEntity.role != "about")
+            )
+            assert extra_links == 129
+            for claim in db.scalars(select(EvidenceClaim)):
+                assert claim.evidence_locator["canonical_url"].startswith("https://")
+                assert "reviewed_by" not in claim.evidence_locator

@@ -1,7 +1,8 @@
 {
-  "version": "existing-reader-20260909-v2",
+  "version": "existing-reader-20260909-v3",
   "previous_versions": [
-    "existing-reader-20260908-v1"
+    "existing-reader-20260908-v1",
+    "existing-reader-20260909-v2"
   ],
   "project": {
     "title": "刚果（金）关键矿产与武装冲突",
@@ -15971,6 +15972,35 @@
       "sample_channel": "event_dynamics"
     },
     {
+      "title": "Rubaya : un glissement de terrain frappe le site minier de Gasasa, plus de 200 victimes redoutées",
+      "canonical_url": "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de",
+      "doi": null,
+      "document_type": "article",
+      "language": "fr",
+      "published_at": "2026-03-04T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Radio Okapi：Rubaya 专题条目",
+      "source_type": "news_media",
+      "source_url": "https://www.radiookapi.net/mot-cle/rubaya",
+      "relation_review_status": "confirmed",
+      "source_metadata": {
+        "topics": [
+          "Rubaya",
+          "M23",
+          "矿难",
+          "矿产走私"
+        ],
+        "verification_status": "metadata_verified",
+        "published_at_provenance": {
+          "precision": "day",
+          "method": "source_metadata"
+        }
+      },
+      "observed_at": "2026-09-08T06:33:28.186180+08:00",
+      "recorded_at": "2026-09-05T06:54:20.357386+08:00",
+      "sample_channel": "event_dynamics"
+    },
+    {
       "title": "RDC-Masisi: plusieurs dizaines de morts suite à un nouvel accident meurtrier dans la mine de coltan de Rubaya",
       "canonical_url": "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine",
       "doi": null,
@@ -16024,6 +16054,35 @@
       },
       "observed_at": "2026-08-30T08:53:01.489693+08:00",
       "recorded_at": "2026-08-30T08:53:01.489693+08:00",
+      "sample_channel": "event_dynamics"
+    },
+    {
+      "title": "Des multinationales liées au coltan de contrebande de Rubaya sous l’AFC-M23 (Global Witness)",
+      "canonical_url": "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+      "doi": null,
+      "document_type": "article",
+      "language": "fr",
+      "published_at": "2026-06-12T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Radio Okapi：Rubaya 专题条目",
+      "source_type": "news_media",
+      "source_url": "https://www.radiookapi.net/mot-cle/rubaya",
+      "relation_review_status": "confirmed",
+      "source_metadata": {
+        "topics": [
+          "Rubaya",
+          "M23",
+          "矿难",
+          "矿产走私"
+        ],
+        "verification_status": "metadata_verified",
+        "published_at_provenance": {
+          "precision": "day",
+          "method": "source_metadata"
+        }
+      },
+      "observed_at": "2026-09-08T06:33:28.186180+08:00",
+      "recorded_at": "2026-09-05T06:54:20.357386+08:00",
       "sample_channel": "event_dynamics"
     },
     {
@@ -26566,6 +26625,47 @@
       "sample_channel": "frontier_research"
     },
     {
+      "title": "Uranium in cobalt-hydroxide exports from the Democratic Republic of the Congo",
+      "canonical_url": "https://www.nature.com/articles/s41467-026-75910-z",
+      "doi": "10.1038/s41467-026-75910-z",
+      "document_type": "journal_article",
+      "language": "en",
+      "published_at": "2026-07-30T08:00:00+08:00",
+      "issue_date_text": null,
+      "source_name": "Nature Communications：钴氢氧化物中的铀",
+      "source_type": "academic_journal",
+      "source_url": "https://www.nature.com/articles/s41467-026-75910-z.pdf",
+      "relation_review_status": "confirmed",
+      "source_metadata": {
+        "topics": [
+          "矿产",
+          "环境",
+          "健康"
+        ],
+        "authors": [
+          "Ryan A. Manzuk",
+          "Sébastien Philippe"
+        ],
+        "keywords": [],
+        "publisher": "Springer Science and Business Media LLC",
+        "journal_title": "Nature Communications",
+        "published_print": [],
+        "research_object": "刚果（金）钴矿开采的铀释放与环境健康影响",
+        "published_online": [
+          2026,
+          7,
+          30
+        ],
+        "verification_status": "出版元数据已核对",
+        "published_at_provenance": {
+          "precision": "day"
+        }
+      },
+      "observed_at": "2026-08-30T21:36:38.214609+08:00",
+      "recorded_at": "2026-09-05T07:21:37.893628+08:00",
+      "sample_channel": "frontier_research"
+    },
+    {
       "title": "APPLICABILITE DE LA CONVENTION N°102 DE L’OIT EN REPUBLIQUE DEMOCRATIQUE DU CONGO : ESQUISSE D’EVALUATION ET PERSPECTIVES",
       "canonical_url": "https://revue-is.org/wp-content/uploads/2026/07/KUMBEKA-01-TIRE-A-PART-024.pdf",
       "doi": "10.62912/meto9848",
@@ -28255,7 +28355,28 @@
           "source_reported_start_at": "2024-04-30T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "31de933b87184fc4b4ea01f530092035a5e3fdc701b7187f54b9ae701c99d373",
+              "claim_kind": "factual",
+              "claimant_name": "United Nations Group of Experts",
+              "subject_text": "Rubaya 矿产供应链",
+              "predicate": "控制与跨境流向",
+              "value_text": "AFC/M23 控制交易中心和运输路线，矿产被运往卢旺达并与当地产出混合",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": null,
+              "comparison_key": "rubaya-supply-chain-control",
+              "position_summary": "联合国专家组的调查结论",
+              "evidence_locator": {
+                "pages": "15-17",
+                "paragraphs": "57-66",
+                "locator_type": "paragraphs",
+                "canonical_url": "https://www.undocs.org/s/2024/969"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
@@ -28263,7 +28384,57 @@
           "source_reported_start_at": "2024-04-30T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "0a7642ae224245310b9eafcf65eafc31b2fd28a34500a5d404cf4f336576c546",
+              "claim_kind": "position",
+              "claimant_name": "Global Witness",
+              "subject_text": "Rubaya 矿产供应链",
+              "predicate": "冲突矿产风险",
+              "value_text": "调查认为多家全球品牌的供应链可能包含来自 Rubaya 的冲突钶钽铁矿",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": null,
+              "comparison_key": "rubaya-supply-chain-control",
+              "position_summary": "研究机构调查结论，不作为官方裁决",
+              "evidence_locator": {
+                "section": "Who buys Rwanda's smuggled coltan",
+                "locator_type": "web_section",
+                "published_at": "2026-06-10",
+                "canonical_url": "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/"
+              }
+            }
+          ]
+        },
+        {
+          "document_url": "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+          "mention_summary": "Radio Okapi 转述 Global Witness 的调查并明确区分了报道来源与调查主体。",
+          "source_reported_start_at": "2024-04-30T08:00:00+08:00",
+          "source_reported_end_at": null,
+          "source_reported_place": "Rubaya",
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "dad5187d9ea4e7933c4ba247afd1d18dfb60f82f7152e1e34a7951ed17cc028f",
+              "claim_kind": "numeric",
+              "claimant_name": "Radio Okapi citing Global Witness",
+              "subject_text": "卢旺达钶钽铁矿出口商",
+              "predicate": "被指使用冲突地区来源",
+              "value_text": "至少 5 家主要出口商被指从冲突地区采购",
+              "numeric_value": "5.000000000000000000",
+              "unit": "家",
+              "time_scope": "2026-06",
+              "comparison_key": "rubaya-rwandan-exporters-2026",
+              "position_summary": "媒体对调查报告的转述",
+              "evidence_locator": {
+                "section": "Des exportateurs rwandais se ravitaillant au Kivu",
+                "locator_type": "web_section",
+                "published_at": "2026-06-12",
+                "canonical_url": "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
@@ -28271,9 +28442,53 @@
           "source_reported_start_at": "2024-04-30T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "c35f192c58dfbe1b06ddc3f21c583893993ba45548e0a12ae681265c0c0ee0df",
+              "claim_kind": "factual",
+              "claimant_name": "United Nations Secretary-General",
+              "subject_text": "Rubaya 安全环境",
+              "predicate": "武装存在与监测限制",
+              "value_text": "AFC/M23 在 Masisi 扩大存在，Rubaya 发生针对该组织领导层的无人机打击",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": null,
+              "comparison_key": "rubaya-security-context-2026",
+              "position_summary": "联合国对安全环境的独立报告",
+              "evidence_locator": {
+                "page": "4",
+                "paragraph": "15",
+                "locator_type": "paragraph",
+                "canonical_url": "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "entities": [
+        {
+          "entity_ref": "place:rubaya",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:afc-m23",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:钶钽铁矿",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "commodity:钽",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "organization:fardc",
+          "role": "actor"
+        }
+      ],
+      "primary_place_ref": "place:rubaya"
     },
     {
       "event_key": "drc-mines-rubaya-communique-2024-05-08",
@@ -28292,7 +28507,29 @@
           "source_reported_start_at": "2024-05-08T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "7ac0744e3ea3bea38f8a178d551db24acc68247638f35caa4b67fb06a807e520",
+              "claim_kind": "position",
+              "claimant_name": "DRC Ministry of Mines as documented by UN Group of Experts",
+              "subject_text": "Rubaya 矿产流向",
+              "predicate": "非法征税与未标记运输",
+              "value_text": "通报指称 M23 对矿产征收非法税费并将未标记矿产运往卢旺达",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": null,
+              "comparison_key": "drc-rubaya-mines-policy-2024",
+              "position_summary": "政府通报的主张由联合国专家组报告记录，目前库内未保存通报原件",
+              "evidence_locator": {
+                "page": "110",
+                "annex": "28",
+                "paragraph": "56",
+                "locator_type": "annex_paragraph",
+                "canonical_url": "https://www.undocs.org/s/2024/969"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
@@ -28300,7 +28537,28 @@
           "source_reported_start_at": "2024-05-08T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya;Mushake",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "64b40d0b3c609f14cb540204ca0be63bbf4acf95aff078025f7571ac507d7ef6",
+              "claim_kind": "numeric",
+              "claimant_name": "DRC Ministry of Mines via Radio Okapi",
+              "subject_text": "Rubaya 矿产交易",
+              "predicate": "非法征税与矿物流向",
+              "value_text": "钶钽铁矿每吨 3000 美元、锡矿每吨 2000 美元的税费由来源通报指称",
+              "numeric_value": "3000.000000000000000000",
+              "unit": "USD_per_tonne",
+              "time_scope": "2024-05",
+              "comparison_key": "drc-rubaya-illegal-tax-2024",
+              "position_summary": "刚方官方媒体转述矿业部口径",
+              "evidence_locator": {
+                "section": "article body",
+                "locator_type": "web_section",
+                "published_at": "2024-05-15",
+                "canonical_url": "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de",
@@ -28308,7 +28566,28 @@
           "source_reported_start_at": "2024-05-08T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya;Mushake",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "fa95d2f89a3ef706eba5315ce158d01df37f4cf58b6576e4a87056340b11fe7d",
+              "claim_kind": "numeric",
+              "claimant_name": "DRC Ministry of Mines via DeskEco",
+              "subject_text": "Rubaya 矿产交易",
+              "predicate": "非法征税与矿物流向",
+              "value_text": "钶钽铁矿每吨 3000 美元、锡矿每吨 2000 美元的税费由来源通报指称",
+              "numeric_value": "3000.000000000000000000",
+              "unit": "USD_per_tonne",
+              "time_scope": "2024-05",
+              "comparison_key": "drc-rubaya-illegal-tax-2024",
+              "position_summary": "本地财经媒体转述矿业部口径",
+              "evidence_locator": {
+                "section": "communique dated 8 May 2024",
+                "locator_type": "web_section",
+                "published_at": "2024-05-14",
+                "canonical_url": "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/",
@@ -28316,9 +28595,65 @@
           "source_reported_start_at": "2024-05-08T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya;Masisi",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "3689d875b9f0f47bc39e208543a79e4129d570a00f58931b28a4e83c8dce19cd",
+              "claim_kind": "factual",
+              "claimant_name": "ITSCI",
+              "subject_text": "Masisi 追溯活动",
+              "predicate": "暂停与撤离",
+              "value_text": "M23 控制 Rubaya 后 ITSCI 立即停止当地追溯活动并撤离团队",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": null,
+              "comparison_key": "rubaya-traceability-status-2024",
+              "position_summary": "行业追溯机制对自身运作状态的一手声明",
+              "evidence_locator": {
+                "section": "statement body",
+                "locator_type": "web_section",
+                "published_at": "2024-05-08",
+                "canonical_url": "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "entities": [
+        {
+          "entity_ref": "place:rubaya",
+          "role": "location"
+        },
+        {
+          "entity_ref": "commodity:钶钽铁矿",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "organization:刚果民主共和国矿业部",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "armed_group:m23",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:锡矿",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "place:rubaya-mushake",
+          "role": "location"
+        },
+        {
+          "entity_ref": "place:rubaya-masisi",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:itsci",
+          "role": "actor"
+        }
+      ],
+      "primary_place_ref": "place:rubaya"
     },
     {
       "event_key": "drc-cobalt-export-quota-conditions-2025-10",
@@ -28337,7 +28672,28 @@
           "source_reported_start_at": "2025-10-12T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "COD",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "f4c801f6c041738a11e0ba70a19c761f8b66667ce91679e317134261f10cae7e",
+              "claim_kind": "factual",
+              "claimant_name": "ARECOMS via ACP",
+              "subject_text": "钴出口配额",
+              "predicate": "申领与执行条件",
+              "value_text": "ARECOMS 公布配额获取和执行条件，但当前证据仅为官方媒体报道",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": null,
+              "comparison_key": "drc-cobalt-quota-policy-2025",
+              "position_summary": "单源政策事件，等待 ARECOMS 第 004/005 号决定原件",
+              "evidence_locator": {
+                "section": "article body",
+                "locator_type": "web_section",
+                "published_at": "2025-10-12",
+                "canonical_url": "https://acp.cd/economie/rdc-fixation-des-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt/"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://mines.cd/rdc-le-gouvernement-etablit-un-nouveau-cadre-pour-lexportation-du-cobalt/",
@@ -28345,7 +28701,28 @@
           "source_reported_start_at": "2025-10-12T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "COD",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "93df000a2782381120f61ba096e8a83bb94a068123cf089c57744a75ba4d5509",
+              "claim_kind": "numeric",
+              "claimant_name": "ARECOMS via MINES.CD",
+              "subject_text": "钴出口配额",
+              "predicate": "基础配额与准入条件",
+              "value_text": "2025 年 10 月基础配额为 3625 吨，11 月和 12 月各为 7250 吨；部分企业被排除于基础配额",
+              "numeric_value": "3625.000000000000000000",
+              "unit": "吨",
+              "time_scope": "2025-Q4",
+              "comparison_key": "drc-cobalt-quota-policy-2025",
+              "position_summary": "行业媒体对 ARECOMS 通报的转述",
+              "evidence_locator": {
+                "section": "decision 005 and base quota",
+                "locator_type": "web_section",
+                "published_at": "2025-10-13",
+                "canonical_url": "https://mines.cd/rdc-le-gouvernement-etablit-un-nouveau-cadre-pour-lexportation-du-cobalt/"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://deskeco.com/index.php/2025/10/13/la-rdc-fixe-les-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt",
@@ -28353,7 +28730,28 @@
           "source_reported_start_at": "2025-10-12T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "COD",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "0e611d2b0ff702c119d5e126014023dfc5d088d39224c14fae3840aa96dde790",
+              "claim_kind": "numeric",
+              "claimant_name": "ARECOMS via DeskEco",
+              "subject_text": "钴出口配额",
+              "predicate": "基础配额与准入条件",
+              "value_text": "2025 年 10 月基础配额为 3625 吨，11 月和 12 月各为 7250 吨",
+              "numeric_value": "3625.000000000000000000",
+              "unit": "吨",
+              "time_scope": "2025-Q4",
+              "comparison_key": "drc-cobalt-quota-policy-2025",
+              "position_summary": "本地财经媒体对 ARECOMS 通报的转述",
+              "evidence_locator": {
+                "section": "article body and quoted communique",
+                "locator_type": "web_section",
+                "published_at": "2025-10-13",
+                "canonical_url": "https://deskeco.com/index.php/2025/10/13/la-rdc-fixe-les-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation",
@@ -28361,9 +28759,53 @@
           "source_reported_start_at": "2025-10-12T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "COD",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "b895126d3cde09db7422d68b8e60e354bd77dcb747dc8eedd04c7f24cd126032",
+              "claim_kind": "factual",
+              "claimant_name": "DRC Ministry of Mines and Ministry of Finance",
+              "subject_text": "钴出口程序",
+              "predicate": "规定配额执行与权利金缴付流程",
+              "value_text": "联合通函将配额核验、取样、称重封装、出口文件和矿业权利金缴付纳入同一执行程序",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2025-Q4",
+              "comparison_key": "drc-cobalt-quota-policy-2025",
+              "position_summary": "两部委签章的官方执行程序原件；不替代仍待归档的 ARECOMS 第004号决定签章原件",
+              "evidence_locator": {
+                "pages": "1-2,6",
+                "locator_type": "pages",
+                "published_at": "2025-11-26",
+                "canonical_url": "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "entities": [
+        {
+          "entity_ref": "organization:刚果民主共和国矿业部",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "place:cod",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:arecoms",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:钴",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "organization:刚果民主共和国财政部",
+          "role": "actor"
+        }
+      ],
+      "primary_place_ref": "place:cod"
     },
     {
       "event_key": "rubaya-gasasa-landslide-2026-03-03",
@@ -28377,12 +28819,61 @@
       "review_status": "reviewed",
       "mentions": [
         {
+          "document_url": "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de",
+          "mention_summary": "Radio Okapi 在事发次日报道超过 200 名受害者可能涉及，标题与正文使用了不确定措辞。",
+          "source_reported_start_at": "2026-03-03T08:00:00+08:00",
+          "source_reported_end_at": null,
+          "source_reported_place": "Rubaya Gasasa",
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "7dc072e1a4f7daa6157447efcc0c597d49ef070faaec59b1d63e272ad0064b7e",
+              "claim_kind": "numeric",
+              "claimant_name": "Radio Okapi",
+              "subject_text": "Rubaya Gasasa 滑坡",
+              "predicate": "受害者规模",
+              "value_text": "超过 200 名受害者可能涉及（来源使用 redoutées）",
+              "numeric_value": "200.000000000000000000",
+              "unit": "人",
+              "time_scope": "2026-03-03",
+              "comparison_key": "rubaya-gasasa-victim-toll-2026-03-03",
+              "position_summary": "初始媒体报道的不确定口径",
+              "evidence_locator": {
+                "locator_type": "headline_and_lead",
+                "published_at": "2026-03-04",
+                "canonical_url": "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de"
+              }
+            }
+          ]
+        },
+        {
           "document_url": "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/",
           "mention_summary": "刚果通讯社转述矿业部通报，称死亡人数超过 200 人，其中约 70 名为儿童。",
           "source_reported_start_at": "2026-03-03T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya Gasasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "237589f0c7493e297d8d6e6d595da604ec8a83d0a61b172f97bb41905b4bbb53",
+              "claim_kind": "numeric",
+              "claimant_name": "DRC Ministry of Mines via ACP",
+              "subject_text": "Rubaya Gasasa 滑坡",
+              "predicate": "死亡人数",
+              "value_text": "矿业部通报称超过 200 人死亡，其中约 70 名儿童",
+              "numeric_value": "200.000000000000000000",
+              "unit": "人",
+              "time_scope": "2026-03-03",
+              "comparison_key": "rubaya-gasasa-victim-toll-2026-03-03",
+              "position_summary": "刚方官方媒体转述矿业部口径",
+              "evidence_locator": {
+                "section": "article lead and ministry statement",
+                "locator_type": "web_section",
+                "published_at": "2026-03-05",
+                "canonical_url": "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine",
@@ -28390,9 +28881,49 @@
           "source_reported_start_at": "2026-03-03T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya Gasasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "aaadbbd9b8e72d0135143805cb030d59a1c13c586dc5a18e6d04c7a32d9ef178",
+              "claim_kind": "numeric",
+              "claimant_name": "ACTUALITE.CD sources",
+              "subject_text": "Rubaya Gasasa 滑坡",
+              "predicate": "死亡人数",
+              "value_text": "超过 100 人死亡",
+              "numeric_value": "100.000000000000000000",
+              "unit": "人",
+              "time_scope": "2026-03-03",
+              "comparison_key": "rubaya-gasasa-victim-toll-2026-03-03",
+              "position_summary": "本地媒体独立数字口径",
+              "evidence_locator": {
+                "section": "article lead",
+                "locator_type": "web_section",
+                "published_at": "2026-03-04",
+                "canonical_url": "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "entities": [
+        {
+          "entity_ref": "organization:afc-m23",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:钶钽铁矿",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "place:rubaya-gasasa",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:刚果民主共和国矿业部",
+          "role": "actor"
+        }
+      ],
+      "primary_place_ref": "place:rubaya-gasasa"
     },
     {
       "event_key": "rubaya-coltan-intensification-un-report-2026-06",
@@ -28411,7 +28942,28 @@
           "source_reported_start_at": "2026-06-11T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya;Mubambiro;Kigali",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "38d9d52aead122048c5a3904939a4590645fdbefdab455717c2e0fe8363a53de",
+              "claim_kind": "numeric",
+              "claimant_name": "United Nations Group of Experts",
+              "subject_text": "Rubaya 受控矿产供应链",
+              "predicate": "开采、征税与出口流向",
+              "value_text": "报告记录钶钽铁矿每公斤 4 美元、锡矿每公斤 2 美元的税费；Rani Mining 出口超过 84 吨，Kanzamin 2025 年至少出口 70 吨钶钽铁矿",
+              "numeric_value": "84.000000000000000000",
+              "unit": "吨",
+              "time_scope": "2025-2026",
+              "comparison_key": "rubaya-coltan-exports-2026-report",
+              "position_summary": "联合国专家组的正式调查结论",
+              "evidence_locator": {
+                "pages": "43-44",
+                "paragraphs": "213-221",
+                "locator_type": "paragraphs",
+                "canonical_url": "https://www.undocs.org/s/2026/466"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
@@ -28419,7 +28971,28 @@
           "source_reported_start_at": "2026-06-11T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya;Kigali",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "0edce25e10e3c7fdb7be33c09ba52f43a63a0164ea302227201be9f57c76fcbe",
+              "claim_kind": "numeric",
+              "claimant_name": "DeskEco citing United Nations Group of Experts",
+              "subject_text": "Rubaya 受控矿产供应链",
+              "predicate": "出口商货运数值",
+              "value_text": "Rani Mining 的海关文件显示其出口超过 84 吨来自 Rubaya 的钶钽铁矿",
+              "numeric_value": "84.000000000000000000",
+              "unit": "吨",
+              "time_scope": "2025-2026",
+              "comparison_key": "rubaya-coltan-exports-2026-report",
+              "position_summary": "本地财经媒体对联合国报告的转述",
+              "evidence_locator": {
+                "section": "production and exporters",
+                "locator_type": "web_section",
+                "published_at": "2026-07-01",
+                "canonical_url": "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
@@ -28427,9 +29000,61 @@
           "source_reported_start_at": "2026-06-11T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Rubaya;Mubambiro;Kigali",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "0febac71df9ec989b1099dc76d36d50b595a912b03fc411ebaa3a4298b5005a4",
+              "claim_kind": "numeric",
+              "claimant_name": "ACTUALITE.CD citing United Nations Group of Experts",
+              "subject_text": "Rubaya 受控矿产供应链",
+              "predicate": "出口商货运数值",
+              "value_text": "Kanzamin Limited 的海关文件显示其 2025 年至少出口 70 吨钶钽铁矿",
+              "numeric_value": "70.000000000000000000",
+              "unit": "吨",
+              "time_scope": "2025",
+              "comparison_key": "rubaya-coltan-exports-2026-report",
+              "position_summary": "本地媒体对联合国报告的转述",
+              "evidence_locator": {
+                "section": "article body",
+                "locator_type": "web_section",
+                "published_at": "2026-07-02",
+                "canonical_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "entities": [
+        {
+          "entity_ref": "organization:afc-m23",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:钶钽铁矿",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "commodity:锡矿",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "place:rubaya-mubambiro-kigali",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:rani-mining-ltd",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:kanzamin-limited",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "place:rubaya-kigali",
+          "role": "location"
+        }
+      ],
+      "primary_place_ref": "place:rubaya-mubambiro-kigali"
     },
     {
       "event_key": "drc-copper-cobalt-concentrate-export-rule-2026-08",
@@ -28448,7 +29073,28 @@
           "source_reported_start_at": "2026-08-06T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Kinshasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "29bd80cc30e442ce44bf8135cdd5dc59b77064d5eb2b178f6f5c07e76ea26930",
+              "claim_kind": "factual",
+              "claimant_name": "ACTUALITE.CD citing an interministerial order",
+              "subject_text": "铜钴精矿出口规则",
+              "predicate": "报道法令的出口限制与例外",
+              "value_text": "报道称新规限制铜钴精矿出口并允许矿业部长在技术经济条件下批准一年期特例",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-06-29",
+              "comparison_key": "drc-copper-cobalt-export-rule-2026",
+              "position_summary": "本地媒体查阅法令后的归属式报道；签署原件仍是证据缺口",
+              "evidence_locator": {
+                "section": "arrêté et dérogation",
+                "locator_type": "web_section",
+                "published_at": "2026-08-06",
+                "canonical_url": "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
@@ -28456,7 +29102,28 @@
           "source_reported_start_at": "2026-08-06T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Kinshasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "738f1cad4affe375f91d813e6cd78e180c5d499a7ca65a27bd84fc2bf05e230e",
+              "claim_kind": "factual",
+              "claimant_name": "Reuters via Shanghai Metals Market",
+              "subject_text": "铜钴精矿出口规则",
+              "predicate": "报道法令的核心限制",
+              "value_text": "Reuters 报道称法令禁止铜钴精矿出口并以本地增值为政策目标",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-06-29",
+              "comparison_key": "drc-copper-cobalt-export-rule-2026",
+              "position_summary": "国际通讯社报道的行业平台转载；不把转载页冒充法令原件",
+              "evidence_locator": {
+                "section": "Reuters report body",
+                "locator_type": "web_section",
+                "published_at": "2026-08-06",
+                "canonical_url": "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine",
@@ -28464,9 +29131,65 @@
           "source_reported_start_at": "2026-08-06T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Kinshasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "6013d5834afc85027a7cf2ca75e7b1f85590dc0164b6ad118b88995d166c5f48",
+              "claim_kind": "factual",
+              "claimant_name": "DeskEco",
+              "subject_text": "铜钴精矿出口规则",
+              "predicate": "报道新规及其签署日期",
+              "value_text": "DeskEco 报道刚果（金）已依 6 月 29 日跨部门法令限制铜钴精矿出口",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-06-29",
+              "comparison_key": "drc-copper-cobalt-export-rule-2026",
+              "position_summary": "本地财经媒体的后续报道；行情数字不用于证明法令内容",
+              "evidence_locator": {
+                "section": "Dans l’actualité",
+                "locator_type": "web_section",
+                "published_at": "2026-08-10",
+                "canonical_url": "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "entities": [
+        {
+          "entity_ref": "organization:刚果民主共和国矿业部",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:钴",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "place:kinshasa",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:刚果民主共和国外贸部",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:刚果民主共和国国民经济部",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:铜",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "organization:reuters",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:deskeco",
+          "role": "actor"
+        }
+      ],
+      "primary_place_ref": "place:kinshasa"
     },
     {
       "event_key": "drc-tanzania-critical-minerals-cooperation-2026-08",
@@ -28485,7 +29208,28 @@
           "source_reported_start_at": "2026-08-18T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Zanzibar",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "ab849f9787f9380ff5c14dccb006466336e6978d29a5dca5c850182aaee3fb9f",
+              "claim_kind": "factual",
+              "claimant_name": "Présidence de la République démocratique du Congo",
+              "subject_text": "刚坦关键矿产合作",
+              "predicate": "公布双边合作安排",
+              "value_text": "总统府公布两国将建立关键矿产战略伙伴关系并交换地质数据",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-08-18",
+              "comparison_key": "drc-tanzania-critical-minerals-2026",
+              "position_summary": "刚果（金）总统府的一手发布",
+              "evidence_locator": {
+                "section": "communiqué body",
+                "locator_type": "web_section",
+                "published_at": "2026-08-18",
+                "canonical_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction",
@@ -28493,7 +29237,28 @@
           "source_reported_start_at": "2026-08-18T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Zanzibar",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "2a28b320bb75f5b5de01e3b2562eda7951b7effd2761bfb2aea2c6c1b992e55e",
+              "claim_kind": "position",
+              "claimant_name": "Félix Tshisekedi via ACTUALITE.CD",
+              "subject_text": "非洲矿产价值链",
+              "predicate": "主张在非洲本地加工",
+              "value_text": "刚方主张减少原料直接外运并在非洲建设加工、能源和基础设施能力",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-08-18",
+              "comparison_key": "drc-tanzania-critical-minerals-2026",
+              "position_summary": "本地媒体对总统公开讲话的归属式报道",
+              "evidence_locator": {
+                "section": "transformation locale et infrastructures",
+                "locator_type": "web_section",
+                "published_at": "2026-08-18",
+                "canonical_url": "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
@@ -28501,9 +29266,65 @@
           "source_reported_start_at": "2026-08-18T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Zanzibar",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "c1a48abaf0c71dae7c8194b73ad7ae8c6c80549eccdc0954e72429484ec7785c",
+              "claim_kind": "factual",
+              "claimant_name": "DeskEco",
+              "subject_text": "刚坦关键矿产合作",
+              "predicate": "报道合作范围",
+              "value_text": "DeskEco 将关键矿产伙伴关系、地质数据交换和油气项目评估列为会谈成果",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-08-18",
+              "comparison_key": "drc-tanzania-critical-minerals-2026",
+              "position_summary": "本地财经媒体对官方会谈成果的报道",
+              "evidence_locator": {
+                "section": "partenariat et données géologiques",
+                "locator_type": "web_section",
+                "published_at": "2026-08-19",
+                "canonical_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "entities": [
+        {
+          "entity_ref": "place:zanzibar",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:刚果民主共和国",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:坦桑尼亚",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:félix-tshisekedi",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:samia-suluhu-hassan",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:关键矿产",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "commodity:石油",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "commodity:天然气",
+          "role": "commodity"
+        }
+      ],
+      "primary_place_ref": "place:zanzibar"
     },
     {
       "event_key": "drc-cobalt-uranium-review-response-2026-08",
@@ -28517,12 +29338,63 @@
       "review_status": "reviewed",
       "mentions": [
         {
+          "document_url": "https://www.nature.com/articles/s41467-026-75910-z",
+          "mention_summary": "7 月 30 日同行评议研究提出模型估算，8 月政府、行业与媒体先后回应并宣布反向检测；估算、反驳和待检测状态并列保存。",
+          "source_reported_start_at": "2026-08-21T08:00:00+08:00",
+          "source_reported_end_at": null,
+          "source_reported_place": "Copperbelt",
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "95615e54a01dc97594d682d5b12b4400c86145c236a430a999fabeff9ce74183",
+              "claim_kind": "position",
+              "claimant_name": "Ryan A. Manzuk and Sébastien Philippe",
+              "subject_text": "刚果（金）钴氢氧化物出口",
+              "predicate": "模型估算伴生铀流量",
+              "value_text": "论文基于地质、工艺和贸易数据模型估算 2000 至 5000 吨天然铀可能在 2000 至 2024 年随钴氢氧化物出口",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2000-2024",
+              "comparison_key": "drc-cobalt-uranium-2026",
+              "position_summary": "同行评议模型估算而非逐批实测结果",
+              "evidence_locator": {
+                "pages": "1,8",
+                "section": "Abstract and Discussion",
+                "locator_type": "article_section",
+                "published_at": "2026-07-30",
+                "canonical_url": "https://www.nature.com/articles/s41467-026-75910-z"
+              }
+            }
+          ]
+        },
+        {
           "document_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
           "mention_summary": "ACTUALITE.CD 汇总政府和行业组织回应，政府称既有矿产品组成数据不支持相关趋势并强调将核验供应链。",
           "source_reported_start_at": "2026-08-21T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Kinshasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "7eea3b7df8367995f9744f59e535caff8b663b57926325dfed6443e74a3ae5f5",
+              "claim_kind": "position",
+              "claimant_name": "DRC Government via ACTUALITE.CD",
+              "subject_text": "钴产品铀含量争议",
+              "predicate": "回应研究与调查",
+              "value_text": "政府回应称铀与铜钴矿共生是已知地质现象并主张依据检测数据判断合规性",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-08",
+              "comparison_key": "drc-cobalt-uranium-2026",
+              "position_summary": "政府和行业立场的媒体汇总；不替代独立检测结果",
+              "evidence_locator": {
+                "section": "réponse du gouvernement",
+                "locator_type": "web_section",
+                "published_at": "2026-08-07",
+                "canonical_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/",
@@ -28530,7 +29402,28 @@
           "source_reported_start_at": "2026-08-21T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Kinshasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "0a1cc9768b74252521b5b167a148b01b9da07f2e84a0bee8167a4f13ccb2998d",
+              "claim_kind": "position",
+              "claimant_name": "DRC Ministry of Mines via ACP",
+              "subject_text": "钴产品铀含量争议",
+              "predicate": "重申透明度与主权立场",
+              "value_text": "矿业部表示将关注研究与报道并以矿产品组成核验和监管程序回应争议",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-08-21",
+              "comparison_key": "drc-cobalt-uranium-2026",
+              "position_summary": "官方媒体对矿业部回应的归属式报道",
+              "evidence_locator": {
+                "section": "communiqué du ministère des Mines",
+                "locator_type": "web_section",
+                "published_at": "2026-08-21",
+                "canonical_url": "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/"
+              }
+            }
+          ]
         },
         {
           "document_url": "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/",
@@ -28538,8 +29431,1142 @@
           "source_reported_start_at": "2026-08-21T08:00:00+08:00",
           "source_reported_end_at": null,
           "source_reported_place": "Kinshasa",
-          "perspective_group": null
+          "perspective_group": null,
+          "claims": [
+            {
+              "claim_key": "2b2645fb6f7c2bfbef6fee080d3b4add7443e053ef0e716785dd253e5508c94e",
+              "claim_kind": "factual",
+              "claimant_name": "MINES.CD citing the DRC Ministry of Mines",
+              "subject_text": "钴产品铀含量争议",
+              "predicate": "宣布开展反向检测",
+              "value_text": "政府宣布对相关产品开展反向检测以确定组成和规范符合性，当前结论仍待结果",
+              "numeric_value": null,
+              "unit": null,
+              "time_scope": "2026-08-21",
+              "comparison_key": "drc-cobalt-uranium-2026",
+              "position_summary": "行业媒体对政府复核程序的报道；明确保留结果未出状态",
+              "evidence_locator": {
+                "section": "Des analyses pour établir les faits",
+                "locator_type": "web_section",
+                "published_at": "2026-08-21",
+                "canonical_url": "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/"
+              }
+            }
+          ]
         }
+      ],
+      "entities": [
+        {
+          "entity_ref": "organization:刚果民主共和国矿业部",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:钴",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "place:kinshasa",
+          "role": "location"
+        },
+        {
+          "entity_ref": "place:copperbelt",
+          "role": "location"
+        },
+        {
+          "entity_ref": "organization:nature-communications",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "commodity:铀",
+          "role": "commodity"
+        },
+        {
+          "entity_ref": "organization:刚果民主共和国政府",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:usmcc",
+          "role": "actor"
+        },
+        {
+          "entity_ref": "organization:cmoc",
+          "role": "actor"
+        }
+      ],
+      "primary_place_ref": "place:copperbelt"
+    }
+  ],
+  "event_relations": [
+    {
+      "source_event_key": "rubaya-conflict-coltan-supply-chain",
+      "target_event_key": "rubaya-coltan-intensification-un-report-2026-06",
+      "relation_type": "same_series",
+      "note": "沿用既有事件系列分组；不表示因果或时间先后。"
+    }
+  ],
+  "entities": [
+    {
+      "ref": "place:rubaya",
+      "entity_type": "place",
+      "canonical_key": "rubaya",
+      "canonical_name": "Rubaya"
+    },
+    {
+      "ref": "organization:afc-m23",
+      "entity_type": "organization",
+      "canonical_key": "afc-m23",
+      "canonical_name": "AFC/M23"
+    },
+    {
+      "ref": "commodity:钶钽铁矿",
+      "entity_type": "commodity",
+      "canonical_key": "钶钽铁矿",
+      "canonical_name": "钶钽铁矿"
+    },
+    {
+      "ref": "commodity:钽",
+      "entity_type": "commodity",
+      "canonical_key": "钽",
+      "canonical_name": "钽"
+    },
+    {
+      "ref": "organization:fardc",
+      "entity_type": "organization",
+      "canonical_key": "fardc",
+      "canonical_name": "FARDC"
+    },
+    {
+      "ref": "organization:刚果民主共和国矿业部",
+      "entity_type": "organization",
+      "canonical_key": "刚果民主共和国矿业部",
+      "canonical_name": "刚果民主共和国矿业部"
+    },
+    {
+      "ref": "armed_group:m23",
+      "entity_type": "armed_group",
+      "canonical_key": "m23",
+      "canonical_name": "M23"
+    },
+    {
+      "ref": "commodity:锡矿",
+      "entity_type": "commodity",
+      "canonical_key": "锡矿",
+      "canonical_name": "锡矿"
+    },
+    {
+      "ref": "place:rubaya-mushake",
+      "entity_type": "place",
+      "canonical_key": "rubaya-mushake",
+      "canonical_name": "Rubaya;Mushake"
+    },
+    {
+      "ref": "place:rubaya-masisi",
+      "entity_type": "place",
+      "canonical_key": "rubaya-masisi",
+      "canonical_name": "Rubaya;Masisi"
+    },
+    {
+      "ref": "organization:itsci",
+      "entity_type": "organization",
+      "canonical_key": "itsci",
+      "canonical_name": "ITSCI"
+    },
+    {
+      "ref": "place:cod",
+      "entity_type": "place",
+      "canonical_key": "cod",
+      "canonical_name": "COD"
+    },
+    {
+      "ref": "organization:arecoms",
+      "entity_type": "organization",
+      "canonical_key": "arecoms",
+      "canonical_name": "ARECOMS"
+    },
+    {
+      "ref": "commodity:钴",
+      "entity_type": "commodity",
+      "canonical_key": "钴",
+      "canonical_name": "钴"
+    },
+    {
+      "ref": "organization:刚果民主共和国财政部",
+      "entity_type": "organization",
+      "canonical_key": "刚果民主共和国财政部",
+      "canonical_name": "刚果民主共和国财政部"
+    },
+    {
+      "ref": "place:rubaya-gasasa",
+      "entity_type": "place",
+      "canonical_key": "rubaya-gasasa",
+      "canonical_name": "Rubaya Gasasa"
+    },
+    {
+      "ref": "place:rubaya-mubambiro-kigali",
+      "entity_type": "place",
+      "canonical_key": "rubaya-mubambiro-kigali",
+      "canonical_name": "Rubaya;Mubambiro;Kigali"
+    },
+    {
+      "ref": "organization:rani-mining-ltd",
+      "entity_type": "organization",
+      "canonical_key": "rani-mining-ltd",
+      "canonical_name": "Rani Mining Ltd."
+    },
+    {
+      "ref": "organization:kanzamin-limited",
+      "entity_type": "organization",
+      "canonical_key": "kanzamin-limited",
+      "canonical_name": "Kanzamin Limited"
+    },
+    {
+      "ref": "place:rubaya-kigali",
+      "entity_type": "place",
+      "canonical_key": "rubaya-kigali",
+      "canonical_name": "Rubaya;Kigali"
+    },
+    {
+      "ref": "place:kinshasa",
+      "entity_type": "place",
+      "canonical_key": "kinshasa",
+      "canonical_name": "Kinshasa"
+    },
+    {
+      "ref": "organization:刚果民主共和国外贸部",
+      "entity_type": "organization",
+      "canonical_key": "刚果民主共和国外贸部",
+      "canonical_name": "刚果民主共和国外贸部"
+    },
+    {
+      "ref": "organization:刚果民主共和国国民经济部",
+      "entity_type": "organization",
+      "canonical_key": "刚果民主共和国国民经济部",
+      "canonical_name": "刚果民主共和国国民经济部"
+    },
+    {
+      "ref": "commodity:铜",
+      "entity_type": "commodity",
+      "canonical_key": "铜",
+      "canonical_name": "铜"
+    },
+    {
+      "ref": "organization:reuters",
+      "entity_type": "organization",
+      "canonical_key": "reuters",
+      "canonical_name": "Reuters"
+    },
+    {
+      "ref": "organization:deskeco",
+      "entity_type": "organization",
+      "canonical_key": "deskeco",
+      "canonical_name": "DeskEco"
+    },
+    {
+      "ref": "place:zanzibar",
+      "entity_type": "place",
+      "canonical_key": "zanzibar",
+      "canonical_name": "Zanzibar"
+    },
+    {
+      "ref": "organization:刚果民主共和国",
+      "entity_type": "organization",
+      "canonical_key": "刚果民主共和国",
+      "canonical_name": "刚果民主共和国"
+    },
+    {
+      "ref": "organization:坦桑尼亚",
+      "entity_type": "organization",
+      "canonical_key": "坦桑尼亚",
+      "canonical_name": "坦桑尼亚"
+    },
+    {
+      "ref": "organization:félix-tshisekedi",
+      "entity_type": "organization",
+      "canonical_key": "félix-tshisekedi",
+      "canonical_name": "Félix Tshisekedi"
+    },
+    {
+      "ref": "organization:samia-suluhu-hassan",
+      "entity_type": "organization",
+      "canonical_key": "samia-suluhu-hassan",
+      "canonical_name": "Samia Suluhu Hassan"
+    },
+    {
+      "ref": "commodity:关键矿产",
+      "entity_type": "commodity",
+      "canonical_key": "关键矿产",
+      "canonical_name": "关键矿产"
+    },
+    {
+      "ref": "commodity:石油",
+      "entity_type": "commodity",
+      "canonical_key": "石油",
+      "canonical_name": "石油"
+    },
+    {
+      "ref": "commodity:天然气",
+      "entity_type": "commodity",
+      "canonical_key": "天然气",
+      "canonical_name": "天然气"
+    },
+    {
+      "ref": "place:copperbelt",
+      "entity_type": "place",
+      "canonical_key": "copperbelt",
+      "canonical_name": "Copperbelt"
+    },
+    {
+      "ref": "organization:nature-communications",
+      "entity_type": "organization",
+      "canonical_key": "nature-communications",
+      "canonical_name": "Nature Communications"
+    },
+    {
+      "ref": "commodity:铀",
+      "entity_type": "commodity",
+      "canonical_key": "铀",
+      "canonical_name": "铀"
+    },
+    {
+      "ref": "organization:刚果民主共和国政府",
+      "entity_type": "organization",
+      "canonical_key": "刚果民主共和国政府",
+      "canonical_name": "刚果民主共和国政府"
+    },
+    {
+      "ref": "organization:usmcc",
+      "entity_type": "organization",
+      "canonical_key": "usmcc",
+      "canonical_name": "USMCC"
+    },
+    {
+      "ref": "organization:cmoc",
+      "entity_type": "organization",
+      "canonical_key": "cmoc",
+      "canonical_name": "CMOC"
+    }
+  ],
+  "document_entities": [
+    {
+      "document_url": "https://www.undocs.org/s/2024/969",
+      "entity_ref": "place:rubaya",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2024/969",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2024/969",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2024/969",
+      "entity_ref": "commodity:钽",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
+      "entity_ref": "place:rubaya",
+      "role": "location"
+    },
+    {
+      "document_url": "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
+      "entity_ref": "commodity:钽",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+      "entity_ref": "place:rubaya",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+      "entity_ref": "commodity:钽",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+      "entity_ref": "place:rubaya",
+      "role": "location"
+    },
+    {
+      "document_url": "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+      "entity_ref": "organization:fardc",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+      "entity_ref": "commodity:钽",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de",
+      "entity_ref": "place:rubaya-gasasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/",
+      "entity_ref": "place:rubaya-gasasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine",
+      "entity_ref": "place:rubaya-gasasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://acp.cd/economie/rdc-fixation-des-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt/",
+      "entity_ref": "place:cod",
+      "role": "location"
+    },
+    {
+      "document_url": "https://acp.cd/economie/rdc-fixation-des-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt/",
+      "entity_ref": "organization:arecoms",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://acp.cd/economie/rdc-fixation-des-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt/",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2024/969",
+      "entity_ref": "armed_group:m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2024/969",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2024/969",
+      "entity_ref": "commodity:锡矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://mines.cd/rdc-le-gouvernement-etablit-un-nouveau-cadre-pour-lexportation-du-cobalt/",
+      "entity_ref": "place:cod",
+      "role": "location"
+    },
+    {
+      "document_url": "https://mines.cd/rdc-le-gouvernement-etablit-un-nouveau-cadre-pour-lexportation-du-cobalt/",
+      "entity_ref": "organization:arecoms",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://mines.cd/rdc-le-gouvernement-etablit-un-nouveau-cadre-pour-lexportation-du-cobalt/",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2025/10/13/la-rdc-fixe-les-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt",
+      "entity_ref": "place:cod",
+      "role": "location"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2025/10/13/la-rdc-fixe-les-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt",
+      "entity_ref": "organization:arecoms",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2025/10/13/la-rdc-fixe-les-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
+      "entity_ref": "place:rubaya-mushake",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
+      "entity_ref": "armed_group:m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
+      "entity_ref": "commodity:锡矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de",
+      "entity_ref": "place:rubaya-mushake",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de",
+      "entity_ref": "armed_group:m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de",
+      "entity_ref": "commodity:锡矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/",
+      "entity_ref": "place:rubaya-masisi",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/",
+      "entity_ref": "armed_group:m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/",
+      "entity_ref": "organization:itsci",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/",
+      "entity_ref": "commodity:锡矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2026/466",
+      "entity_ref": "place:rubaya-mubambiro-kigali",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2026/466",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2026/466",
+      "entity_ref": "organization:rani-mining-ltd",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2026/466",
+      "entity_ref": "organization:kanzamin-limited",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2026/466",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.undocs.org/s/2026/466",
+      "entity_ref": "commodity:锡矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+      "entity_ref": "place:rubaya-kigali",
+      "role": "location"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+      "entity_ref": "organization:rani-mining-ltd",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+      "entity_ref": "commodity:锡矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
+      "entity_ref": "place:rubaya-mubambiro-kigali",
+      "role": "location"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
+      "entity_ref": "organization:afc-m23",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
+      "entity_ref": "organization:rani-mining-ltd",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
+      "entity_ref": "organization:kanzamin-limited",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
+      "entity_ref": "commodity:钶钽铁矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
+      "entity_ref": "commodity:锡矿",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation",
+      "entity_ref": "place:cod",
+      "role": "location"
+    },
+    {
+      "document_url": "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation",
+      "entity_ref": "organization:arecoms",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation",
+      "entity_ref": "organization:刚果民主共和国财政部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+      "entity_ref": "place:kinshasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+      "entity_ref": "organization:刚果民主共和国外贸部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+      "entity_ref": "organization:刚果民主共和国国民经济部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+      "entity_ref": "commodity:铜",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+      "entity_ref": "place:kinshasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+      "entity_ref": "organization:reuters",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+      "entity_ref": "commodity:铜",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine",
+      "entity_ref": "place:kinshasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine",
+      "entity_ref": "organization:deskeco",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine",
+      "entity_ref": "commodity:铜",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "place:zanzibar",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "organization:刚果民主共和国",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "organization:坦桑尼亚",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "organization:félix-tshisekedi",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "organization:samia-suluhu-hassan",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "commodity:关键矿产",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "commodity:石油",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+      "entity_ref": "commodity:天然气",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction",
+      "entity_ref": "place:zanzibar",
+      "role": "location"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction",
+      "entity_ref": "organization:félix-tshisekedi",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction",
+      "entity_ref": "organization:samia-suluhu-hassan",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction",
+      "entity_ref": "commodity:关键矿产",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
+      "entity_ref": "place:zanzibar",
+      "role": "location"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
+      "entity_ref": "organization:刚果民主共和国",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
+      "entity_ref": "organization:坦桑尼亚",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
+      "entity_ref": "commodity:关键矿产",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
+      "entity_ref": "commodity:石油",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
+      "entity_ref": "commodity:天然气",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.nature.com/articles/s41467-026-75910-z",
+      "entity_ref": "place:copperbelt",
+      "role": "location"
+    },
+    {
+      "document_url": "https://www.nature.com/articles/s41467-026-75910-z",
+      "entity_ref": "organization:nature-communications",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.nature.com/articles/s41467-026-75910-z",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://www.nature.com/articles/s41467-026-75910-z",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://www.nature.com/articles/s41467-026-75910-z",
+      "entity_ref": "commodity:铀",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+      "entity_ref": "place:kinshasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+      "entity_ref": "organization:刚果民主共和国政府",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+      "entity_ref": "organization:usmcc",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+      "entity_ref": "organization:cmoc",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+      "entity_ref": "commodity:铀",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/",
+      "entity_ref": "place:kinshasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/",
+      "entity_ref": "commodity:铀",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/",
+      "entity_ref": "place:kinshasa",
+      "role": "location"
+    },
+    {
+      "document_url": "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/",
+      "entity_ref": "organization:刚果民主共和国矿业部",
+      "role": "actor"
+    },
+    {
+      "document_url": "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/",
+      "entity_ref": "commodity:钴",
+      "role": "commodity"
+    },
+    {
+      "document_url": "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/",
+      "entity_ref": "commodity:铀",
+      "role": "commodity"
+    }
+  ],
+  "topics": [
+    {
+      "slug": "关键矿产",
+      "title": "关键矿产",
+      "document_urls": [
+        "https://www.undocs.org/s/2024/969",
+        "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
+        "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+        "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+        "https://acp.cd/economie/rdc-fixation-des-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt/",
+        "https://mines.cd/rdc-le-gouvernement-etablit-un-nouveau-cadre-pour-lexportation-du-cobalt/",
+        "https://deskeco.com/index.php/2025/10/13/la-rdc-fixe-les-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt",
+        "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
+        "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de",
+        "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/",
+        "https://www.undocs.org/s/2026/466",
+        "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+        "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais",
+        "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation",
+        "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+        "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+        "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine",
+        "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+        "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction",
+        "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees",
+        "https://www.nature.com/articles/s41467-026-75910-z",
+        "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+        "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/",
+        "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/"
+      ]
+    },
+    {
+      "slug": "武装冲突",
+      "title": "武装冲突",
+      "document_urls": [
+        "https://www.undocs.org/s/2024/969",
+        "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
+        "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+        "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+        "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de",
+        "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/",
+        "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine",
+        "https://www.undocs.org/s/2026/466",
+        "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+        "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais"
+      ]
+    },
+    {
+      "slug": "供应链尽责",
+      "title": "供应链尽责",
+      "document_urls": [
+        "https://www.undocs.org/s/2024/969",
+        "https://globalwitness.org/en/press-releases/conflict-coltan-used-in-technology-from-major-brands/",
+        "https://www.radiookapi.net/2026/06/12/actualite/economie/des-multinationales-liees-au-coltan-de-contrebande-de-rubaya-sous-lafc",
+        "https://monusco.unmissions.org/sites/default/files/2026-04/Report%20of%20the%20Secretary%20general%20S%202026%20208-n2605066.pdf",
+        "https://www.itsci.org/2024/05/08/suspension-of-itsci-activities-in-masisi-territory-following-the-presence-of-non-state-armed-group-m23-in-rubaya-town/"
+      ]
+    },
+    {
+      "slug": "矿业安全",
+      "title": "矿业安全",
+      "document_urls": [
+        "https://www.radiookapi.net/2026/03/04/actualite/societe/rubaya-un-glissement-de-terrain-frappe-le-site-minier-de-gasasa-plus-de",
+        "https://acp.cd/economie/rdc-plus-de-200-morts-dans-un-eboulement-sur-le-site-minier-de-rubaya/",
+        "https://actualite.cd/index.php/2026/03/04/rdc-masisi-plusieurs-dizaines-de-morts-suite-un-nouvel-accident-meurtrier-dans-la-mine"
+      ]
+    },
+    {
+      "slug": "钴出口政策",
+      "title": "钴出口政策",
+      "document_urls": [
+        "https://acp.cd/economie/rdc-fixation-des-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt/",
+        "https://mines.cd/rdc-le-gouvernement-etablit-un-nouveau-cadre-pour-lexportation-du-cobalt/",
+        "https://deskeco.com/index.php/2025/10/13/la-rdc-fixe-les-conditions-dobtention-et-dexecution-des-quotas-dexportation-du-cobalt",
+        "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation"
+      ]
+    },
+    {
+      "slug": "矿业政策",
+      "title": "矿业政策",
+      "document_urls": [
+        "https://www.undocs.org/s/2024/969",
+        "https://www.radiookapi.net/2024/05/15/actualite/politique/exploitation-illicite-des-minerais-de-rubaya-le-ministere-des-mines",
+        "https://www.deskeco.com/2024/05/14/guerre-dans-lest-de-la-rdc-le-rwanda-fait-main-basse-sur-les-minerais-3t-de-rubaya-sous-la-barbe-de"
+      ]
+    },
+    {
+      "slug": "跨境供应链",
+      "title": "跨境供应链",
+      "document_urls": [
+        "https://www.undocs.org/s/2026/466",
+        "https://deskeco.com/2026/07/01/rdc-lintensification-de-lexploitation-du-coltan-rubaya-relance-les-accusations-contre-les-reseaux",
+        "https://actualite.cd/2026/07/02/rdc-le-coltan-de-rubaya-au-coeur-dun-systeme-de-pillage-integre-au-marche-rwandais"
+      ]
+    },
+    {
+      "slug": "矿业税费",
+      "title": "矿业税费",
+      "document_urls": [
+        "https://datawarehouse.ctcpm.cd/cadre/juridique/legislation/download/45/legislation"
+      ]
+    },
+    {
+      "slug": "出口政策",
+      "title": "出口政策",
+      "document_urls": [
+        "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+        "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+        "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine"
+      ]
+    },
+    {
+      "slug": "本地加工",
+      "title": "本地加工",
+      "document_urls": [
+        "https://actualite.cd/2026/08/06/rdc-kinshasa-interdit-lexportation-des-concentres-de-cuivre-et-de-cobalt-pour-encourager",
+        "https://news.metal.com/fr/newscontent/104046596-le-congo-interdit-les-exportations-de-concentr%C3%A9s-de-cuivre-et-de-cobalt-selon-un-arr%C3%AAt%C3%A9-officiel",
+        "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction"
+      ]
+    },
+    {
+      "slug": "矿产品价格",
+      "title": "矿产品价格",
+      "document_urls": [
+        "https://deskeco.com/2026/08/10/commerce-exterieur-le-cuivre-gagne-pres-de-300-usd-le-cobalt-perd-8-usd-cette-semaine"
+      ]
+    },
+    {
+      "slug": "地质数据",
+      "title": "地质数据",
+      "document_urls": [
+        "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+        "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees"
+      ]
+    },
+    {
+      "slug": "区域合作",
+      "title": "区域合作",
+      "document_urls": [
+        "https://www.presidence.cd/actualiteune-detail/actualite/tete_a_tete_entre_le_president_felix_tshisekedi_et_son_homologue_dr_samia_suluhu_hassan_la_rdc_et_la_tanzanie_renforcent_leur_cooperation_economique_et_securitaire",
+        "https://actualite.cd/2026/08/18/felix-tshisekedi-en-tanzanie-nous-en-avons-assez-de-servir-de-terre-dextraction",
+        "https://deskeco.com/index.php/2026/08/19/rdc-tanzanie-un-partenariat-strategique-se-dessine-autour-des-minerais-critiques-et-des-donnees"
+      ]
+    },
+    {
+      "slug": "供应链透明度",
+      "title": "供应链透明度",
+      "document_urls": [
+        "https://www.nature.com/articles/s41467-026-75910-z",
+        "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+        "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/",
+        "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/"
+      ]
+    },
+    {
+      "slug": "科学评估",
+      "title": "科学评估",
+      "document_urls": [
+        "https://www.nature.com/articles/s41467-026-75910-z"
+      ]
+    },
+    {
+      "slug": "质量标准",
+      "title": "质量标准",
+      "document_urls": [
+        "https://actualite.cd/2026/08/07/uranium-dans-dexportations-dhydroxydes-de-cobalt-kinshasa-sexplique-et-reaffirme-son",
+        "https://mines.cd/rdc-le-gouvernement-annonce-une-contre-analyse-apres-des-revelations-sur-la-presence-duranium-dans-du-cobalt-exporte/"
+      ]
+    },
+    {
+      "slug": "矿业治理",
+      "title": "矿业治理",
+      "document_urls": [
+        "https://acp.cd/nation/rdc-la-transparence-et-la-souverainete-reaffirmees-dans-le-dossier-du-cobalt/"
       ]
     }
   ],
@@ -28830,10 +30857,10 @@
   "summary": {
     "structured_observations": 419,
     "structured_datasets": 6,
-    "document_metadata": 323,
+    "document_metadata": 326,
     "document_channels": {
-      "event_dynamics": 49,
-      "frontier_research": 263,
+      "event_dynamics": 51,
+      "frontier_research": 264,
       "other": 2,
       "policy_center": 3,
       "think_tank_report": 6
@@ -28843,17 +30870,23 @@
       "2023": 43,
       "2024": 53,
       "2025": 71,
-      "2026": 93
+      "2026": 94
     },
     "research_domains": {
-      "economy": 24,
+      "economy": 25,
       "governance": 18,
-      "resources_environment": 34,
-      "population_social": 91,
+      "resources_environment": 35,
+      "population_social": 92,
       "international_relations": 19
     },
     "reviewed_events": 8,
-    "event_evidence_links": 25,
+    "confirmed_claims": 28,
+    "event_entities": 54,
+    "event_relations": 1,
+    "document_entity_links": 129,
+    "topic_count": 17,
+    "document_topic_links": 73,
+    "event_evidence_links": 28,
     "public_field_examples": 3,
     "real_private_materials": 0,
     "abstracts": 0,

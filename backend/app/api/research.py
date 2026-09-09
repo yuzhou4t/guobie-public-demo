@@ -762,7 +762,9 @@ def _country_profile_completeness(
         "gdp_observation": any(code.startswith("NY.GDP") for code in indicator_codes),
         "population_observation": "SP.POP.TOTL" in indicator_codes,
         "commodity_material": coverage["commodity_materials"].get(iso3, 0) > 0,
-        "environment_observation": any(code.startswith(("EN.", "AG.", "EG.")) for code in indicator_codes),
+        "environment_observation": any(
+            code.startswith(("EN.", "AG.", "EG.")) or code == "NY.GDP.MINR.RT.ZS" for code in indicator_codes
+        ),
         "trade_dataset": any(
             token in key.lower() for key in dataset_keys for token in ("trade", "comtrade", "wits", "fdi")
         ),
@@ -873,6 +875,7 @@ def _country_conflict_summary(db: Session, country_id: int | None) -> list[dict[
                 "event_id": event_id,
                 "event_title": events[event_id].title,
                 "comparison_key": comparison_key,
+                "comparison_label": claims[0].subject_text,
                 "claim_count": len(claims),
                 "values": [
                     {
@@ -883,7 +886,11 @@ def _country_conflict_summary(db: Session, country_id: int | None) -> list[dict[
                     }
                     for claim in claims
                 ],
-                "method_note": "相互冲突的主张并列展示，不按数量裁决。",
+                "method_note": (
+                    "来源口径与关注点并列展示；差异不必然构成事实冲突，不自动裁决。"
+                    if get_settings().public_demo_enabled
+                    else "相互冲突的主张并列展示，不按数量裁决。"
+                ),
             }
         )
     return result[:6]
@@ -8689,6 +8696,7 @@ def get_event_evidence(event_id: int, db: DbSession) -> dict[str, Any]:
         "comparison_groups": [
             {
                 "comparison_key": key,
+                "comparison_label": group[0].subject_text,
                 "claims": [_claim_read(claim) for claim in group],
                 "has_difference": len(
                     {(claim.value_text, _number(claim.numeric_value), claim.unit) for claim in group}

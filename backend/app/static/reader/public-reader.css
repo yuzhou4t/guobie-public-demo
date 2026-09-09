@@ -30,3 +30,9 @@ body.public-demo .public-demo-notice {
 }
 
 .public-sample-note { margin: 0 0 8px; color: #64748b; font-size: 11px; line-height: 1.5; }
+
+/* Keep long source statements readable in the public comparison sample. */
+.public-demo .conflict-claim-group header strong { font-size: 14px; line-height: 1.5; }
+.public-demo .conflict-claim-group p { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 2.2fr); gap: 16px; align-items: start; margin: 10px 0; font-size: 13px; line-height: 1.6; }
+.public-demo .conflict-claim-group p span { min-width: 0; text-align: left; }
+@media (max-width: 680px) { .public-demo .conflict-claim-group p { grid-template-columns: 1fr; gap: 4px; } }

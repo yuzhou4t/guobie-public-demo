@@ -729,7 +729,7 @@ function evidenceMatrixHtml(groups, methodNote, sources = []) {
     return `
       <tr>
         <th class="stance-dimension">
-          <strong>${escapeHtml(group.comparison_key)}</strong>
+          <strong>${escapeHtml(group.comparison_label || group.comparison_key)}</strong>
           <div><span class="precision ${group.has_difference ? "is-different" : "is-consistent"}">${group.has_difference ? "存在口径差异" : "各方表述一致"}</span></div>
         </th>
         ${cells}
@@ -1617,7 +1617,7 @@ function renderCountryConflictSummary() {
   const root = document.getElementById("countryConflictSummary");
   if (!root) return;
   const groups = state.country.conflict_summary || [];
-  root.innerHTML = groups.length ? groups.map((group) => `<article class="conflict-claim-group"><header><div><span>${escapeHtml(group.comparison_key)}</span><strong>${escapeHtml(group.event_title)}</strong></div><a href="#/countries/${state.country.iso3}/events/${group.event_id}">核对事件</a></header><div>${(group.values || []).map((claim) => `<p><b>${escapeHtml(claim.claimant)}</b><span>${escapeHtml(claim.value || claim.numeric_value || "值未登记")} ${escapeHtml(claim.unit || "")}</span></p>`).join("")}</div><small>${escapeHtml(group.method_note || "冲突主张并列展示，不自动裁决。")}</small></article>`).join("") : emptyState("当前没有达到并列展示条件的冲突主张。");
+  root.innerHTML = groups.length ? groups.map((group) => `<article class="conflict-claim-group"><header><div><span>${escapeHtml(group.comparison_label || group.comparison_key)}</span><strong>${escapeHtml(group.event_title)}</strong></div><a href="#/countries/${state.country.iso3}/events/${group.event_id}">核对事件</a></header><div>${(group.values || []).map((claim) => `<p><b>${escapeHtml(claim.claimant)}</b><span>${escapeHtml(claim.value || (claim.numeric_value != null ? `${claim.numeric_value} ${claim.unit || ""}` : "值未登记"))}</span></p>`).join("")}</div><small>${escapeHtml(group.method_note || "冲突主张并列展示，不自动裁决。")}</small></article>`).join("") : emptyState("当前没有达到并列展示条件的冲突主张。");
 }
 
 function researchMaterialCardHtml(item) {

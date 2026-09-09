@@ -14,11 +14,16 @@ from app.db.session import get_session_factory
 from app.models import (
     Document,
     DocumentEntity,
+    DocumentTopic,
     DocumentVersion,
+    EventEntity,
     EventMention,
+    EventRelation,
+    EvidenceClaim,
     ResearchEntity,
     ResearchEvent,
     Source,
+    Topic,
     User,
 )
 from app.models.public_demo import PublicDemoInstallation
@@ -149,6 +154,45 @@ def _initialize_selected(db):
                     note="沿用所选公开资料的已有国别关联",
                 )
             )
+    entity_refs = {}
+    for item in payload.get("entities", []):
+        entity = db.scalar(
+            select(ResearchEntity).where(
+                ResearchEntity.entity_type == item["entity_type"],
+                ResearchEntity.canonical_key == item["canonical_key"],
+            )
+        )
+        if entity is None:
+            entity = ResearchEntity(
+                entity_type=item["entity_type"],
+                canonical_key=item["canonical_key"],
+                canonical_name=item["canonical_name"],
+            )
+            db.add(entity)
+            db.flush()
+        entity_refs[item["ref"]] = entity.id
+    for item in payload.get("document_entities", []):
+        vid, eid = versions[item["document_url"]], entity_refs[item["entity_ref"]]
+        if db.get(DocumentEntity, (vid, eid, item["role"])) is None:
+            db.add(
+                DocumentEntity(
+                    document_version_id=vid,
+                    entity_id=eid,
+                    role=item["role"],
+                    extraction_method="imported",
+                    review_status="confirmed",
+                )
+            )
+    for item in payload.get("topics", []):
+        topic = db.scalar(select(Topic).where(Topic.slug == item["slug"]))
+        if topic is None:
+            topic = Topic(slug=item["slug"], title=item["title"], status="active")
+            db.add(topic)
+            db.flush()
+        for url in set(item["document_urls"]):
+            vid = versions[url]
+            if db.get(DocumentTopic, (vid, topic.id)) is None:
+                db.add(DocumentTopic(document_version_id=vid, topic_id=topic.id, review_status="confirmed"))
     for item in payload.get("events", []):
         event = db.scalar(select(ResearchEvent).where(ResearchEvent.event_key == item["event_key"]))
         if event is None:
@@ -167,28 +211,69 @@ def _initialize_selected(db):
             "sample_version": payload["version"],
             "provenance": "existing_reviewed_public_sources",
         }
+        event.primary_place_entity_id = entity_refs.get(item.get("primary_place_ref"))
         db.flush()
+        for link in item.get("entities", []):
+            eid = entity_refs[link["entity_ref"]]
+            if db.get(EventEntity, (event.id, eid, link["role"])) is None:
+                db.add(EventEntity(event_id=event.id, entity_id=eid, role=link["role"]))
         for mention in item["mentions"]:
             vid = versions[mention["document_url"]]
             existing = db.scalar(
-                select(EventMention.id).where(
+                select(EventMention).where(
                     EventMention.event_id == event.id, EventMention.document_version_id == vid
                 )
             )
             if existing is None:
-                db.add(
-                    EventMention(
-                        event_id=event.id,
-                        document_version_id=vid,
-                        review_status="confirmed",
-                        mention_summary=mention.get("mention_summary", ""),
-                        source_reported_start_at=_date(mention.get("source_reported_start_at")),
-                        source_reported_end_at=_date(mention.get("source_reported_end_at")),
-                        source_reported_place=mention.get("source_reported_place") or "",
-                        source_fields={"perspective_group": mention.get("perspective_group")},
-                        evidence_locator={"canonical_url": mention["document_url"]},
+                existing = EventMention(
+                    event_id=event.id,
+                    document_version_id=vid,
+                    review_status="confirmed",
+                    mention_summary=mention.get("mention_summary", ""),
+                    source_reported_start_at=_date(mention.get("source_reported_start_at")),
+                    source_reported_end_at=_date(mention.get("source_reported_end_at")),
+                    source_reported_place=mention.get("source_reported_place") or "",
+                    source_fields={"perspective_group": mention.get("perspective_group")},
+                    evidence_locator={"canonical_url": mention["document_url"]},
+                )
+                db.add(existing)
+                db.flush()
+            for claim in mention.get("claims", []):
+                found = db.scalar(
+                    select(EvidenceClaim.id).where(
+                        EvidenceClaim.event_mention_id == existing.id,
+                        EvidenceClaim.claim_key == claim["claim_key"],
                     )
                 )
+                if found is None:
+                    db.add(EvidenceClaim(event_mention_id=existing.id, review_status="confirmed", **claim))
+    for item in payload.get("event_relations", []):
+        source_event = db.scalar(
+            select(ResearchEvent).where(ResearchEvent.event_key == item["source_event_key"])
+        )
+        target_event = db.scalar(
+            select(ResearchEvent).where(ResearchEvent.event_key == item["target_event_key"])
+        )
+        if source_event is None or target_event is None:
+            raise ValueError("Missing sample event for relation")
+        if item["relation_type"] != "same_series" or source_event.series_key != target_event.series_key:
+            raise ValueError("Only existing same-series sample relations are supported")
+        existing = db.scalar(
+            select(EventRelation.id).where(
+                EventRelation.source_event_id == source_event.id,
+                EventRelation.target_event_id == target_event.id,
+                EventRelation.relation_type == item["relation_type"],
+            )
+        )
+        if existing is None:
+            db.add(
+                EventRelation(
+                    source_event_id=source_event.id,
+                    target_event_id=target_event.id,
+                    relation_type=item["relation_type"],
+                    note=item["note"],
+                )
+            )
     root = Path(__file__).resolve().parents[3]
     seed_capability_templates(db, root / "data/research_capability_templates.json")
     seed_public_capability_catalog(db)

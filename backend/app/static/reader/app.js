@@ -3502,6 +3502,31 @@ function renderEventHall(rows, reports = state.eventReports) {
   renderEventPreview(entries);
 }
 
+function eventSourceReportsHtml(sources = [], sourceCount = 0) {
+  const reports = sources.filter((source) => source.document?.document_version_id);
+  return `<section class="report-section event-source-reports-summary" id="eventSourceReports"><button type="button" class="event-source-reports-trigger" data-open-event-source-reports aria-haspopup="dialog"><span><small>确认来源</small><strong>${Number(sourceCount)} 个来源 · ${reports.length} 份原始报告</strong></span><em>${reports.length ? "点击查看聚合前的具体报道、定位和原始链接" : "当前确认来源尚未绑定可展示的固定报告版本"}</em><b>展开查看 →</b></button></section>`;
+}
+
+function eventSourceReportsDialogHtml(sources = [], sourceCount = 0) {
+  const reports = sources.filter((source) => source.document?.document_version_id);
+  if (!reports.length) return emptyState("当前确认来源尚未绑定可展示的固定报告版本");
+  const groups = new Map();
+  reports.forEach((source) => {
+    const document = source.document || {};
+    const key = String(document.source_id || document.source_name || source.mention_id);
+    if (!groups.has(key)) groups.set(key, { name: document.source_name || "来源未登记", reports: [] });
+    groups.get(key).reports.push(source);
+  });
+  const cards = [...groups.values()].map((group, sourceIndex) => `<article class="event-source-group"><header><div><span>来源 ${sourceIndex + 1}</span><strong>${escapeHtml(group.name)}</strong></div><em>人工确认</em></header><div class="event-source-documents">${group.reports.map((source) => {
+    const document = source.document || {};
+    const url = safeUrl(document.canonical_url || document.discovery_url || document.source_url);
+    const locator = formatLocator(source.evidence_locator);
+    const summary = document.abstract || "本站未保存这份报告的正文或来源摘要，请从原始来源阅读全文。";
+    return `<section class="event-source-document" ${projectMaterialAttributes(document)}><div class="event-source-document-heading"><div><small>${escapeHtml(displayEnum(DOCUMENT_TYPE_LABELS, document.document_type, "报告"))} · v${Number(document.version_no || 1)}</small><h4>${escapeHtml(document.title || "未命名报告")}</h4></div><time>${escapeHtml(publishedLabel(document.published_at, document.published_at_precision))}</time></div><div class="event-source-report-copy"><p><b>来源摘要</b>${escapeHtml(summary)}</p><p><b>事件命中摘要</b>${escapeHtml(source.mention_summary || "该来源与事件的命中说明待补充。")}</p></div><dl><div><dt>证据定位</dt><dd>${escapeHtml(locator)}</dd></div><div><dt>报道 / 入库</dt><dd>${escapeHtml(localDate(source.times?.reported_at))} / ${escapeHtml(localDate(source.times?.recorded_at))}</dd></div></dl><footer><button type="button" class="text-link" data-material-version="${Number(document.document_version_id)}">查看固定版本与定位</button>${url ? `<a class="text-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">打开原始报告 ↗</a>` : `<span>原始链接待核验</span>`}</footer></section>`;
+  }).join("")}</div></article>`).join("");
+  return `<div class="event-source-dialog-summary"><span>${Number(sourceCount || groups.size)} 个确认来源 · ${reports.length} 份原始报告</span><p>按来源展开聚合前的固定报告版本；来源摘要与事件命中摘要分开显示。</p></div><div class="event-source-report-list">${cards}</div><p class="method-note">这里只展示已获准保存的摘要和人工登记的命中说明；未保存正文时请打开原始报告阅读全文。</p>`;
+}
+
 function renderEventWorkspace(event, evidence, pane) {
   const toolbar = document.getElementById("eventToolbar");
   const tabs = document.getElementById("eventTabs");
@@ -3538,7 +3563,7 @@ function renderEventWorkspace(event, evidence, pane) {
     return;
   }
   const entities = (event.entities || []).map((item) => `<span class="entity-chip"><b>${escapeHtml(item.name)}</b> · ${escapeHtml(displayEnum(ENTITY_ROLE_LABELS, item.role, "相关主体"))}</span>`).join("");
-  detailRoot.innerHTML = `${event.country?.iso3 ? `<div class="object-links"><a href="#/countries/${escapeHtml(event.country.iso3)}">进入${escapeHtml(event.country.name)}国别空间</a></div>` : ""}<section class="report-section"><h3>事件概览</h3><p>${escapeHtml(event.summary || "当前事件尚无独立摘要。")}</p><div class="event-overview-meta"><span><b>类型</b>${escapeHtml(displayEnum(EVENT_TYPE_LABELS, event.event_type))}</span><span><b>时间</b>${escapeHtml(event.start_at ? localDate(event.start_at) : "日期未知")}</span><span><b>时间精度</b>${escapeHtml(displayEnum(DATE_PRECISION_LABELS, event.date_precision))}</span><span><b>确认来源</b>${Number(evidence.source_count || 0)}</span></div>${entities ? `<div class="entity-chip-list">${entities}</div>` : emptyState("尚未登记人物、机构、地点或政策实体")}<details class="developer-details"><summary>技术信息</summary><pre>${escapeHtml(JSON.stringify({ event_type: event.event_type, date_precision: event.date_precision }, null, 2))}</pre></details></section><p class="method-note">未登记关系时不推断因果；来源主张不会被平均或覆盖。</p>`;
+  detailRoot.innerHTML = `${event.country?.iso3 ? `<div class="object-links"><a href="#/countries/${escapeHtml(event.country.iso3)}">进入${escapeHtml(event.country.name)}国别空间</a></div>` : ""}<section class="report-section"><h3>事件概览</h3><p>${escapeHtml(event.summary || "当前事件尚无独立摘要。")}</p><div class="event-overview-meta"><span><b>类型</b>${escapeHtml(displayEnum(EVENT_TYPE_LABELS, event.event_type))}</span><span><b>时间</b>${escapeHtml(event.start_at ? localDate(event.start_at) : "日期未知")}</span><span><b>时间精度</b>${escapeHtml(displayEnum(DATE_PRECISION_LABELS, event.date_precision))}</span><span><b>确认来源</b>${Number(evidence.source_count || 0)} 个 · 下方可查看原报告</span></div>${entities ? `<div class="entity-chip-list">${entities}</div>` : emptyState("尚未登记人物、机构、地点或政策实体")}<details class="developer-details"><summary>技术信息</summary><pre>${escapeHtml(JSON.stringify({ event_type: event.event_type, date_precision: event.date_precision }, null, 2))}</pre></details></section>${eventSourceReportsHtml(evidence.sources || [], evidence.source_count)}<p class="method-note">未登记关系时不推断因果；来源主张不会被平均或覆盖。</p>`;
 }
 
 async function loadEvents(eventId = null, pane = "overview", serial = state.routeSerial) {
@@ -5393,6 +5418,16 @@ async function generateTopicDigest(caseId, button) {
 function showToast(message) { const toast = document.getElementById("toast"); toast.textContent = message; toast.hidden = false; window.setTimeout(() => { toast.hidden = true; }, 2400); }
 
 document.addEventListener("click", async (event) => {
+  if (event.target.closest("[data-open-event-source-reports]")) {
+    const dialog = document.getElementById("eventSourceReportsDialog");
+    document.getElementById("eventSourceReportsDialogBody").innerHTML = eventSourceReportsDialogHtml(state.eventEvidence?.sources || [], state.eventEvidence?.source_count || 0);
+    dialog.showModal();
+    return;
+  }
+  if (event.target.closest("[data-close-event-source-reports]")) {
+    document.getElementById("eventSourceReportsDialog").close();
+    return;
+  }
   const projectPrompt = event.target.closest("[data-project-prompt]");
   if (projectPrompt) {
     const form = document.querySelector("[data-project-task-form]");
@@ -5933,7 +5968,12 @@ document.addEventListener("click", async (event) => {
     } catch (error) { actionButton.disabled = false; actionButton.textContent = `运行失败：${error.message}`; }
     return;
   }
-  const materialButton = event.target.closest("[data-material-version]"); if (materialButton) { await openMaterial(materialButton.dataset.materialVersion); return; }
+  const materialButton = event.target.closest("[data-material-version]"); if (materialButton) {
+    const sourceReportsDialog = document.getElementById("eventSourceReportsDialog");
+    if (sourceReportsDialog?.open) sourceReportsDialog.close();
+    await openMaterial(materialButton.dataset.materialVersion);
+    return;
+  }
   if (event.target.closest("[data-close-material]")) document.getElementById("materialDrawer").close();
 });
 
@@ -6863,5 +6903,7 @@ init();
 document.getElementById("countryReadingDialog").addEventListener("cancel", event => { event.preventDefault(); closeCountryReading(); });
 
 document.getElementById("countryReadingDialog").addEventListener("click", event => { if (event.target.closest('a[href^="#/"]')) closeCountryReading(); });
+
+document.getElementById("eventSourceReportsDialog").addEventListener("click", event => { if (event.target === event.currentTarget) event.currentTarget.close(); });
 
 window.addEventListener("hashchange", () => { const material = document.getElementById("materialDrawer"); if (material.open) material.close(); });

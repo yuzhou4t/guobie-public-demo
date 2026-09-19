@@ -52,6 +52,21 @@ def create_app():
         raise RuntimeError("Public Reader requires exact allowed origins")
     app = FastAPI(title="国别智枢 · 公开体验", docs_url=None, redoc_url=None, openapi_url=None)
 
+    def connection_view(row):
+        if settings.public_demo_shared_api_key is not None:
+            return {
+                "protocol": settings.public_demo_shared_protocol,
+                "base_url": normalize_base_url(
+                    settings.public_demo_shared_base_url,
+                    allowed_hosts={"api.deepseek.com"},
+                ),
+                "model": settings.public_demo_shared_model,
+                "connected": True,
+                "managed": True,
+                "expires_at": None,
+            }
+        return {**sessions.view(row), "managed": False}
+
     @app.middleware("http")
     async def boundary(request: Request, call_next):
         path = request.url.path
@@ -178,7 +193,7 @@ def create_app():
     @app.get("/api/v1/reader/model-connection")
     def connection(request: Request):
         with get_session_factory()() as db:
-            return sessions.view(db.get(PublicDemoSession, request.state.public_demo_session_id))
+            return connection_view(db.get(PublicDemoSession, request.state.public_demo_session_id))
 
     @app.post("/api/v1/reader/model-connection/test")
     def test_connection(payload: ConnectionInput, request: Request):
@@ -220,7 +235,7 @@ def create_app():
                 )
                 row.key_expires_at = min(sessions.now() + sessions.KEY_SECONDS, row.expires_at)
                 db.commit()
-                return sessions.view(row)
+                return connection_view(row)
         finally:
             with get_session_factory()() as db:
                 sessions.release(db, sid, lease)
@@ -231,7 +246,7 @@ def create_app():
             row = db.get(PublicDemoSession, request.state.public_demo_session_id)
             row.provider_key_ciphertext, row.key_expires_at = None, None
             db.commit()
-        return {"connected": False}
+            return connection_view(row)
 
     @app.delete("/api/v1/reader/demo-session")
     def reset(request: Request):
@@ -293,7 +308,8 @@ def create_app():
         original = (STATIC / "index.html").read_text()
         # Add only the model-settings/session integration to the existing entry.
         original = original.replace(
-            '<script src="./app.js', '<script src="./public-reader.js"></script>\n  <script src="./app.js'
+            '<script src="./app.js',
+            '<script src="./public-reader.js?v=20260919-shared-deepseek"></script>\n  <script src="./app.js',
         )
         return HTMLResponse(original, headers={"Cache-Control": "no-cache"})
 

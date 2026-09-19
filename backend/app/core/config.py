@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     public_demo_secret_key: SecretStr | None = None
     public_demo_allowed_origins: str = ""
     public_demo_cron_secret: SecretStr | None = None
+    public_demo_shared_api_key: SecretStr | None = None
+    public_demo_shared_base_url: str = "https://api.deepseek.com"
+    public_demo_shared_model: str = "deepseek-flash"
+    public_demo_shared_protocol: str = "responses"
 
     database_url: str = Field(
         default="postgresql+psycopg://guobie:guobie@localhost:5432/guobie",
@@ -73,6 +77,7 @@ class Settings(BaseSettings):
 
     @field_validator(
         "public_api_key",
+        "public_demo_shared_api_key",
         "comtrade_subscription_key",
         "agent_openai_api_key",
         "agent_coze_token",
@@ -91,6 +96,14 @@ class Settings(BaseSettings):
         allowed = {"evidence_only", "codex_local", "coze_test", "openai_responses", "user_api"}
         if normalized not in allowed:
             raise ValueError(f"agent_runtime must be one of {sorted(allowed)}")
+        return normalized
+
+    @field_validator("public_demo_shared_protocol")
+    @classmethod
+    def validate_public_demo_shared_protocol(cls, value: str) -> str:
+        normalized = value.strip().lower()
+        if normalized not in {"chat_completions", "responses"}:
+            raise ValueError("public_demo_shared_protocol must be chat_completions or responses")
         return normalized
 
     @field_validator("agent_codex_binary")

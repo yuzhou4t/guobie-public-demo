@@ -1,4 +1,5 @@
 import importlib
+from types import SimpleNamespace
 
 import pytest
 from cryptography.fernet import Fernet
@@ -12,7 +13,7 @@ from app.services.public_demo_samples import sample_manifest
 
 
 @pytest.fixture
-def public_app(monkeypatch, session_factory):
+def public_app(request, monkeypatch, session_factory):
     for key, value in {
         "PUBLIC_DEMO_ENABLED": "true",
         "AGENT_RUNTIME": "user_api",
@@ -22,6 +23,11 @@ def public_app(monkeypatch, session_factory):
         "PUBLIC_API_READ_ONLY": "false",
     }.items():
         monkeypatch.setenv("GUOBIE_" + key, value)
+    shared_key = getattr(request, "param", None)
+    if shared_key:
+        monkeypatch.setenv("GUOBIE_PUBLIC_DEMO_SHARED_API_KEY", shared_key)
+    else:
+        monkeypatch.delenv("GUOBIE_PUBLIC_DEMO_SHARED_API_KEY", raising=False)
     get_settings.cache_clear()
     from app.cli.init_public_demo import initialize
 
@@ -103,6 +109,41 @@ def test_model_connection_and_boundary(public_app, monkeypatch):
         assert not a.get("/api/v1/reader/model-connection").json()["connected"]
 
 
+@pytest.mark.parametrize("public_app", ["shared-test-secret"], indirect=True)
+def test_managed_deepseek_connection_is_ready_without_exposing_key(public_app, session_factory, monkeypatch):
+    from app.services.community_auth import CURRENT_REQUEST
+    from app.services.public_demo_runtime import current_runtime
+    from app.services.public_demo_sessions import digest
+
+    with TestClient(public_app) as client:
+        client.get("/api/v1/reader/auth/status")
+        response = client.get("/api/v1/reader/model-connection")
+        assert response.status_code == 200
+        assert response.json() == {
+            "protocol": "responses",
+            "base_url": "https://api.deepseek.com",
+            "model": "deepseek-flash",
+            "connected": True,
+            "managed": True,
+            "expires_at": None,
+        }
+        assert "shared-test-secret" not in response.text
+
+        from app.services import public_demo_runtime
+
+        monkeypatch.setattr(public_demo_runtime, "get_session_factory", lambda: session_factory)
+        sid = digest(client.cookies.get("guobie_public_demo"))
+        context = CURRENT_REQUEST.set(SimpleNamespace(state=SimpleNamespace(public_demo_session_id=sid)))
+        try:
+            runtime = current_runtime(get_settings())
+        finally:
+            CURRENT_REQUEST.reset(context)
+        assert runtime.shared is True
+        assert runtime.model == "deepseek-flash"
+        with session_factory() as db:
+            runtime._validate_session(db)
+
+
 @pytest.mark.parametrize("protocol", ["chat_completions", "responses"])
 def test_original_runtime_contract(protocol):
     from app.services.public_demo_runtime import UserAPIRuntime
@@ -112,6 +153,7 @@ def test_original_runtime_contract(protocol):
             assert api_key == "test-key"
             if protocol == "responses":
                 assert endpoint.endswith("/responses") and payload["store"] is False
+                assert payload["reasoning"] == {"effort": "none"}
                 return {
                     "output": [
                         {"type": "message", "content": [{"type": "output_text", "text": '{"ok":true}'}]}

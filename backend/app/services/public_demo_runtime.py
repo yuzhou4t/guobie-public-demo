@@ -17,25 +17,30 @@ from app.services.public_demo_sessions import now, provider_key, release, reserv
 class UserAPIRuntime(StructuredAgentRuntime):
     runtime_name = "user_api"
 
-    def __init__(self, *, sid, connection, api_key, timeout_seconds=45, client=None):
+    def __init__(self, *, sid, connection, api_key, timeout_seconds=45, client=None, shared=False):
         super().__init__(model=connection["model"], timeout_seconds=timeout_seconds)
         self.sid, self.connection, self.api_key = sid, connection, api_key
         self.client = client or SafeModelHttpClient(timeout=timeout_seconds)
+        self.shared = shared
+
+    def _validate_session(self, db):
+        row = db.get(PublicDemoSession, self.sid)
+        if row is None or row.expires_at <= now():
+            raise AgentRuntimeError("体验会话已失效，请刷新页面")
+        if not self.shared:
+            if row.connection != self.connection:
+                raise AgentRuntimeError("体验会话已变化，请重新连接 API")
+            provider_key(row)
+        return row
 
     def _invoke_json(self, *, instructions, prompt, schema):
         with get_session_factory()() as db:
-            row = db.get(PublicDemoSession, self.sid)
-            if row is None or row.expires_at <= now() or row.connection != self.connection:
-                raise AgentRuntimeError("体验会话已变化，请重新连接 API")
-            provider_key(row)
+            self._validate_session(db)
             lease = reserve(db, self.sid)
         try:
             result = self.invoke(instructions=instructions, prompt=prompt, schema=schema)
             with get_session_factory()() as db:
-                row = db.get(PublicDemoSession, self.sid)
-                if row is None or row.expires_at <= now() or row.connection != self.connection:
-                    raise AgentRuntimeError("体验会话已失效，本轮结果不可采用")
-                provider_key(row)
+                self._validate_session(db)
             return result
         except (ProviderError, HTTPException) as exc:
             raise AgentRuntimeError(str(exc) if isinstance(exc, ProviderError) else str(exc.detail)) from None
@@ -63,6 +68,8 @@ class UserAPIRuntime(StructuredAgentRuntime):
                     }
                 },
             }
+            if urlsplit(base).hostname == "api.deepseek.com":
+                payload["reasoning"] = {"effort": "none"}
         else:
             endpoint = base + "/chat/completions"
             payload = {
@@ -113,6 +120,22 @@ def current_runtime(settings):
         raise AgentRuntimeError("体验会话缺失，请刷新页面")
     with get_session_factory()() as db:
         row = db.get(PublicDemoSession, sid)
+        if settings.public_demo_shared_api_key is not None:
+            connection = {
+                "protocol": settings.public_demo_shared_protocol,
+                "base_url": normalize_base_url(
+                    settings.public_demo_shared_base_url,
+                    allowed_hosts={"api.deepseek.com"},
+                ),
+                "model": settings.public_demo_shared_model,
+            }
+            return UserAPIRuntime(
+                sid=sid,
+                connection=connection,
+                api_key=settings.public_demo_shared_api_key.get_secret_value(),
+                timeout_seconds=settings.agent_timeout_seconds,
+                shared=True,
+            )
         try:
             key = provider_key(row)
         except HTTPException as exc:
